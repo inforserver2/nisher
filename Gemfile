@@ -36,6 +36,7 @@ gem 'whenever', require: false # cron
 
 gem 'correios-frete'
 gem 'rspec'
+gem 'newrelic_rpm'
 
 # Use unicorn as the web server
 # gem 'unicorn'

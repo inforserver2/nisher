@@ -112,6 +112,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    newrelic_rpm (3.3.3)
     nokogiri (1.5.0)
     pg (0.12.2)
     polyamorous (0.5.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   delayed_job_web
   email_validator
   jquery-rails
+  newrelic_rpm
   pg
   rails (= 3.2.1)
   ransack
