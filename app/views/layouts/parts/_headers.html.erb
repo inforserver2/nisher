@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<meta property="og:title" content="Conheça a Nisher Networks" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Dieta, perder peso, melhor qualidade de vida, emagrecer enquanto dorme, redução de estomago, emagrecer dormindo, e podendo ainda ganhar dinheiro indicando para seus amigos? Cadastre-se agora e melhore seu estilo de vida."/>
+<meta property="og:image " content="<%= "#{[CFG["prot"], "/assets/logo.png"].join}" %>"/>
+<% if @sponsor %>
+  <meta property="og:url" content="<%= get_site @sponsor %>" />
+<meta property="fb:admins" content="NisherNetworks" />
+<% end %>
+  <title><%= CFG['site-title'] %></title>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <%= stylesheet_link_tag    "application" %>
+
+  <%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js","https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js", "application"  %>
+  <%= csrf_meta_tag %>
+</head>

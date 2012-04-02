@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  subject: MyString
+  message: MyText
+  sponsor_id: 1
+
+two:
+  name: MyString
+  email: MyString
+  subject: MyString
+  message: MyText
+  sponsor_id: 1

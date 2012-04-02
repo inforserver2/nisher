@@ -1,0 +1,45 @@
+<h1 class="title">Lista de recebimentos em conta bancária</h1>
+
+<div id="office_payments_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:office_payments_path do |f| %>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["a enviar",0], ["enviado",1], ["pendente",2], ["cancelado",2]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", office_payments_path %>
+    <% end %>
+  </div>
+</div>
+
+
+<div id="office_payments_list">
+  <table cellspacing="0" class="office">
+    <caption>Lista envio pagamentos <%= "(#{@payments.count} - #{@payments.sum(:value)})" %></caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>valor</th>
+        <th>status</th>
+        <th>quitado?</th>
+        <th>obs?</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.id %></td>
+        <td><%= payment.value.try :real_contabil %></td>
+        <td><%= payment_status payment.status %></td>
+        <td><%= boo payment.closed? %></td>
+        <td><%= boo payment.obs? %></td>
+        <td><%= link_to "ver", office_payment_path(payment) %></td>
+      </tr>
+
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @payments %>
+</div>
+

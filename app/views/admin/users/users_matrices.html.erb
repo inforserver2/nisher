@@ -1,0 +1,20 @@
+<h1 class="title">Matrizes dos usuários</h1>
+
+<div id="admin_user_matrices">
+  <table cellspacing="0" class="office">
+    <tr><th>id</th><th>usuário</th><th>indicador</th><td>indicados</td><th>matriz</th><th>upline</th><th>downlines</th></tr>
+    <% User.where(account_type_id:2).joins(:matrix).find_each(batch_size:100) do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.get_login %></td>
+        <td><%= user.sponsor_id %></td>
+        <td><%= user.sponsored_count %></td>
+        <td><%= user.matrix.try :id %></td>
+        <td><%= user.matrix.try :upline_id %></td>
+        <td><%= user.matrix.try :downlines_count %></td>
+      </tr>
+
+    <% end %>
+  </table>
+</div>
+

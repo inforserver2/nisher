@@ -1,0 +1,46 @@
+
+<h1 class="title"> Lista Parceiros Diretos </h1>
+
+<div id="admin_matrices_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:office_networking_pending_path(params[:id]) do |f| %>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :name_cont %><br/>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :email1_or_email2_cont %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", office_networking_pending_path(params[:id]) %>
+    <% end %>
+  </div>
+</div>
+
+<div id="office_matrices_list">
+  <table cellspacing="0" class="office">
+    <caption>Total <%= @users.count %></caption>
+    <thead>
+      <tr>
+        <th>usuário id</th>
+        <th>login</th>
+        <th>apelido</th>
+        <th>status</th>
+        <th>indicador</th>
+        <th>+ info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.id %></td>
+          <td><%= u.get_login %></td>
+          <td><%= u.get_nick %></td>
+          <td><%= user_status u.status %></td>
+          <td><%= u.sponsor.get_login %></td>
+          <td><%= link_to "mais", office_networking_client_path(u.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @users %>
+</div>
+

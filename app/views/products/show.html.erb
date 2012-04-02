@@ -1,0 +1,23 @@
+<h1 class="title"><%= @product.title %></h1>
+<div id="site_product">
+  <%= form_tag(line_items_path, :class=>:form) do %>
+    <%= link_to image_tag(@product.image_url(:medium)), image_path(@product.image_url(:show)), :class=>:fancy %>
+    <p><%= @product.description %></p>
+    <% if @product.product_tastes.any? %>
+        <%= label_tag "Escolha o sabor" %>
+        <%= select_tag :product_taste_id, options_for_select(@product.product_tastes.order("id ASC").all.map{|taste| [taste.name, taste.id]}) %>
+    <% end %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <span class="price"><%= @product.price.real_contabil %></span>
+      <%= button_to 'Adicionar ao carrinho' %>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<div id="more_product">
+  <iframe id="iframe_product" src="<%= more_product_path(@product) %>" width="100%" frameborder=0 scrolling="no" >
+    <p>Your browser does not support iframes.</p>
+  </iframe>
+
+</div>
+<%= javascript_tag "iframe_sizing();" %>

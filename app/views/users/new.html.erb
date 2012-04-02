@@ -1,0 +1,128 @@
+<h1 class="title">Cadastro</h1>
+
+<br/>
+<p><strong>Você esta se cadastrando pela rede de negócios de: </strong> <%= @sponsor.get_nick %><strong>&nbsp &nbsp <%= request.host %></strong></p>
+<br/>
+<div id="cufon_cart">
+
+  <h1>Carrinho: <%= @cart.total_items %> itens <span id="cufon_cart_details">[exibir detalhes]</span></h1>
+
+  <div id="cufon_cart_data" style="display:none">
+    <%= link_to "Alterar dados do carrinho", carrinho_path %>
+    <div id="items">
+      <h1>Itens</h1>
+      <table>
+        <% for item in @cart.line_items %>
+          <tr id="<%=dom_id(item)  %>" class="items">
+            <td id="item_quantity"><%= item.quantity %></td>
+            <td><%= item.product.title %> <%= " Sabor: #{item.product_taste.name}" if item.product_taste_id %></td>
+            <td id="total_price"><%= item.total_price.real_contabil %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div id="address">
+      <h1>Para:</h1>
+        <p>Destinatário:</p>
+        <span><%= @cart.frete.to_name %></span>
+        <br/>
+        <p>Logradouro:</p>
+        <span><%= @cart.frete.street_name %></span>
+        <br/>
+        <p>Número:</p>
+        <span><%= @cart.frete.number %></span>
+        <br/>
+        <p>Bairro:</p>
+        <span><%= @cart.frete.neighborhood %></span>
+        <br/>
+        <p>Complemento:</p>
+        <span><%= @cart.frete.complement %></span>
+        <br/>
+        <p>Cidade:</p>
+        <span><%= @cart.frete.city_name %></span>
+        <br/>
+        <p>Estado:</p>
+        <span><%= @cart.frete.state_name %></span>
+        <br/>
+        <p>País:</p>
+        <span><%= @cart.frete.country.name %></span>
+        <br/>
+        <p>Cep:</p>
+        <span><%= @cart.frete.zip_to %></span>
+      </div>
+
+    <div id="frete">
+      <h1>Frete</h1>
+      <p>Tipo: <span><%= @cart.frete.frete_type.name %></span></p>
+      <% if @cart.frete.frete_type_id==3 -%>
+      <p>Valor:<span>Indefinido</span></p>
+      <% else -%>
+      <p>Valor:<span><%= @cart.frete.price.real_contabil %></span></p>
+      <% end -%>
+    </div>
+    <div id="total">
+      <p><span>Valor do pedido:</span><br/><%= @cart.final_price.real_contabil %></p>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<div id="cufon_question" style="display:none;">
+  <h1>Tipo de Cliente: </h1>
+</div>
+<div class="clear"></div>
+<div id="question1">
+  <h1>Que tipo de cliente Nisher você quer ser?</h1>
+  <ul>
+    <li>
+      <div id="option1" class="new_user_option">
+        <%= image_tag "consumer_deals.jpg" %>
+        <h1 class="customer_type">Apenas Consumo</h1>
+        <div>
+          <p>O plano específico para o cliente de consumo.</p>
+          <h2>Recebe:</h2>
+          <ul>
+            <li>Produtos de qualidade</li>
+            <li>Os melhores preços do mercado</li>
+            <li>Emagrecimento com saúde</li>
+          </ul>
+          <br/>
+          <% if  User.cannot_be_any_in_cont? @product_ids %>
+            <%= link_to "Cadastrar",  "#", alt:"Esta opção não pôde ser acionada porque você adicionou um kit distribuidor ao carrinho. Para prosseguir você precisaria removê-lo ou utilizar a opção ao lado.", class:"nisher_button1 nisher_button2" %>
+          <% else %>
+            <%= link_to "Cadastrar",  "#", id:"new_user_option_1", alt:"Apenas Consumo", class:"nisher_button1" %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div id="option2" class="new_user_option">
+        <%= image_tag "business_deals.jpg" %>
+        <h1 class="customer_type">Consumo e Negócios</h1>
+        <div>
+          <p>Destinado para clientes interessados em serem alem de clientes, parceiros de negócios junto a Nisher.</p>
+          <h2>Recebe:</h2>
+          <ul>
+            <li>Todos os benefícios de cliente</li>
+            <li>Comissão por indicação</li>
+            <li>Prêmios por metas atinjidas</li>
+            <li>Trabalha em equipe</li>
+          </ul>
+          <% unless  User.cannot_be_any_in_cont? @product_ids %>
+            <%= link_to "Cadastrar",  "#", alt:"Esta opção não pôde ser acionada porque você ainda não adicionou um kit distribuidor a este carrinho. Para prosseguir você precisará adicioná-lo.", class:"nisher_button1 nisher_button2" %>
+          <% else %>
+            <%= link_to "Cadastrar",  "#", id:"new_user_option_2", alt:"Consumo e Negócios", class:"nisher_button1" %>
+
+          <% end %>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="clear"></div>
+</div>
+
+<div id="new_user_form" style="display:none;">
+  <%= render 'form' %>
+</div>
+
+

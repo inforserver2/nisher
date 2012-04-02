@@ -1,0 +1,68 @@
+<h1 class="title">Edição dados frete</h1>
+<%= form_for [:admin,@frete], html:{class:"form"} do |f| %>
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@frete}  %>
+
+
+  <div class="field">
+    <%= f.label :frete_type_id %>
+    <%= f.select :frete_type_id, [["PAC", 1], ["SEDEX",2], ["INTERNACIONAL", 3]]%>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+        <%= f.label :to_name %><br />
+        <%= f.text_field :to_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :street_name %><br />
+        <%= f.text_field :street_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :number %><br />
+        <%= f.text_field :number %>
+      </div>
+
+      <div class="field">
+        <%= f.label :neighborhood %><br />
+        <%= f.text_field :neighborhood %>
+      </div>
+
+      <div class="field">
+        <%= f.label :complement %><br />
+        <%= f.text_field :complement %>
+      </div>
+
+      <div class="field">
+        <%= f.label :city_name %><br />
+        <%= f.text_field :city_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :state_name %><br />
+        <%= f.text_field :state_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :zip_to %><br />
+        <%= f.text_field :zip_to %>
+      </div>
+
+      <div class="field">
+        <%= f.label :country_id %><br />
+        <%= f.collection_select :country_id, Country.all, :id, :name %>
+      </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>

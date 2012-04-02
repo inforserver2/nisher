@@ -1,0 +1,55 @@
+<%= form_for([:admin,@boleto], :html=>{:class=>:form}) do |f| %>
+  <%= render :partial => "/shared/error", :locals=>{:obj=>@boleto} %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  <div class="field">
+    <%= f.label :cpfcnpj %><br />
+    <%= f.text_field :cpfcnpj, value: @boleto.show_cpfcnpj %>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br />
+    <%= f.text_field :order_id %>
+  </div>
+  <% unless @boleto.persisted? %>
+    <div class="field">
+      <%= f.label :qtd %><br />
+      <%= f.select :qtd, (1..12).to_a %><br/>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price, value: @boleto.price.real_contabil %>
+  </div>
+  <% if @boleto.persisted? %>
+    <div class="field">
+      <%= f.label :status %><br />
+      <%= f.select :status, [["pendente",0], ["pago",1]] %><br/>
+    </div>
+
+  <% end %>
+
+  <% unless @boleto.persisted? %>
+    <div class="field">
+      <%= f.label :start_date %><br />
+      <%= f.text_field :start_date, value:(Date.today+30.days).to_s_br %>
+    </div>
+<% end -%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

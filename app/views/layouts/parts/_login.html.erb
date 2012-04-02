@@ -1,0 +1,49 @@
+
+        <div class="box login">
+          <div class="title">Login</div>
+          <% unless is_logged? %>
+          <div class="infor">
+            <%= form_for @session, :url=>sessions_path, :method=>:post, :html=>{:class=>"form form_sidebar"}  do |f| %>
+              <%= f.label "Usuário ou email:" %>
+              <%= f.text_field :name %>
+              <%= f.label "Senha:" %>
+              <%= f.password_field :password %>
+              <%= f.submit "Conectar" %>
+            <% end %>
+            <span class="min"><%= link_to "Esqueçeu sua senha? clique aqui", send_my_password_path %></span>
+            <span class="min"><%= link_to "Não tem conta? cadastre-se aqui", sign_up_path %></span>
+          </div>
+          <% else %>
+            <div class="logged">
+              <% if is_logged? %>
+                <div class="show">
+                  <h2>Usuário logado:</h2>
+                  <p><%= ([current_user.id,current_user.get_login].join("-")).truncate(30) %></p>
+                </div>
+                <% if is_sublogged? %>
+                  <div class="show">
+                    <h2>Usuário sublogado:</h2>
+                    <p><%= [current_master.id,current_master.get_login].join("-") %></p>
+                    <p><%= link_to "Retornar", return_path, :method=>:post %></p>
+                  </div>
+                <% end %>
+              <% end %>
+              <div class="show">
+                <h2>Último login foi em:</h2>
+                <p> <%= current_user.last_login.to_s_br %> </p>
+              </div>
+              <%= button_to "Desconectar", sign_out_path, :confirm=>"Você tem certeza que quer desconectar seu acesso?", :method=>:get %>
+              <% if is_logged? && @layout_type=="office" %>
+                <span><%= link_to "Fazer um novo pedido", products_path %></span>
+              <% else %>
+                <span><%= link_to "Ir para o escritório virtual", office_root_path %></span>
+              <% end %>
+            </div>
+
+          <% end %>
+
+
+        </div>
+
+
+

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  blocked: false
+  blocked_at: 2012-02-11 05:14:43
+
+two:
+  email: MyString
+  blocked: false
+  blocked_at: 2012-02-11 05:14:43

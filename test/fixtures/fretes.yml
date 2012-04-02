@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  zip_to: MyString
+  weight: 9.99
+  height: 9.99
+  width: 9.99
+  length: 9.99
+  price: 1.5
+  frete_type: 
+  cart: 
+
+two:
+  zip_to: MyString
+  weight: 9.99
+  height: 9.99
+  width: 9.99
+  length: 9.99
+  price: 1.5
+  frete_type: 
+  cart: 

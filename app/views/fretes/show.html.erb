@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Zip to:</b>
+  <%= @frete.zip_to %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @frete.weight %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @frete.height %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @frete.width %>
+</p>
+
+<p>
+  <b>Length:</b>
+  <%= @frete.length %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @frete.price %>
+</p>
+
+<p>
+  <b>Frete type:</b>
+  <%= @frete.frete_type_id %>
+</p>
+
+<p>
+  <b>Cart:</b>
+  <%= @frete.cart_id %>
+</p>
+
+<p>
+  <b>Frete way:</b>
+  <%= @frete.frete_way_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_frete_path(@frete) %> |
+<%= link_to 'Back', fretes_path %>

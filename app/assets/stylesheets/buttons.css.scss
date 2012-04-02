@@ -1,0 +1,28 @@
+
+.nisher_button1{
+  background-color: blue;
+  padding: 10px;
+  margin-top: 10px;
+  color: white !important;
+  text-decoration: none;
+  &:hover{
+    color: white;
+    background-color: lighten(#03BAF3,10%);
+    text-decoration: none;
+  }
+}
+
+.nisher_button2{
+  color: gray !important;
+  background-color: #eeeeee;
+  &:hover{
+    cursor: default;
+    color: gray !important;
+    background-color: #eeeeee;
+  }
+}
+
+input.email_list{
+  margin-top: 10px;
+  float: right;
+}

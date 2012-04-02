@@ -1,0 +1,12 @@
+<h2>Informativo de bônus</h2>
+<p>Um novo registro de bônus foi associado a sua conta!</p>
+<table class="lista">
+  <tr><th>id</th><td><%= @comm.id %></td></tr>
+  <tr><th>valor</th><td><%= @comm.value.real_contabil %></td></tr>
+  <tr><th>status</th><td><%= comm_status @comm.status %></td></tr>
+  <tr><th>tipo</th><td><%= @comm.comm_type.name %></td></tr>
+  <tr><th>pedido</th><td><%= @comm.order_id %></td></tr>
+  <tr><th>registrado em:</th><td><%= @comm.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Veja mais informações através da sua central de negócios.</p>

@@ -1,0 +1,10 @@
+<h1>Contato</h1>
+
+<table class="lista">
+  <tr><th>Nome:</th><td><%= @contact["name"] %></td><tr/>
+   <tr><th>Email:</th><td><%= @contact["email"] %></td><tr/>
+   <tr><th>Assunto:</th><td><%= @contact["subject"] %></td><tr/>
+   <tr><th>Mensagem:</th><td><%= simple_format @contact["message"] %></td><tr/>
+       <tr><th>Site:</th><td><%= link_to root_url( :subdomain=>@sponsor.name ), root_url( :subdomain=>@sponsor.name ) %></td><tr/>
+
+</table>

@@ -1,0 +1,49 @@
+<%= link_to "Voltar", office_meus_dados_path %>
+<h1 class="title">Meus dados - Dados conta bancária</h1>
+<%= form_for(@user, url: office_dados_banco_path, :html=>{:class=>:form}) do |f| %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+  <%= f.fields_for :bank_account do |b| %>
+      <div class=field>
+        <%= b.label :bank %><br/>
+        <%= b.collection_select(:bank_id, Bank.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :bank_account_type %><br/>
+        <%= b.collection_select(:bank_account_type_id, BankAccountType.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :agency %><br/>
+        <%= b.text_field :agency %>
+      </div>
+
+      <div class=field>
+        <%= b.label :account %><br/>
+        <%= b.text_field :account %>
+      </div>
+
+      <div class=field>
+        <%= b.label :cpf_owner %><br/>
+        <%= b.text_field :cpf_owner %>
+      </div>
+
+      <div class=field>
+        <%= b.label :fullname_owner %><br/>
+        <%= b.text_field :fullname_owner %>
+      </div>
+
+      <div class=field>
+        <%= b.label :extra %><br/>
+        <%= b.text_area :extra, rows:2 %>
+      </div>
+    <% end %>
+
+
+
+  <div class="actions">
+    <%= f.submit "Atualizar"%>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<h1 class="title">Logins proibidos</h1>
+
+<div id="admin_blacklist_usernames_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_blacklist_usernames_path do |f| %>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :name_cont %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_blacklist_usernames_path %>
+    <% end %>
+  </div>
+</div>
+
+<table class="nisher">
+  <tr>
+    <th>Login</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blacklist_usernames.each do |blacklist_username| %>
+  <tr>
+    <td><%= blacklist_username.name %></td>
+    <td><%= link_to 'Deletar', [:admin,blacklist_username], confirm: 'Têm certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @blacklist_usernames %>
+
+<br />
+
+<%= button_to 'Adc novo login proibido', new_admin_blacklist_username_path, :method=>:get %>

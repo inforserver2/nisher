@@ -1,0 +1,10 @@
+<%= form_for([:admin,@blacklist_username], :html=>{:class=>:form}) do |f| %>
+  <%= render :partial => "/shared/error", :locals=>{:obj=>@blacklist_username} %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

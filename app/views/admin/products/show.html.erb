@@ -1,0 +1,53 @@
+<%= link_to 'Editar', edit_admin_product_path(@admin_product) %> |
+<%= link_to 'Voltar', admin_products_path %>
+<h1 class="title">Exibindo produto <%= @admin_product.id %></h1>
+<p>
+  <b>Atualizado em:</b>
+  <%= @admin_product.updated_at.to_s_br %>
+</p>
+<p>
+  <b>Título:</b>
+  <%= @admin_product.title %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= simple_format @admin_product.description %>
+</p>
+
+<p>
+  <b>Imagem:</b>
+  <%= link_to image_tag(@admin_product.image_url(:thumb)), image_path(@admin_product.image_url(:show)), :class=>:fancy %>
+</p>
+
+<p>
+  <b>Preço:</b>
+  <%= @admin_product.price.real_contabil %>
+</p>
+
+<p>
+  <b>Produto comissionável?</b>
+  <%= t @admin_product.prod_valid.to_s %>
+</p>
+
+<p>
+  <b>Porcentagem comissionável</b>
+  <%= @admin_product.comm_porc %>
+</p>
+
+<p>
+  <b>Visível no site:</b>
+  <%= t @admin_product.visible.to_s %>
+</p>
+
+<p>
+  <b>Categorias:</b>
+  <%= @admin_product.product_categories.map(&:title).to_sentence %>
+</p>
+
+<iframe id="iframe_page" src="<%= more_product_path(@admin_product) %>" width="100%" frameborder=0 scrolling="no" >
+    <p>Your browser does not support iframes.</p>
+  </iframe>
+  <%= javascript_tag "iframe_sizing();" %>
+
+

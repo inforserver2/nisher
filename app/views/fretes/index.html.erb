@@ -1,0 +1,39 @@
+<h1>Listing fretes</h1>
+
+<table>
+  <tr>
+    <th>Zip to</th>
+    <th>Weight</th>
+    <th>Height</th>
+    <th>Width</th>
+    <th>Length</th>
+    <th>Price</th>
+    <th>Frete type</th>
+    <th>Cart</th>
+    <th>Frete way</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fretes.each do |frete| %>
+  <tr>
+    <td><%= frete.zip_to %></td>
+    <td><%= frete.weight %></td>
+    <td><%= frete.height %></td>
+    <td><%= frete.width %></td>
+    <td><%= frete.length %></td>
+    <td><%= frete.price %></td>
+    <td><%= frete.frete_type_id %></td>
+    <td><%= frete.cart_id %></td>
+    <td><%= frete.frete_way_id %></td>
+    <td><%= link_to 'Show', frete %></td>
+    <td><%= link_to 'Edit', edit_frete_path(frete) %></td>
+    <td><%= link_to 'Destroy', frete, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Frete', new_frete_path %>

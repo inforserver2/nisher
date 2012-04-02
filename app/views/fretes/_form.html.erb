@@ -1,0 +1,42 @@
+<%= form_for(@frete) do |f| %>
+  <%= render :partial => "/shared/error", :locals=>{:obj=>@frete} %>
+  <div class="field">
+    <%= f.label :zip_to %><br />
+    <%= f.text_field :zip_to %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :frete_type_id %><br />
+    <%= f.collection_select :frete_type_id, FreteType.all.map, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :cart_id %><br />
+    <%= f.text_field :cart_id %>
+  </div>
+  <div class="field">
+    <%= f.label :frete_way_id %><br />
+    <%= f.collection_select :frete_way_id, FreteWay.all.map, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

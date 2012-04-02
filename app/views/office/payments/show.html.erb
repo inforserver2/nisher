@@ -1,0 +1,59 @@
+<h1 class="title">Dados recebimento em conta</h1>
+
+<section id="office_payment_show" class="office_show_data">
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados do registro</h1>
+    </header>
+    <table class="office">
+      <tr><th>id</th><td><%= @payment.id %></td></tr>
+      <tr><th>registrado em</th><td><%= @payment.created_at.to_s_br %></td></tr>
+      <tr><th>valor</th><td><%= @payment.value.real_contabil %></td></tr>
+      <tr><th>status</th><td><%= payment_status @payment.status %></td></tr>
+      <% if @payment.closed==true %>
+        <tr><th>quitado em</th><td><%= @payment.closed_at.to_s_br %></td></tr>
+      <% end %>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados da conta bancária vinculado especificamente para este depósito</h1>
+    </header>
+    <table class="office">
+        <tr><th>Banco:</th><td><%= @payment.p_bank_account.try(:bank).try :name %></td></tr>
+        <tr><th>Agência:</th><td><%= @payment.p_bank_account.try(:agency) %></td></tr>
+        <tr><th>Conta:</th><td><%= @payment.p_bank_account.try(:account) %></td></tr>
+        <tr><th>Tipo de conta:</th><td><%= @payment.p_bank_account.try(:bank_account_type_id) %></td></tr>
+        <tr><th>Titular da conta:</th><td><%= @payment.p_bank_account.try(:fullname_owner) %></td></tr>
+        <tr><th>CPF/CNPJ do titular:</th><td><%= @payment.p_bank_account.try(:cpf_owner) %></td></tr>
+        <tr><th>Mais informações:</th><td><%= simple_format @payment.p_bank_account.try(:extra) %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Bônus vinculados a este recebimento</h1>
+    </header>
+    <table class="office">
+      <tr><th>id</th><th>valor</th><th>total</th></tr>
+      <% count=[] -%>
+      <% @payment.comms.each do |comm| %>
+        <% count << comm.value -%>
+        <tr><td><%= link_to comm.id, admin_comm_path(comm)  %></td><td><%= comm.value.real %></td><td><%= count.sum.real %></td></tr>
+      <% end %>
+      <% count=nil -%>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Observações</h1>
+    </header>
+    <table>
+      <tr><td><%= simple_format @payment.obs %></td></tr>
+    </table>
+  </article>
+
+</section>

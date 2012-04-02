@@ -1,0 +1,8 @@
+<%= link_to "Voltar", :back %>
+<h1 class="title">Admin - Log de tarefa administrativa</h1>
+<table cellspacing="0" class="office">
+  <tr><th>Tarefa</th><td><%= @job.name %></td></tr>
+  <tr><th>Forma</th><td><%= job_type @job.type_id %></td></tr>
+  <tr><th>Horário</th><td><%= @job.created_at.to_s_br %></td></tr>
+  <tr><th>Log</th><td><%= simple_format @job.log %></td></tr>
+</table>

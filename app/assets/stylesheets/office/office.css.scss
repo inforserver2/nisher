@@ -1,0 +1,46 @@
+// Place all the styles related to the office/office controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+table.office{
+  margin:{
+    top: 10px;
+    bottom: 10px;
+  }
+  width: 100%;
+  caption{
+    font-size: 18px;
+    text-align:center;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+  }
+  th,td{
+    padding:{
+      left: 3px;
+      right: 3px;
+    }
+  }
+  th{
+    font-weight:bold;
+    vertical-align: top;
+  }
+  thead{
+    th{
+      height: 30px;
+      text-align: left;
+      font-weight:bold;
+      background-color: blue;
+      color: white;
+      line-height: 30px;
+    }
+  }
+  tbody{
+    td,th{
+      border-bottom: 1px solid gray;
+    }
+    tr:hover{
+      background-color: #cff;
+    }
+  }
+}
+

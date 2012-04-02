@@ -1,0 +1,563 @@
+-
+  id:  1
+  title:  Fill-up
+  description:  --- "REDU\xC3\x87\xC3\x83O DO ESTOMAGO SEM CIRURGIA"
+  price:  155.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/fillup.jpg
+  weight: 0.400
+  length: 16
+  width: 20
+  height: 11
+  product_category_ids: [ 1 , 2 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+
+  <div class="movies">
+    <h2>Vídeos de apresentação</h2>
+    <iframe height="202" src="http://www.youtube.com/embed/Px6MNoGc3gI?rel=0" frameborder="0" width="230" allowfullscreen=""></iframe>
+    <iframe height="202" src="http://www.youtube.com/embed/LoW3O_02kuc?rel=0" frameborder="0" width="230" allowfullscreen=""></iframe>
+  </div>
+
+  <div class="more">
+    <h2>Vencer a Balança sem passar fome! 7 Benefícios em um só Produto!</h2>
+    <br>
+    <p><b>Fill-Up é um produto revolucionário!</b></p>
+    <p>Foram 8 anos de pesquisa para se chegar a essa fórmula exclusiva e inteligente que certamente irá lhe ajudar em seu Programa de Redução de Peso e Medidas!</p>
+    <br>
+    <p>Fill-Up é um produto aprovado pelo Ministério da Saúde e conquistou o mercado através de sua comprovação de eficiência (que você poderá assistir clicando ao lado onde se lê: "Clique aqui e veja o vídeo explicativo").</p>
+    <br>
+    <p>Fill-Up foi desenvolvido pelo Departamento Técnico Científico da Nisher por uma equipe de profissionais da saúde que desejam oferecer-lhe o que há de melhor em suplementação nutricional natural, confira os 7 benefícios de Fill-Up:</p>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/3.jpg"><br>
+    <p><b>1. Reduz o espaço interno de seu estômago!</b><br>
+    Ao ingerir os comprimidos de Fill-Up com água, eles expandem dentro de seu estômago, reduzindo o espaço interno e atenuando a sensação de fome!<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/1.jpg"> <br>
+    <b>2. Se combina com a Gordura!</b><br>
+    Fill-Up tem afinidade lipídica e por isso começa a atrair e a se combinar com a gordura que faz parte de sua alimentação diária, essa gordura não será digerida e você reduzirá calorias!<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/2.jpg"> <br>
+    <b>3. Aumenta a atividade estomacal!</b><br>
+    Fill-Up faz o seu estômago trabalhar por pelo menos 5 horas, esse processo ajuda você a perder ainda mais calorias!<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/3.jpg"> <br>
+    <b>4. Reveste o Intestino Delgado com Gel!</b><br>
+    Fill-Up passa depois para o seu intestino delgado, revestindo-o com um Gel que retarda a absorção dos açúcares e carboidratos impedindo o aumento brusco dos níveis de insulina que produzem gordura em seu corpo.<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/4.jpg"> <br>
+    <b>5. Ajuda a eliminar Toxinas</b><br>
+    Fill-Up faz uma varredura em seu aparelho digestório auxiliando na eliminação das toxinas que causam gases e desconforto abdominal.<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/5.jpg"> <br>
+    <b>6. Desperta o Intestino Preguiçoso!</b><br>
+    Fill-Up estimula a atividade intestinal combatendo naturalmente a prisão de ventre. Fill-Up não é absorvido, ele é expelido de seu organismo pelas vias naturais combinado com as gorduras e os carboidratos.<br>
+    <img alt="" width="150" height="150" src="/assets/fillup_partes/6.jpg"> <br>
+    <b>7. Fill-Up contém Vitamina C!</b><br>
+    A vitamina C age como antioxidante combatendo os nocivos Radicais Livres ajudando na manutenção de diversos processos de seu metabolismo. Frasco com 180 comprimidos.&nbsp;Tome 05 comprimidos com dois copos de agua,&nbsp;15 minutos&nbsp;antes do almoço. Importante tomar&nbsp;no minimo 02 litros de agua por dia.</p>
+    <p><strong>Produto registrado na ANVISA</strong>( Produto não indicado para pessoas alérgicas e peixe e crustáceos).</p>
+  </div>
+
+</div>
+</body></html>'
+-
+  id:  2
+  title:  NutraMeal
+  description:  --- "Mix nutricional composto de prote\xC3\xADnas nobres que ajudam voc\xC3\xAA a emagrecer enquanto dorme, metabolizando a gordura em energia.\r\n\ Frasco com 500g."
+  price:  88.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/nutrameal.jpg
+  weight: 1
+  length: 18
+  width: 14
+  height: 14
+  product_category_ids: [ 1, 2 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+            <h2>Perder peso enquanto dorme. É possível perder peso durante o sono?</h2>
+            <p>Muita confusão pode ser causada quando o assunto é perda de peso. O que devo fazer? O que devo comer? Qual é o melhor suplemento nutricional para me ajudar a emagrecer?</p>
+            <br>
+            <p>O segredo do emagrecimento está na contabilidade das calorias. Na verdade é regra bem simples. Se ingerir mais calorias do que você gasta diariamente você irá engordar e se perder mais calorias do que ingere, irá emagrecer. Simples, não é mesmo?</p>
+            <br>
+            <p>Portanto se quiser perder peso de verdade deve buscar meios de reduzir as calorias que ingere diariamente e procurar ser mais ativa. Sabendo disso, o Departamento Técnico Científico da Nisher desenvolveu uma linha de produtos que vai lhe ajudar a reduzir a quantidade de calorias que faz com que você engorde.</p>
+            <br>
+            <p>Se você deseja mesmo emagrecer, convém saber que na hora do jantar é a pior hora para se comer em demasia, especialmente carboidratos refinados ou aqueles que se convertem rapidamente em glicose e contribuem para que você engorde cada vez mais. O seu corpo segue um ritmo chamado ciclo circadiano que rege o seu metabolismo. Note que ao acordar estará meio lenta, atingirá o pico máximo de energia lá pelas 14h00 e depois das 18h00 o seu corpo começa a desacelerar lhe preparando para o sono. Ingerir muito alimento, ou aqueles que são ricos em carboidratos nessa hora, contribuem para a formação de gordura, pois seu metabolismo está mais lento e você não irá praticar nenhuma atividade física enquanto dorme.</p>
+            <br>
+            <p>Portanto, estudos indicam que antes de dormir a melhor opção seria ingerir uma refeição nutritiva, mas com baixo teor de carboidratos e com poucas calorias. Nutra Meal pode (a critério de seu médico ou nutricionista) substituir a sua refeição da noite, pois se constitui num delicioso Mix Nutricional, único do mercado elaborado com três fontes de proteínas nobres que quase não interferem em sua taxa de glicemia, portanto não criam mais gordura em seu corpo.</p>
+            <br>
+            <p>Nutra Meal vem em dois deliciosos sabores: Papaya com Cassis e Floresta Negra e pode ser diluído em água, suco, leite, e fica muito gostoso se misturado a um iogurte desnatado.</p>
+            <br>
+            <p>Nutra Meal evita aquela sensação de "empachamento" e dá aquela sensação de saciedade e bem estar.</p>
+            <br>
+            <div class="centralize">
+              <img alt="" width="456" height="256" src="/assets/nutrameal_partes/1.jpg"><br>
+
+            </div>
+            <p>Se antes de dormir você ingerir uma refeição com alto teor de carboidratos, seu corpo irá usar parte desse alimento para produzir energia para manter o seu metabolismo funcionando durante o sono e a outra parte dele poderá ser convertida e estocada como gordura gerando quilos extras. Nutra Meal é uma rica fonte de Proteína que é a matéria prima que seu corpo usa para produzir músculos. Nutra Meal tem baixo teor de Carboidratos, assim sendo, ingerindo Nutra Meal antes de dormir, seu corpo não encontrará a matéria prima mais adequada para converter em energia ou em gordura, ao contrário se verá forçado a usar a sua própria gordura corparal como fonte de energia para manter seu metabolismo ativo por pelo menos 8 horas, e assim lhe ajudará a perder peso enquanto dorme, de maneira muito segura e natural. Não é milagre! É tecnologia!</p>
+            <p>&nbsp;Modo de usar: Dilua 03 colheres rasas de sopa de Nutra Meal em um copo duplo de</p>
+            <p>leite ou iogurte&nbsp;desnatado. Não use combinado com alimentos. Deliciosos sabores: Mamão Papaya com Cassis ou Floresta</p>
+            <p>Negra.&nbsp;</p>
+            <br align="center">
+            <div class="centralize">
+              <iframe height="349" src="http://www.youtube.com/embed/0FNCnsMb7WU" frameborder="0" width="425" allowfullscreen=""></iframe>
+            </div>
+
+            <p>&nbsp;</p>
+
+</div>
+</body></html>'
+-
+  id:  3
+  title:  Álef
+  description:  --- "Auxilia naturalmente a prevenir os males do colesterol, triglic\xC3\xA9rides e combate a hipertens\xC3\xA3o. Rica fonte natural de Omega 3, 6 e 9. Frasco com 60 c\xC3\xA1psulas."
+  price:  126.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/alef.jpg
+  weight: 0.300
+  length: 16
+  width: 20
+  height: 11
+  product_category_ids: [ 1, 2 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+            <h2>O Detergente biológico!</h2>
+            <br>
+            Óleo de Linhaça<br>
+            Óleo de Peixe<br>
+            Lecitina de Ovo<br>
+            <br>
+            Alef é o único suplemento que junta 3 ingredientes importantes que oferecem um equilibrio perfeito entre as melhores fontes naturais de ômega 3; ômega 6 e ômega 9.<br>
+            <br>
+            O ômega 3 não é produzido em seu organismo e precisa ser ingerido diariamente, sem ele o nosso organismo não funciona adequadamente.<br>
+            <br>
+            Ele ajuda a baixar os níveis de Triglicerídeos e auxilia na redução do Colesterol. Além de contribuir para reduzir casos de hipertensão, é muito conhecido por auxiliar na saúde do coração.<br>
+            <br>
+            O ômega 6 também é um ácido graxo poli-insaturado que não é fabricado em seu organismo e portanto precisa ser ingerido todos os dias. Ele é um antioxidante natural que ajuda a acelerar o metabolismo da gordura auxiliando no controle da obesidade e podendo ser usado como auxiliar na redução do apetite.<br>
+            <br>
+            O ômega 9 é um ácido graxo que o seu organismo também não sintetiza. Ele é vital na construção das membranas de nossas células e faz parte da barreira protetora da pele mantendo-a hidratada e ajudando a retardar os processos de envelhecimento. Também participa da produção natural dos hormônios do corpo. <br>
+            <br>
+            <b>Apresentação:</b> Frascos com 60 cápsulas de 500mg cada<br>
+            <b>Modo de uso:</b> Tomar 1 capsula  antes do café, almoço e jantar<br>
+            <b>Produto registrado na ANVISA</b> (não indicado para pessoas alérgicas e peixe e crustáceos)
+
+</div>
+</body></html>'
+-
+  id:  4
+  title:  MegaStack Diurno
+  description:  --- "O seu corpo perde milhares de c\xC3\xA9lulas por dia. O MegaStack Dia possui todos os elementos essenciais para ajudar seu organismo a repor estas c\xC3\xA9lulas."
+  price:  86.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/stack_diurno.jpg
+  weight: 0.300
+  length: 16
+  width: 20
+  height: 11
+  product_category_ids: [ 1, 2 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+            <h2>Atrasar o seu relógio Biológico! É possível retardar o envelhecimento?!</h2>
+            <br>
+            <p>Você sabia que o seu corpo trabalha como um relógio biológico que pode ser adiantado ou atrasado dependendo de como é o seu estilo de vida e também de como você cuida de sua nutrição?</p>
+            <br>
+            <p>Pesquisas ao redor do mundo têm mostrado que certos nutrientes ajudam a retardar o surgimento de sinais visíveis de envelhecimento. Por isso, o Departamento Técnico Científico da Nisher desenvolveu o Mega Stack a.m. &amp; p.m. que cuida de sua beleza de dentro para fora potencializado ainda mais os efeitos de seu creme cosmético auxiliando num aspecto mais jovial e também na manutenção da saúde.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/2.jpg"><br>
+            </div>
+            <p>Mega Stack vem com 60 tabletes em cada frasco (diurno e noturno) que atuam na derme auxiliando na redução dos sinais de envelhecimento e linhas de expressão. Seu uso é indicado à partir dos 24 anos de idade.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/1.jpg"><br>
+            </div>
+            <p><b>Veja alguns benefícios do uso contínuo:</b></p>
+            <ul>
+                <li>Auxilia na firmeza, maciez, densidade e elasticidade da pele.</li>
+                <li>Oferece um pool de aminoácidos que são responsáveis pelo aspecto jovial da pele.</li>
+                <li>Atua na reestruturação da camada interna de suporte da pele.</li>
+                <li>Promove redução no surgimento de linhas finas e rugas.</li>
+                <li>Também atua nas unhas e nos cabelos fortalecendo-os</li>
+                <li>Oferece nutrientes que são indispensáveis à manutenção da saúde dando maior disposição.</li>
+                <li>Contém Colágeno Hidrolisado que garante absorção máxima.</li>
+                <li>Contém vitaminas A, C e E que são antioxidantes e neutralizam os radicais livres responsáveis pelo envelhecimento precoce.</li>
+                <li>Contém Biotina e Ácido Fólico que atuam na pele e nos órgãos.</li>
+                <li>Contém Zinco, Cromo e Magnésio que ajudam na imunidade e na manutenção do vigor físico.</li>
+                <li>Modo de usar: Tome 02 comprimidos em jejum. Alimente-se após 20 minutos ou mais.</li>
+            </ul>
+</div>
+</body></html>'
+-
+  id:  5
+  title:  MegaStack Noturno
+  description:  --- "Enquanto voc\xC3\xAA dorme seu corpo trabalha para fazer a manuten\xC3\xA7\xC3\xA3o dos \xC3\xB3rg\xC3\xA3os, tecidos e horm\xC3\xB4nios. O MegaStack noite possui todos os elementos essenciais para este processo."
+  price:  86.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/stack_noturno.jpg
+  weight: 0.300
+  length: 16
+  width: 20
+  height: 11
+  product_category_ids: [ 1, 2 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+            <h2>Atrasar o seu relógio Biológico! É possível retardar o envelhecimento?!</h2>
+            <br>
+            <p>Você sabia que o seu corpo trabalha como um relógio biológico que pode ser adiantado ou atrasado dependendo de como é o seu estilo de vida e também de como você cuida de sua nutrição?</p>
+            <br>
+            <p>Pesquisas ao redor do mundo têm mostrado que certos nutrientes ajudam a retardar o surgimento de sinais visíveis de envelhecimento. Por isso, o Departamento Técnico Científico da Nisher desenvolveu o Mega Stack a.m. &amp; p.m. que cuida de sua beleza de dentro para fora potencializado ainda mais os efeitos de seu creme cosmético auxiliando num aspecto mais jovial e também na manutenção da saúde.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/2.jpg"><br>
+            </div>
+            <p>Mega Stack vem com 60 tabletes em cada frasco (diurno e noturno) que atuam na derme auxiliando na redução dos sinais de envelhecimento e linhas de expressão. Seu uso é indicado à partir dos 24 anos de idade.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/1.jpg"><br>
+            </div>
+            <p><b>Veja alguns benefícios do uso contínuo:</b></p>
+            <ul>
+                <li>Auxilia na firmeza, maciez, densidade e elasticidade da pele.</li>
+                <li>Oferece um pool de aminoácidos que são responsáveis pelo aspecto jovial da pele.</li>
+                <li>Atua na reestruturação da camada interna de suporte da pele.</li>
+                <li>Promove redução no surgimento de linhas finas e rugas.</li>
+                <li>Também atua nas unhas e nos cabelos fortalecendo-os</li>
+                <li>Oferece nutrientes que são indispensáveis à manutenção da saúde dando maior disposição.</li>
+                <li>Contém Colágeno Hidrolisado que garante absorção máxima.</li>
+                <li>Contém vitaminas A, C e E que são antioxidantes e neutralizam os radicais livres responsáveis pelo envelhecimento precoce.</li>
+                <li>Contém Biotina e Ácido Fólico que atuam na pele e nos órgãos.</li>
+                <li>Contém Zinco, Cromo e Magnésio que ajudam na imunidade e na manutenção do vigor físico.</li>
+                <li>Modo de usar: Tome 02 comprimidos em jejum. Alimente-se após 20 minutos ou mais.</li>
+            </ul>
+</div>
+</body></html>'
+-
+  id:  6
+  title:  Kit Saúde
+  description:  --- "Plena nutri\xC3\xA7\xC3\xA3o e sa\xC3\xBAde."
+  price:  288.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/kit_saude.jpg
+  weight: 0.500
+  length: 16
+  width: 20
+  height: 11
+  product_category_ids: [ 1, 3 ]
+  more: '<html><head></head><body></body><body><p>
+        &nbsp;</p>
+<p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 12px; font: inherit; vertical-align: baseline; text-align: left; ">
+        <b>O kit é formado pelos seguintes itens:</b></p>
+<p>
+        1 Álef<br>
+        1 Mega Stack Diurno<br>
+        1 Mega Stack Noturno</p>
+
+</body></html>'
+-
+  id:  7
+  title:  Kit Emagrecimento
+  description:  --- "Acelera a redu\xC3\xA7\xC3\xA3o de peso e queima de gordura."
+  price:  369.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/kit_emagrecimento.jpg
+  weight: 1.000
+  length: 16
+  width: 20
+  height: 15
+  product_category_ids: [ 1, 3 ]
+  more: '<html><body><p>
+        &nbsp;</p>
+<p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 12px; font: inherit; vertical-align: baseline; text-align: left; ">
+        <b>O kit é formado pelos seguintes itens:</b></p>
+<p>
+        1 Álef<br>
+        1 Nutra Meal<br>
+        1 Fill-UP</p>
+
+</body></html>'
+-
+  id:  8
+  title:  MegaStack Combo
+  description:  --- Diurno e Noturno
+  price:  166.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/combo_megastack.jpg
+  weight: 0.400
+  length: 18
+  width: 16
+  height: 18
+  product_category_ids: [ 1, 3 ]
+  more: '<html><head><link href="/assets/site_products.css?body=1" media="screen" rel="stylesheet" type="text/css">
+</head><body></body><body><div id="iframe_product_content">
+            <h2>Atrasar o seu relógio Biológico! É possível retardar o envelhecimento?!</h2>
+            <br>
+            <p>Você sabia que o seu corpo trabalha como um relógio biológico que pode ser adiantado ou atrasado dependendo de como é o seu estilo de vida e também de como você cuida de sua nutrição?</p>
+            <br>
+            <p>Pesquisas ao redor do mundo têm mostrado que certos nutrientes ajudam a retardar o surgimento de sinais visíveis de envelhecimento. Por isso, o Departamento Técnico Científico da Nisher desenvolveu o Mega Stack a.m. &amp; p.m. que cuida de sua beleza de dentro para fora potencializado ainda mais os efeitos de seu creme cosmético auxiliando num aspecto mais jovial e também na manutenção da saúde.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/2.jpg"><br>
+            </div>
+            <p>Mega Stack vem com 60 tabletes em cada frasco (diurno e noturno) que atuam na derme auxiliando na redução dos sinais de envelhecimento e linhas de expressão. Seu uso é indicado à partir dos 24 anos de idade.</p>
+            <div class="centralize">
+              <img alt="" width="481" height="247" src="/assets/megastack_partes/1.jpg"><br>
+            </div>
+            <p><b>Veja alguns benefícios do uso contínuo:</b></p>
+            <ul>
+                <li>Auxilia na firmeza, maciez, densidade e elasticidade da pele.</li>
+                <li>Oferece um pool de aminoácidos que são responsáveis pelo aspecto jovial da pele.</li>
+                <li>Atua na reestruturação da camada interna de suporte da pele.</li>
+                <li>Promove redução no surgimento de linhas finas e rugas.</li>
+                <li>Também atua nas unhas e nos cabelos fortalecendo-os</li>
+                <li>Oferece nutrientes que são indispensáveis à manutenção da saúde dando maior disposição.</li>
+                <li>Contém Colágeno Hidrolisado que garante absorção máxima.</li>
+                <li>Contém vitaminas A, C e E que são antioxidantes e neutralizam os radicais livres responsáveis pelo envelhecimento precoce.</li>
+                <li>Contém Biotina e Ácido Fólico que atuam na pele e nos órgãos.</li>
+                <li>Contém Zinco, Cromo e Magnésio que ajudam na imunidade e na manutenção do vigor físico.</li>
+                <li>Modo de usar: Tome 02 comprimidos em jejum. Alimente-se após 20 minutos ou mais.</li>
+            </ul>
+</div>
+</body></html>'
+-
+  id:  9
+  title:  100 Panfletos Fill-up
+  description:  --- 100 Panfletos Fill-up
+  price:  15.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/panfleto_fillup2.jpg
+  weight: 0.500
+  length: 5
+  width: 15
+  height: 11
+  product_category_ids: [ 1, 4 ]
+-
+  id:  10
+  title:  100 Panfletos MegaStack
+  description:  --- 100 Panfletos MegaStack
+  price:  15.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/panfleto_megastack.jpg
+  weight: 0.500
+  length: 5
+  width: 15
+  height: 20
+  product_category_ids: [ 1, 4 ]
+-
+  id:  11
+  title:  100 Panfletos NutraMeal
+  description:  --- 100 Panfletos NutraMeal
+  price:  15.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/panfleto_nutra.jpg
+  weight: 0.500
+  length: 5
+  width: 15
+  height: 20
+  product_category_ids: [ 1, 4 ]
+-
+  id:  12
+  title:  100 Panfletos de Divulgação e Recrutamento
+  description:  --- "100 Panfletos de Divulga\xC3\xA7\xC3\xA3o e Recrutamento"
+  price:  15.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/panfleto_divulgacao.jpg
+  weight: 0.100
+  length: 5
+  width: 12
+  height: 15
+  product_category_ids: [ 1, 4 ]
+-
+  id:  13
+  title:  Bottom - Você já emagreceu hoje?
+  description:  --- ""
+  price:  5.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/bottom_fillup.jpg
+  weight: 0.100
+  length: 10
+  width: 10
+  height: 10
+  product_category_ids: [ 1, 5 ]
+-
+  id:  14
+  title:  Cd Apresentação Produtos
+  description:  --- ""
+  price:  5.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/cd_apresentacao.jpg
+  weight: 0.100
+  length: 10
+  width: 10
+  height: 10
+  product_category_ids: [ 1, 5 ]
+-
+  id:  15
+  title:  Apostila de Apresentação Nisher
+  description:  --- ""
+  price:  25.0
+  stock:  10000
+  prod_valid:  false
+  visible:  true
+  buy:  true
+  weight: 0.200
+  length: 11
+  width: 16
+  height: 20
+  product_category_ids: [ 1, 5 ]
+-
+  id:  16
+  title:  Kit Personalizado
+  description: --- ""
+  price:  0.0
+  stock:  10000
+  prod_valid:  true
+  visible:  true
+  buy:  false
+  image:  /images/seeds/products/kit_personalizado.jpg
+  product_category_ids: [ 1, 3 ]
+  more: '<html><body><p>
+        &nbsp;</p>
+<h3 style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 18px; font: inherit; vertical-align: baseline; text-align: left; font-weight: bold; color: rgb(22, 85, 173); ">
+        Personalize seu kit</h3>
+<p>
+        <span class="price" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 18px; font: inherit; vertical-align: baseline; text-align: left; color: rgb(255, 0, 0); font-weight: bold; ">Através do telefone&nbsp;</span></p>
+<p>
+        <span class="price" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 18px; font: inherit; vertical-align: baseline; text-align: left; color: rgb(255, 0, 0); font-weight: bold; ">&nbsp;0800-772-02-23 &nbsp;</span></p>
+<p>
+        <span class="price" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; font-size: 18px; font: inherit; vertical-align: baseline; text-align: left; color: rgb(255, 0, 0); font-weight: bold; ">RAMAL 202 ou 214</span></p>
+<p>
+        <b>Programas nutricionais para:</b></p>
+<p>
+        Redução de gordura<br>
+        Fortalecimento de musculos e ossos<br>
+        Renovação celular<br>
+        Complementação de Omega 3/6/9<br>
+        E outros...</p>
+
+</body></html>'
+-
+  id:  17
+  title:  Kit Distribuidor 1
+  description: --- "Este plano é o mais indicado para receber comissões em todos os níveis de ganhos disponíveis para os distribuidores rentabilizarem em parceria com a Nisher."
+  price:  688
+  stock:  10000
+  prod_valid:  true
+  network_plan: true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/kit_personalizado.jpg
+  product_category_ids: [ 1, 3, 6 ]
+  more: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Suba o nível de seu estilo de vida melhorando sua saúde e construindo uma potencial fonte de renda extra em equipe. <br />
+  Este kit contêm os nossos produtos principais e o material de treinamento que é tudo que você precisa pra conhecer melhor nossos produtos. <br />
+  Este plano é o mais indicado para receber comissões em todos os níveis de ganhos disponíveis para os distribuidores rentabilizarem em parceria com a Nisher.</p>
+<p>Solicite já o seu pedido para participar de um dos melhores plano de negócios do Brasil a Nisher Networks.</p>
+<p>Você receberá os seguintes itens:</p>
+<p>2 Mega Stack<br />
+  2 Fill Up<br />
+  2 Nutra Meal<br />
+  1 Apostila Treinamento<br />
+  1 DVD Treinamento</p>
+<p>Garanta já o seu sucesso!</p>
+</body>
+</html>'
+-
+  id:  18
+  title:  Kit Distribuidor 2
+  description: --- "Este é o nosso plano de negócios intermediário que ja te mantem a um passo do plano mais indicado para receber comissões em todos os níveis de ganhos disponíveis para os distribuidores rentabilizarem em parceria com a Nisher."
+  price:  290
+  stock:  10000
+  prod_valid:  true
+  network_plan: true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/kit_personalizado.jpg
+  product_category_ids: [ 1, 3, 6 ]
+  more: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Suba o nível de seu estilo de vida melhorando sua saúde e construindo uma potencial fonte de renda extra em equipe. Este kit contêm uma parte de nossos produtos principais e o material de treinamento que é tudo que você precisa pra conhecer melhor nossos produtos. Este é o nosso plano de negócios intermediário que ja te mantem a um passo do plano mais indicado para receber comissões em todos os níveis de ganhos disponíveis para os  distribuidores rentabilizarem em parceria com a Nisher.</p>
+<p>Solicite já o seu pedido para participar de um dos melhores plano de negócios do Brasil a Nisher Networks.</p>
+<p>Você receberá os seguintes itens:</p>
+<p>1 Mega Stack<br />
+  2 Nutra Meal<br />
+  1 Apostila Treinamento<br />
+1 DVD Treinamento</p>
+<p>Garanta já o seu sucesso!</p>
+</body>
+</html>
+'
+-
+  id:  19
+  title:  Kit Distribuidor 3
+  description: --- "Este é o nosso plano inicial indicado para quem quer iniciar um plano de carreira no sistema de negócios da Nisher que ainda te oferecerá todo o suporte para subir no plano de carreira."
+  price:  128
+  stock:  10000
+  prod_valid:  true
+  network_plan: true
+  visible:  true
+  buy:  true
+  image:  /images/seeds/products/kit_personalizado.jpg
+  product_category_ids: [ 1, 3, 6 ]
+  more: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>Suba o nível de seu estilo de vida melhorando sua saúde e construindo uma potencial fonte de renda extra em equipe. Este kit contêm o principal produto da Nisher e o material de treinamento que é tudo que você precisa pra conhecer melhor nossos produtos. Este é o nosso plano inicial indicado para quem quer iniciar um plano de carreira no sistema de negócios da Nisher que ainda te oferecerá todo o suporte para subir no plano de carreira.</p>
+<p>Solicite já o seu pedido para participar de um dos melhores plano de negócios do Brasil a Nisher Networks.</p>
+<p>Você receberá os seguintes itens:</p>
+<p>1Nutra Meal<br />
+  1 Apostila Treinamento<br />
+1 DVD Treinamento</p>
+<p>Garanta já o seu sucesso!</p>
+</body>
+</html>
+'
+
+...

@@ -1,0 +1,43 @@
+<h1 class="title">Admin - Dados do bônus</h1>
+
+<div id="admin_comm_show">
+  <table class="office">
+    <tr><th>id</th><td><%= @comm.id %></td></tr>
+    <tr><th>login titular</th><td><%= link_to @comm.user.get_login, admin_user_path(@comm.user) %></td></tr>
+    <tr><th>registrado em</th><td><%= @comm.created_at.to_s_br %></td></tr>
+    <tr><th>valor</th><td><%= @comm.value.real %></td></tr>
+    <tr><th>status</th><td><%= comm_status @comm.status %></td></tr>
+    <tr><th>tipo</th><td><%= comm_type @comm.type_id %></td></tr>
+    <% if @comm.type_id==1 || @comm.type_id==4 %>
+      <tr><th>classe</th><td><%= @comm.comm_type.try(:name) %></td></tr>
+      <tr><th>id pedido</th><td><%= link_to @comm.order.id, admin_order_path(@comm.order.id) %></td></tr>
+    <% end %>
+
+    <% if @comm.type_id==1 %>
+      <tr><th>itens pedido</th><td>
+        <table>
+            <tr><th>qtd</th><th>produto</th><th>valor unitario</th><th>valor total</th></tr>
+          <% @comm.order.cart.line_items.each do |item| %>
+            <tr class="items <%= cycle("odd", "even") %>">
+              <td><%= item.quantity %></td>
+              <td><%= item.product.title %> <%= " Sabor: #{item.product_taste.name}" if item.product_taste_id %></td>
+              <td><%= item.unit_price.real_contabil %></td>
+              <td><%= item.total_price.real_contabil %></td>
+            </tr>
+        <% end %>
+        <tr><td></td><td></td><td>valor final</td><td><%= @comm.order.cart.total_price.real_contabil %></td></tr>
+        </table>
+      </td></tr>
+    <% end %>
+
+    <% if @comm.type_id==2 %>
+      <tr><th>enviado para</th><td><%= @comm.receiver.get_login %></td></tr>
+    <% end %>
+
+    <% if @comm.type_id==3 %>
+      <tr><th>recebido de</th><td><%= @comm.sender.get_login %></td></tr>
+    <% end %>
+    <tr><th>id do pagamento</th><td><%= @comm.payment_id %></td></tr>
+
+  </table>
+</div>

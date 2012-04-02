@@ -1,0 +1,38 @@
+<h1 class="title">Fechar pagamento</h1>
+<p>Siga as instruções abaixo:</p>
+
+<div id="order_close" class="office_close">
+
+  <br/>
+  <table>
+    <caption>Dados do pedido</caption>
+    <tr><th>id</th><td><%= @order.id %></td></tr>
+    <tr><th>total itens</th><td><%= @order.cart.total_items %></td></tr>
+    <tr><th>valor</th><td><%= @order.price.real_contabil %></td></tr>
+    <tr><th>status</th><td><%= order_status @order.status %></td></tr>
+    <tr><th>titular</th><td><%= @order.user.get_nick %></td></tr>
+  </table>
+  <br/>
+
+  <%= form_for [:admin,@order], url: admin_close_order_path do |f| %>
+    <%= render :partial => 'shared/error', :locals=>{:obj=>@order}  %>
+
+    <%= f.hidden_field :closing, value:true %>
+    <div class="field">
+    <%= f.check_box :paid_with_money %>
+    <%= f.label :paid_with_money %>
+    </div>
+    <div class="field">
+    <%= f.check_box :mailing %>
+    <%= f.label :mailing %>
+    </div>
+    <div class="field">
+    <%= f.check_box :make_comm %>
+    <%= f.label :make_comm %>
+    </div>
+    <div class="actions">
+    <%= f.submit "concluir o pagamento" %>
+    </div>
+  <% end %>
+</div>
+

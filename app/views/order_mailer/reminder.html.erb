@@ -1,0 +1,11 @@
+<h2>Fatura pendente</h2>
+<p>Enviamos este email pra lembrá-lo sobre o pedido em aberto abaixo:</p>
+
+<table class="lista">
+  <tr><th>Pedido</th><td><%= @order.id %></td></tr>
+  <tr><th>Data de cadastro</th><td><%= @order.created_at.to_s_br %></td></tr>
+  <tr><th>Valor total</th><td><%= @order.price.real_contabil %></td></tr>
+  <tr><th>Status</th><td><%= order_status @order.status %></td></tr>
+  <tr><th>Link</th><td><%= link_to "Visualizar pedido", order_url(@order, subdomain: username_for_subdomain(@order.user),token:@order.token) %></td></tr>
+</table>
+<p>Agradecemos a sua preferência pela Nisher</p>

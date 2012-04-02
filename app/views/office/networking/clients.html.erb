@@ -1,0 +1,44 @@
+<h1 class="title"> Clientes </h1>
+
+<div id="admin_clients_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:office_networking_clients_path do |f| %>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :email1_or_email2_cont %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["pendente",0], ["ativo",1], ["inativo",2]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", office_networking_clients_path %>
+
+    <% end %>
+  </div>
+</div>
+
+<div id="office_matrices_list">
+  <table cellspacing="0" class="office">
+    <caption>Total <%= @clients.count %></caption>
+    <thead>
+      <tr>
+        <th>id cliente</th>
+        <th>login</th>
+        <th>apelido</th>
+        <th>status</th>
+        <th>+ info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= client.id %></td>
+          <td><%= client.get_login %></td>
+          <td><%= client.get_nick %></td>
+          <td><%= user_status client.status %></td>
+          <td><%= link_to "mais", office_networking_client_path(client.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @clients %>
+</div>
+

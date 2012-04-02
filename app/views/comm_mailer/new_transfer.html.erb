@@ -1,0 +1,11 @@
+<h2>Informativo de transferência de saldo</h2>
+<p>Registramos a seguinte transferência de saldo:</p>
+<table class="lista">
+  <tr><th>id</th><td><%= @comm.id %></td></tr>
+  <tr><th>valor</th><td><%= @comm.value.real_contabil %></td></tr>
+  <tr><th>de</th><td><%= @comm.user.get_login %></td></tr>
+  <tr><th>para</th><td><%= @comm.receiver.get_login %></td></tr>
+  <tr><th>registrado em:</th><td><%= @comm.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Veja mais informações através da sua central de negócios.</p>

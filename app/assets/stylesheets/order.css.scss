@@ -1,0 +1,196 @@
+// Place all the styles related to the order controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#dados_pedido{
+  width: 180px;
+  float: left;
+}
+#dados_itens{
+  width: 300px;
+  float: left;
+}
+#dados_address{
+  width: 200px;
+  float: left;
+}
+#dados_cadastro{
+  width: 180px;
+  float: left;
+}
+#dados_site{
+  .site{
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+#pedido_formas_pagamento{
+  text-align: center;
+  p{
+    font-size: 18px;
+  }
+}
+#pedido_deposito{
+  #dados_conta{
+    .conta{
+      span{
+        display: block;
+      }
+    }
+  }
+}
+.box_tipo_pedido{
+  border: 2px dashed #cff;
+  padding: 5px;
+  text-align: center;
+  h1{
+    font: {
+      weight: bold;
+      size: 18px;
+    }
+    margin-bottom: 10px;
+  }
+  p{
+    margin-bottom: 10px;
+  }
+}
+.box_cadastro, .box_site{
+  h1{
+    font-weight: 800;
+    margin-bottom: 10px;
+    background-color: #1c4ea3;
+    color: #fff;
+    padding: 4px;
+  }
+  margin: 5px;
+  border: 1px dashed #cff;
+  padding: 5px;
+  background-color: #e7f1f6;
+  font-size: 11px;
+  min-height: 180px;
+  p{
+    font-size: 12px;
+  }
+  td{
+    padding: 2px;
+  }
+  span{
+    margin-left: 10px;
+  }
+}
+
+.box_pedido{
+  h1{
+    font-weight: 800;
+    margin-bottom: 10px;
+    background-color: #1c4ea3;
+    color: #fff;
+    padding: 4px;
+  }
+  margin: 5px;
+  border: 1px dashed #cff;
+  padding: 5px;
+  background-color: #fcedc2;
+  font-size: 11px;
+  min-height: 380px;
+  p{
+    font-size: 12px;
+  }
+  td{
+    padding: 2px;
+  }
+  span{
+    margin-left: 10px;
+  }
+}
+div#dados_contas{
+  border: 1px solid black;
+  margin:2px;
+  width: 300px;
+  float: left;
+  h2{
+    font-size: 15px;
+  }
+  ul{
+    list-style: none;
+    div.conta{
+      img{
+        float: left;
+        padding: 2px;
+      }
+      div{
+        float: left;
+        margin-top: 20px;
+        span{
+          text-align: left;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+div#dados_empresa{
+  h2{
+    font-weight: bold;
+    font-size: 15px;
+  }
+  div#dados_favorecido{
+    span{
+      display: block;
+    }
+  }
+}
+div#pedido_total_a_pagar{
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  text-align: center;
+  h1{
+    font-weight: bold;
+    font-size: 21px;
+    color: blue;
+    margin: 3px;
+  }
+  p{
+    font-size: 18px;
+    color: red;
+  }
+}
+
+.office_list{
+  table{
+    width: 100%;
+    margin:{
+      bottom: 10px;
+      top: 10px;
+    }
+    caption{
+      font-weight: bold;
+      text-align: center;
+    }
+    thead{
+      background-color: blue;
+      color: white;
+      height: 30px;
+      th{
+        padding: 2px;
+      }
+    }
+    tbody{
+      tr{
+        &:hover{
+          background-color: #cff;
+        }
+        height: 25px;
+      }
+      td{
+        padding: 2px;
+      }
+
+    }
+
+
+  }
+}

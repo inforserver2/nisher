@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= CFG['site-title'] %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <% #= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+    <p id="sponsor"> <strong>Cliente indicador: </strong> <%= @sponsor.name %></p>
+    <div class="header">
+      <%= link_to image_tag("logo.png"), root_path %>
+      <h2>Produtos de Emagrecimento e Nutrição com Qualidade</h2>
+      <embed id="banner" src='/swf/banner.swf' pluginspage='http://www.macromedia.com' type='application/x-shockwave-flash' height=106 width=582 wmode="transparent"></embed>
+    </div>
+
+    <div class="clear"></div> 
+    <div class="middleware">
+      <div id="newsletter">
+        <h2>Receba nossos informativos e concorra a produtos</h2>
+        <%= form_tag("#") do %>
+          <%= label_tag "Informe seu e-mail:" %>
+          <%= text_field_tag "Email:" %>
+          <%= submit_tag "Participar" %>
+        <% end %>
+      </div>
+      <div id="cart">
+        <p><%= link_to "Seu carrinho contêm 0 item", "#" %></p> 
+      </div>
+    </div>
+
+    <div class="clear"></div> 
+
+    <div class="wrap">
+      <nav class="top">
+        <ul>
+          <li><%= link_to "Página Inicial", "#" %></li>
+          <li><%= link_to "A Nisher", "#" %></li>
+          <li><%= link_to "Aumente sua renda", "#" %></li>
+          <li><%= link_to "Eventos", "#" %></li>
+          <li><%= link_to "Depoimentos", "#" %></li>
+          <li><%= link_to "Dúvidas", "#" %></li>
+          <li><%= link_to "Cadastre-se", "#", :class=>"activated" %></li>
+          <li><%= link_to "Contato", "#" %></li>
+        </ul>
+      </nav> 
+      <div class="clear"></div>
+      <div id="sidebar">
+        
+        <div class="box">
+          <div class="title">
+            Produtos
+          </div>
+          <ul>
+            <li><%= link_to "Produto1", "#" %></li>
+            <li><%= link_to "Produto2", "#" %></li>
+            <li><%= link_to "Produto3", "#" %></li>
+            <li><%= link_to "Produto4", "#" %></li>
+            <li><%= link_to "Produto5", "#" %></li>
+            <li><%= link_to "Produto6", "#" %></li>
+          </ul>
+        </div> 
+        
+        <div class="box">
+          <div class="title">Login</div>
+          <div class="info">
+            <%= form_for @session, :url=>sessions_path, :method=>:post  do |f| %>
+              <%= f.label "Usuário ou email:" %>
+              <%= f.text_field :name %>
+              <%= f.label "Senha:" %>
+              <%= f.password_field :password %>
+              <%= f.submit "Fazer login" %>
+            <% end %>
+            <span><%= link_to "Esqueçeu sua senha? clique aqui", "#" %></span>
+            <span><%= link_to "Não tem conta? cadastre-se aqui", "#" %></span>
+
+          </div>
+        </div> 
+        
+        <div class="box">
+          <div class="title">TV</div>
+          <div class="info">
+            <%= image_tag "tv.gif" %>
+            <p><%= link_to "Acompanhe as apresentações e treinamentos nutricionais da Nisher através deste canal", "#" %></p>
+          </div>
+        </div> 
+
+      </div>
+
+      <div id="content">
+        
+        <div id="banner">
+          <div id="slider">
+            <a href="fillup.html"><img src="assets/b1.png" width="747" height="461" alt="b1" /></a>
+            <a href="megastack_diurno.html"><img src="assets/b2.png" width="747" height="461" alt="b2" /></a>
+            <a href="nutra_meal.html"><img src="assets/b3.png" width="747" height="461" alt="b3" /></a>
+            <a href="alef.html"><img src="assets/b4.png" width="747" height="461" alt="b4" /></a>
+          </div>
+
+        </div> 
+
+
+          <div id="products">
+            
+          	<div class="fillup showcase">
+           	  <h3>Fill-UP</h3>
+                  <img src="assets/fillup.jpg"/>
+                  <p>Faça redução de estômago sem cirurgia</p>
+                  <span class="price">R$ 149,00</span>
+                  <div class="buy"><a href="fillup.html">Comprar</a></div>
+                </div>
+
+            
+          	<div class="meal showcase">
+           	  <h3>Nutra Meal</h3>
+              <img src="assets/nutrimeal.jpg"/>
+              <p>Emagreça 
+                enquanto 
+              dorme</p>
+			<span class="price">R$ 75,00</span>
+              <div class="buy"><a href="nutra_meal.html">Comprar</a></div>
+          	</div>
+            
+          	<div class="alef showcase">
+           	  <h3>Álef</h3>
+              <img src="assets/alef.jpg"/>
+              <p>Complexo
+                Omega 3<br />
+              /6/9</p>
+<span class="price">R$ 116,00</span>
+              <div class="buy"><a href="alef.html">Comprar</a></div>
+          	</div>
+            
+          	<div class="stackdiurno showcase">
+           	  <h3>Mega Stack dia</h3>
+              <img src="assets/megastack_diurno.jpg"/>
+              <p>Auxílio
+                renovação 
+              celular</p>
+<span class="price">R$ 76,00</span>
+              <div class="buy"><a href="megastack_diurno.html">Comprar</a></div>
+          	</div>
+            
+          	<div class="stacknoturno showcase">
+           	  <h3>Mega Stack noite</h3>
+              <img src="assets/megastack_noturno.jpg"/>
+              <p>Intensifica
+                renovação 
+              celular</p>
+<span class="price">R$ 76,00</span>
+              <div class="buy"><a href="megastack_noturno.html">Comprar</a></div>
+          	</div>
+            
+
+
+            
+            
+          </div>
+          <div class="clear"></div>
+
+
+          <div id="tips" class="info_box">
+            <h3>50 dicas</h3>
+            <%= image_tag "50dicas.jpg" %>
+            <p>Para emagrecer com eficiência primeiramente é preciso atentar para o fato de que qualquer produto para perder peso só funcionará adequadamente para pessoas que possuem um hábito saudável de vida ...</p>
+            <span><%= link_to "ver mais", "#" %></span> 
+          </div>
+
+          <div id="meetings" class="info_box">
+            <h3>Reuniões de negócios</h3>
+            <%= image_tag "business.jpg" %>
+            <p>Saiba como a Nisher pode te ajudar a fazer lucros de R$ 5.000,00 ou mais mensalmente.
+              Você ganha!
+              Seus indicados ganham! 
+              E a rede toda cresce em equipe...</p>
+            <span><%= link_to "ver mais", "#" %></span> 
+          </div>
+
+      </div>
+      <div class="clear"></div>
+      <hr/>
+    
+      <div id="bottom1">
+
+        <h3>Mapa de navegação</h3>
+        
+        <div class="links">
+          <ul>
+            <li><%= link_to "Página Inicial", "#" %></li>
+            <li><%= link_to "A Nisher", "#" %></li>
+            <li><%= link_to "Aumente sua Renda", "#" %></li>
+            <li><%= link_to "Eventos", "#" %></li>
+            <li><%= link_to "Dúvidas", "#" %></li>
+            <li><%= link_to "Contato", "#" %></li>
+            <li><%= link_to "Política AntiSpam", "#" %></li>
+          </ul>
+        </div>
+        
+        <div class="links">
+          <ul>
+            <li><%= link_to "FillUP", "#" %></li>
+            <li><%= link_to "NutraMeal", "#" %></li>
+            <li><%= link_to "Álef", "#" %></li>
+            <li><%= link_to "Mega Stack Dia", "#" %></li>
+            <li><%= link_to "Mega Stack Noite", "#" %></li>
+            <li><%= link_to "Kit Saúde", "#" %></li>
+            <li><%= link_to "Kit Emagrecimento", "#" %></li>
+            <li><%= link_to "Kit Personalizado", "#" %></li>
+            <li><%= link_to "Outros Produtos", "#" %></li>
+          </ul>
+        </div>
+        
+        <div class="links">
+          <ul>
+            <li><%= link_to "Área do cliente", "#" %></li>
+            <li><%= link_to "Promoções", "#" %></li>
+            <li><%= link_to "50 dicas", "#" %></li>
+            <li><%= link_to "Nisher TV", "#" %></li>
+          </ul>
+        </div>
+
+        <div class="links payments">
+          <%= image_tag "logistica.jpg" %>
+        </div>
+
+      </div>
+
+      <div class="clear"></div>
+
+    </div>
+    <p id="copyrights">Todos os direitos reservados para <%= link_to "Nisher Networks", "#" %></p>
+    <div class="clear"></div>
+  
+    <% flash.each do |k,v| %>
+      <div class="flash <%= k %>">
+        <%= v %>
+      </div>
+    <% end %>
+
+    <nav id="top">
+      <ul>
+        <li><%= link_to "Users", users_path %></li>
+        <li><%= link_to "Contact us", new_contact_path %></li>
+        <li><%= link_to "Login", sign_in_path %></li>
+        <li><%= link_to "Apps", apps_path %></li>
+        <li><%= link_to "Restaurar senha", send_my_password_path %></li>
+        <% if is_logged? %>
+          <li><%= link_to "Logout", sign_out_path %></li>
+          <li><%= link_to "Blacklist Usernames", blacklist_usernames_path %></li>
+
+        <% end %>
+      </ul> 
+    </nav>
+
+    <% if session[:sponsor] %>
+      <div class="show">
+        <h2>Sponsor</h2>
+        <p><%= [@sponsor.id,@sponsor.name].join("-") %></p>
+      </div>
+    <% end %>
+
+    <% if is_logged? %>
+
+      <div class="show">
+        <h2>Logged</h2>
+        <p><%= [current_user.id,current_user.name].join("-") %></p>
+      </div>
+
+      <% if is_sublogged? %>
+        <div class="show">
+          <h2>Sublogged</h2>
+          <p><%= [current_master.id,current_master.name].join("-") %></p>
+          <p><%= link_to "Return", return_path, :method=>:post %></p>
+        </div>
+      <% end %>
+        
+    <% end %>
+
+    <%= yield %>
+
+    
+    
+  </div>
+
+
+  <br/><p>Params:</p>
+<%= params.inspect %>
+<br/><p>Sessions:</p>
+<%= session.inspect %>
+<br/><p>Flashes:</p>
+<%= flash.inspect %>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<h2>Cadastro concluído</h2>
+<p>Bem vindo à Nisher!</p>
+<p>Abaixo segue informações para você acessar o painel de cliente onde poderá:</p>
+<ul>
+  <li>Listar pedidos</li>
+  <li>Atualizar dados pessoais</li>
+  <li>Fazer novos pedidos</li>
+  <li>Gerar segunda via para pagamentos</li>
+  <li>Acompanhar os mais diversos relatórios</li>
+  <li>Baixar materiais de apresentação e treinamento</li>
+  <li>E muito mais...</li>
+</ul>
+
+<table class="lista">
+  <tr><th>Seu apelido</th><td><%= @user.get_nick %></td></tr>
+  <tr><th>Seu login</th><td><%= @user.get_login %></td></tr>
+  <tr><th>Sua senha</th><td><%= @user.password %></td></tr>
+  <% if @user.account_type_id==2 %>
+    <tr><th>Seu site de divulgação</th><td><%= get_site @user %></td></tr>
+    <tr><td colspan=2>Seu site de negócios já foi reservado e estará disponível para receber visitações tão logo que este pedido receber a confirmação de pagamento.</td></tr>
+  <% end %>
+  <tr><th>Data do cadastro:</th><td><%= @user.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Ficamos a disposição para melhor atendê-los.</p>
+

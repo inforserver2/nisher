@@ -1,0 +1,10 @@
+<%= form_for([:admin,@multiuser], :html=>{:class=>:form}) do |f| %>
+  <%= render :partial => "/shared/error", :locals=>{:obj=>@multiuser} %>
+  <div class="field">
+    <%= f.label :cpfcnpj %><br />
+    <%= f.text_field :cpfcnpj, class:"positive" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<h1 class="title">Login do usuário</h1>
+<p>Entre com os dados abaixo:</p>
+<%= form_for @session, :url=>sessions_path, :method=>:post, :html=>{:class=>"login form"}  do |f| %>
+
+  <%= f.label "Usuário ou e-mail:"%>
+  <%= f.text_field :name %>
+  <%= f.label "Senha:" %>
+  <%= f.password_field :password %>
+  <%= f.submit "Conectar" %>
+            <span class="min"><%= link_to "Esqueçeu sua senha? clique aqui", send_my_password_path %></span>
+            <span class="min"><%= link_to "Não tem conta? cadastre-se aqui", sign_up_path %></span>
+
+<% end %>
+

@@ -1,0 +1,65 @@
+
+                                    <ul id="office_menu2" class="sf-menu sf-vertical sf-js-enabled sf-shadow">
+                                        <li>
+                                                <a href="<%= office_meus_dados_path %>">Meus dados</a>
+                                        </li>
+                                        <li>
+                                                <a href="<%= office_orders_path %>">Pedidos</a>
+                                        </li>
+                                        <li class="sfHover">
+                                                <a class="sf-with-ul" href="#a">Rede de negócios<span class="sf-sub-indicator"> »</span></a>
+                                                <ul style=" display: none; ">
+                                                        <% if current_user.account_type_id==1  %>
+                                                        <li><a href="<%= office_networking_activate_path %>">Ativar</a></li>
+                                                        <% elsif current_user.account_type_id==2 %>
+                                                        <li><a href="<%= office_networking_stats_path %>">Estatísticas de indicações</a></li>
+                                                        <li><a href="<%= office_comms_path %>">Lista de bônus</a></li>
+                                                        <li><a href="<%= transfer_office_comms_path %>">Transferência de bônus</a></li>
+                                                        <li><a href="<%= office_payments_path %>">Recebimentos em conta bancária</a></li>
+                                                        <li><a href="<%= office_dados_banco_path %>">Conta bancária</a></li>
+                                                      <% end %>
+                                                </ul>
+                                              </li>
+                                        <% if current_user.account_type_id==2 && current_user.status!=0%>
+                                          <li class="sfHover">
+                                                <a class="sf-with-ul" href="#a">Materiais de divulgação<span class="sf-sub-indicator"> »</span></a>
+                                                <ul style=" display: none; ">
+                                                        <li><a href="<%= office_site_banners_path %>">Banners</a></li>
+                                                        <li><a href="<%= office_site_downloads_path %>">Downloads</a></li>
+                                                        <li><a href="<%= office_site_mensagens_path %>">Mensagens para Facebook</a></li>
+                                                </ul>
+                                              </li>
+                                        <% end %>
+
+
+                                        <% if is_admin? %>
+                                        <li class="sfHover">
+                                                <a class="sf-with-ul" href="#a">Administração<span class="sf-sub-indicator"> »</span></a>
+                                                <ul style="display: none; ">
+                                                        <li><a href="<%= admin_users_path %>">Usuários</a></li>
+                                                        <li><a href=" <%= users_matrices_admin_users_path %> ">Relatório de matrizes</a></li>
+                                                        <li><a href=" <%= admin_matrices_index_path %> ">Pesquisa em matrizes</a></li>
+                                                        <% if CFG["adminfakeusers"]==true %>
+                                                          <li><a href="<%= mass_signup_form_admin_users_path %>">Inscrições rápidas</a></li>
+                                                        <% end -%>
+                                                        <li><a href="<%= admin_boletos_path %>">Boletos manuais</a></li>
+                                                        <li><a href="<%= admin_comms_path %>">Bônus</a></li>
+                                                        <li><a href="<%= admin_payments_path %>">Envio de pagamentos</a></li>
+                                                        <li><a href="<%= admin_orders_path %>">Pedidos</a></li>
+                                                        <li><a href="<%= admin_products_path %>">Produtos</a></li>
+                                                        <li><a href="<%= admin_product_categories_path %>">Categoria de produtos</a></li>
+                                                        <li><a href="<%= admin_pages_path %>">Páginas</a></li>
+                                                        <li><a href="<%= admin_blacklist_usernames_path %>">Logins proibidos</a></li>
+                                                        <li><a href="<%= admin_multiusers_path %>">Multiusuários permitidos</a></li>
+                                                        <li><a href="<%= admin_jobs_path %>">Tarefas administrativas</a></li>
+                                                        <li><a href="<%= admin_news_index_path %>">Lista de emails newsletter</a></li>
+                                                        <li><a href="/delayed_job">Monitor do carteiro</a></li>
+                                                </ul>
+                                              </li>
+                                            <% end -%>
+                                            <li><a href="<%= new_contact_path %>">Contato</a></li>
+                                </ul>
+
+
+
+

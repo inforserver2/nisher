@@ -1,0 +1,54 @@
+<h1 class="title">Lista de Matrizes</h1>
+
+<div id="admin_matrices_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_matrices_index_path do |f| %>
+      <%= f.label "matriz id equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "usuário id equivale a" %>
+      <%= f.text_field :user_id_eq %><br/>
+      <%= f.label "Total indicações nível 1" %>
+      <%= f.text_field :level1_eq %><br/>
+      <%= f.label "Total indicações nível 2" %>
+      <%= f.text_field :level2_eq %><br/>
+      <%= f.label "Total indicações nível 3" %>
+      <%= f.text_field :level3_eq %><br/>
+      <%= f.label "Total indicações nível 4" %>
+      <%= f.text_field :level4_eq %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_matrices_index_path %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= form_tag admin_matrices_emails_path, target:"_blank"  do |f| %>
+    <%= hidden_field_tag :ids, @q.result.map(&:id)  %>
+    <%= submit_tag "lista emails", class:"email_list" %>
+  <% end %>
+</div>
+
+<div id="admin_matrices_list">
+  <table class="office">
+    <caption>Lista de matrizes (<%= @matrices.count %>)</caption>
+    <thead>
+      <tr>
+        <th>matriz id</th>
+        <th>usuário id</th>
+        <th>nome usuário</th>
+        <th>nome exibição</th>
+      </tr>
+    </thead>
+
+    <% @matrices.each do |m| %>
+      <tr>
+        <td><%= m.id %></td>
+        <td><%= m.user_id %></td>
+        <td><%= link_to m.user.get_login, admin_user_path(m.user_id), target:"_blank" %></td>
+        <td><%= m.user.get_nick %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @matrices %>
+</div>

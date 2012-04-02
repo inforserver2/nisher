@@ -1,0 +1,34 @@
+<h1 class="title">Multiusuários permitidos</h1>
+
+<div id="admin_multiusers_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_multiusers_path do |f| %>
+      <%= f.label "cpf ou cnpj contêm" %>
+      <%= f.text_field :cpfcnpj_cont %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_multiusers_path %>
+    <% end %>
+  </div>
+</div>
+
+<table class="nisher">
+  <tr>
+    <th>Cpf ou Cnpj</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @multiusers.each do |multiuser| %>
+  <tr>
+    <td><%= multiuser.cpfcnpj %></td>
+    <td><%= link_to 'Deletar', [:admin,multiuser], confirm: 'Têm certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @multiusers %>
+
+<br />
+
+<%= button_to 'Adc novo multiusuário permitido', new_admin_multiuser_path, :method=>:get %>

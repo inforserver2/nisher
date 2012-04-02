@@ -1,0 +1,18 @@
+<h1 class="title">Dados do patrocinador <%= @type %></h1>
+<div id="office_client_data">
+  <table cellspacing="0" class="office">
+    <tbody>
+    <tr><th style="width:150px">Data do cadastro</th><td><%= @personal.created_at.to_s_br %></td></tr>
+    <tr><th>Tipo de conta</th><td><%= tipo_cliente @personal.account_type_id %></td></tr>
+    <tr><th>Nome de exibição</th><td><%= @personal.get_nick %></td></tr>
+    <tr><th>Email1</th><td><%= @personal.email1 %></td></tr>
+    <tr><th>Email2</th><td><%= @personal.email2 %></td></tr>
+    <tr><th>Telefone</th><td><%= @personal.phone %></td></tr>
+    <tr><th>Celular</th><td><%= @personal.mobile %></td></tr>
+    <tr><th>Cidade</th><td><%= @personal.address.city_name %></td></tr>
+    <tr><th>Estado</th><td><%= @personal.address.state_name %></td></tr>
+    <tr><th>País</th><td><%= @personal.address.country.name %></td></tr>
+
+    </tbody>
+  </table>
+</div>

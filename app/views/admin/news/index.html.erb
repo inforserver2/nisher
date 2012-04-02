@@ -1,0 +1,59 @@
+<h1 class="title">Email Newsletter</h1>
+<p>Abaixo a lista de todos os emails inscritos</p>
+
+<div id="admin_news_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_news_path do |f| %>
+      <%= f.label "email equivale a" %>
+      <%= f.text_field :email_eq %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= f.label "bloqueado?" %>
+      <%= f.check_box :blocked_true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_news_path %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= form_tag emails_admin_news_index_url, target:"_blank"  do |f| %>
+    <%= hidden_field_tag :ids, @q.result.map(&:id)  %>
+    <%= submit_tag "lista emails", class:"email_list" %>
+  <% end %>
+</div>
+
+<div id="admin_news_index">
+  <table cellspacing="0" class="office">
+    <caption>Total (<%= @news.count %>)</caption>
+    <thead>
+      <tr>
+        <th>email</th>
+        <th>registrado em</th>
+        <th>bloqueado?</th>
+        <th>funções</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @news.each do |new| %>
+      <tr>
+        <td><%= new.email %></td>
+        <td><%= new.created_at.to_s_br %></td>
+        <td><%= boo new.blocked %></td>
+        <td>
+          <% unless new.blocked %>
+            <%= link_to "bloquear", block_admin_news_path(new), method: :put %>
+            <% else %>
+            <%= link_to "desbloquear", unblock_admin_news_path(new), method: :put %>
+          <% end %>
+          <%= link_to "excluir", admin_news_path(new), method: :delete, confirm:"Tem certeza?"  %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @news %>
+</div>

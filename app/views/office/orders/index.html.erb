@@ -1,0 +1,31 @@
+<h1 class="title">Pedidos</h1>
+<p>Visualize todos os pedidos em lista abaixo</p>
+<div id="office_orders">
+  <table class="office">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Preço</th>
+        <th>Itens</th>
+        <th>Status</th>
+        <th>Mais detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order|  -%>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.price.try :real_contabil %></td>
+          <td><%= order.cart.try :total_items %></td>
+          <td><%= order_status order.status %> </td>
+          <td><%= link_to "ver", order_path(order.id,token:order.token) %></td>
+        </tr>
+      <% end -%>
+
+    </tbody>
+
+  </table>
+</div>
+<%= will_paginate @orders, class:"digg_pagination" %>
+
+

@@ -1,0 +1,76 @@
+<h1 class="title">Rede de negócios - Ativar</h1>
+<p>Você ainda não é um cliente cadastrado em nossa rede de negócios. Siga as instruções abaixo para efetivar sua inscrição.</p>
+
+<section id="net_signup">
+  <header>
+    <h1>Plano Consumo e Negócios</h1>
+  </header>
+  <article>
+    <p>Destinado para clientes interessados em serem alem de clientes, parceiros de negócios junto a Nisher.</p>
+    <h2>Recebe:</h2>
+    <ul>
+      <li>Todos os benefícios de cliente</li>
+      <li>Comissão por indicação</li>
+      <li>Prêmios por metas atinjidas</li>
+      <li>Trabalha em equipe</li>
+    </ul>
+    <br/>
+    <a href="#" alt="Consumo e Negócios" class="nisher_button1" id="net_activate">Cadastrar</a>
+  </article>
+</section>
+<div class="clear"></div>
+<div id="net_signup_form">
+  <%= form_for @user, url:office_networking_activate_proc_path, method: :put, remote:true, html:{class:"form"} do |f| %>
+
+    <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+    <%= hidden_field_tag "user[account_type_id]", "2" %>
+
+    <div class="field" id="login_place">
+    <%= f.label :name %><br />
+    <%= text_field_tag "user[name]", "" %>
+    <div id="check_for_user"></div>
+  </div>
+
+
+  <div id="bank_account_place">
+    <%= f.fields_for :bank_account do |b| %>
+      <div class=field>
+        <%= b.label :bank %><br/>
+        <%= b.collection_select(:bank_id, Bank.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :bank_account_type %><br/>
+        <%= b.collection_select(:bank_account_type_id, BankAccountType.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :agency %><br/>
+        <%= b.text_field :agency %>
+      </div>
+
+      <div class=field>
+        <%= b.label :account %><br/>
+        <%= b.text_field :account %>
+      </div>
+
+      <div class=field>
+        <%= b.label :cpf_owner %><br/>
+        <%= b.text_field :cpf_owner %>
+      </div>
+
+      <div class=field>
+        <%= b.label :fullname_owner %><br/>
+        <%= b.text_field :fullname_owner %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Ativar"%>
+  </div>
+
+<% end %>
+
+</div>

@@ -1,0 +1,29 @@
+<%= link_to "Alterar dados", "#", id:"link_alterar_dados" %>
+<br/>
+<p>Destinatário:</p>
+<span><%= @cart.frete.to_name %></span>
+<br/>
+<p>Logradouro:</p>
+<span><%= @cart.frete.street_name %></span>
+<br/>
+<p>Número:</p>
+<span><%= @cart.frete.number %></span>
+<br/>
+<p>Bairro:</p>
+<span><%= @cart.frete.neighborhood %></span>
+<br/>
+<p>Complemento:</p>
+<span><%= @cart.frete.complement %></span>
+<br/>
+<p>Cidade:</p>
+<span><%= @cart.frete.city_name %></span>
+<br/>
+<p>Estado:</p>
+<span><%= @cart.frete.state_name %></span>
+<br/>
+<p>País:</p>
+<span><%= @cart.frete.country.name %></span>
+<br/>
+<p>Cep:</p>
+<span><%= @cart.frete.zip_to %></span>
+

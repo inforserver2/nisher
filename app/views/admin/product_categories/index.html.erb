@@ -1,0 +1,26 @@
+<h1 class="title">Categoria de produtos</h1>
+<%= button_to 'Inserir nova categoria', new_admin_product_category_path, :method=>:get %>
+
+<div id="product_categories">
+  <% @admin_product_categories.each do |admin_product_category| %>
+    <%= div_for admin_product_category do %>
+      <h2><%= admin_product_category.title %></h2>
+      <span>
+        <%= link_to 'Mais info', [:admin,admin_product_category] %> |
+        <%= link_to 'Editar', edit_admin_product_category_path(admin_product_category) %> | 
+        <%= link_to 'Remover', [:admin,admin_product_category], confirm: 'Têm certeza?', method: :delete %>
+      </span>
+      <%= link_to image_tag(admin_product_category.image_url(:medium)), image_path(admin_product_category.image_url(:show)), :class=>:fancy %>
+      <div class="expander">
+        <%=simple_format admin_product_category.description.try(:truncate,350) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="clear"></div>
+<br />
+
+<div class="flickr_pagination">
+<%= will_paginate @admin_product_categories %>
+
+</div>

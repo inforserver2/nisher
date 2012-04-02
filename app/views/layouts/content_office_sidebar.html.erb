@@ -1,0 +1,33 @@
+<% @layout_type = "office" %>
+<%= render :partial => "layouts/parts/headers" %>
+<body>
+
+  <div class="container">
+   
+    <%= render :partial => "layouts/parts/top" %>
+
+    <div class="wrap">
+      
+      <div class="clear"></div>
+        <%= render :partial => "layouts/parts/office_sidebar" %>
+      <div id="content">
+          <%= render :partial => "layouts/parts/flashes" %>
+        
+        <%= yield %>
+
+
+        <div class="clear"></div>
+
+
+
+      </div>
+      <div class="clear"></div>
+
+      <% unless is_logged? %>
+        <%= render :partial => "layouts/parts/bottom1" %>
+      <% end %>
+
+      <div class="clear"></div>
+
+    </div>
+<%= render :partial => "layouts/parts/bottom" %>

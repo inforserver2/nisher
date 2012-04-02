@@ -1,0 +1,74 @@
+<h1 class="title">Admin - Lista Bônus</h1>
+
+<div id="admin_comms_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_comms_path do |f| %>
+      <%= f.label "id bônus equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "id pedido equivale a" %>
+      <%= f.text_field :order_id_eq %><br/>
+      <%= f.label "id pagamento equivale a" %>
+      <%= f.text_field :payment_id_eq %><br/>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :user_name_cont %><br/>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :user_email1_or_user_email2_cont %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= f.label "tipo equivale a" %>
+      <%= f.select :type_id_eq, [["bônus",1], ["transferência",2], ["credito",3],["compra",4]], include_blank:true %><br/>
+      <%= f.label "classe equivale a" %>
+      <%= f.select :comm_type_id_eq, options_for_select(CommType.all.map{|t| [t.name,t.id]}), include_blank:true %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["disponível",0], ["em envio",1], ["pago",2], ["cancelado",3]], include_blank:true %><br/>
+      <%= f.label "bloqueado?" %>
+      <%= f.check_box :blocked_true %><br/>
+      <%= f.label "sob pagamento?" %>
+      <%= f.check_box :payment_id_present %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_comms_path %>
+    <% end %>
+  </div>
+</div>
+
+
+<div id="office_comms_list">
+  <table cellspacing="0" class="office">
+    <caption>Lista bônus <%= "(#{@comms.count} - #{@comms.sum(:value).real_contabil})" %></caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>valor</th>
+        <th>status</th>
+        <th>tipo</th>
+        <th>classe</th>
+        <th>pedido</th>
+        <th>login</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @comms.each do |comm| %>
+      <tr>
+        <td><%= comm.id %></td>
+        <td><%= comm.value.real %></td>
+        <td><%= comm_status comm.status %></td>
+        <td><%= comm_type comm.type_id %></td>
+        <td><%= comm.comm_type.try(:name) %></td>
+        <td><%= comm.order_id %></td>
+        <td><%= comm.user.get_login %></td>
+        <td>
+          <%= link_to "ver", admin_comm_path(comm) %> |
+          <%= link_to "editar", edit_admin_comm_path(comm) %>
+        </td>
+      </tr>
+
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @comms %>
+</div>
+

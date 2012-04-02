@@ -1,0 +1,27 @@
+<div id="selecao_frete" style="display:none"  >
+  <p>Selecione o frete de sua preferência:</p>
+  <% if @cart.frete.query.any? && @cart.frete.query.last[:sedex].sucesso? && @cart.frete.country_id==29 %>
+    <ul>
+      <li>
+        <%= radio_button_tag :frete, :sedex, nil, :class=>"frete_tipo"  %> 
+        <%= label_tag :sedex %>
+        <span class="price"><%= @cart.frete.sedex_price  %></span>
+      </li>
+      <li>
+        <%= radio_button_tag :frete, :pac, nil, :class=>"frete_tipo"  %> 
+        <%= label_tag :pac %>
+        <span class="price"><%= @cart.frete.pac_price  %></span>
+      </li>
+    </ul>
+    <div id="valor_final_a_pagar">
+      <span>R$ ???</span>
+    </div>
+      
+  <% elsif @cart.frete.query.empty? && @cart.frete.country_id==29 %>
+    <span>Não foi possivel calcular o valor do frete no momento, tente novamente agora ou mais tarde.</span>
+  <% elsif @cart.frete.country_id!=29 %>
+    <span>Não foi possivel calcular o valor do frete internacional, sua compra irá ser emitida com o valor sem frete e um gerente Nisher entrará em contato após atualizar o valor da compra com o valor do frete calculado.</span>
+
+  <% end %>
+  <%= button_to "Prosseguir", "#" %>
+</div>

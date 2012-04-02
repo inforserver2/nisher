@@ -1,0 +1,53 @@
+<%  cache 'site_bottom1' do %>
+      <div id="bottom1">
+
+        <h3>Mapa de navegação</h3>
+
+        <div class="links">
+          <ul>
+            <li><%= link_to "Página Inicial", root_path %></li>
+            <li><%= link_to "A Nisher", site_nisher_path %></li>
+            <li><%= link_to "Aumente sua Renda", site_renda_path %></li>
+            <li><%= link_to "Eventos", site_eventos_path %></li>
+            <li><%= link_to "Dúvidas", site_duvidas_path %></li>
+            <li><%= link_to "Contato", new_contact_path %></li>
+            <li><%= link_to "Política AntiSpam", site_antispam_path %></li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <ul>
+            <li><%= link_to "Kit Distribuidor 1",  Product.find(17)  %></li>
+            <li><%= link_to "Kit Distribuidor 2",  Product.find(18)  %></li>
+            <li><%= link_to "Kit Distribuidor 3",  Product.find(19)  %></li>
+            <li><%= link_to "Fill-UP", Product.find(1) %></li>
+            <li><%= link_to "Nutra Meal",  Product.find(2)  %></li>
+            <li><%= link_to "Álef",  Product.find(3) %></li>
+            <li><%= link_to "MegaStack Diurno",  Product.find(4)  %></li>
+            <li><%= link_to "MegaStack Noturno", Product.find(5)  %></li>
+            <li><%= link_to "Dupla MegaStack", Product.find(8)  %></li>
+            <li><%= link_to "Kit Saúde",  Product.find(6)  %></li>
+            <li><%= link_to "Kit Emagrecimento",  Product.find(7)  %></li>
+            <li><%= link_to "Kit Personalizado",  Product.find(16)  %></li>
+            <li><%= link_to "Outros produtos", "/products" %></li>
+            <li><%= link_to "Contrato", site_contrato_path %></li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <ul>
+            <li><%= link_to "Área do cliente", office_root_path %></li>
+            <li><%= link_to "Promoções", site_promocoes_path %></li>
+            <li><%= link_to "50 dicas", site_dicas_path %></li>
+            <li><%= link_to "Nisher TV", site_tv_path %></li>
+          </ul>
+        </div>
+
+        <div class="links payments icons">
+          <%= image_tag "logistica.jpg" %>
+          <%= link_to image_tag("icons/face.png"), CFG["link_fb"] , target: "_blank" %>
+          <%= link_to image_tag("icons/tweet.png"), CFG["link_tw"], target: "_blank"  %>
+        </div>
+
+      </div>
+<% end -%>

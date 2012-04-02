@@ -1,0 +1,39 @@
+<h1 class="title">Matriz 9x4 - Nisher Networks</h1>
+<p>Clique sobre o total para obter a lista de registros</p>
+  <table cellspacing="0" class="office">
+    <caption>Diretos</caption>
+    <thead>
+      <tr><th style="width: 50%">Tipo</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Clientes</td><td><%= link_to @clients, office_networking_clients_path  %></td></tr>
+      <tr><td>Parceiros</td><td>  <%= link_to @pending_users.size , office_networking_pending_path  %></td></tr>
+      <tr><td>Todos</td><td><%=@clients+@pending_users.size  %></td></tr>
+    </tbody>
+  </table>
+  <table cellspacing="0" class="office">
+    <caption>Parceiros</caption>
+    <thead>
+      <tr><th>Nivel</th><th>Total</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="width: 50%">1</td><td>  <%= link_to @levels[:level1], office_networking_level_path(1)  %></td></tr>
+      <tr><td>2</td><td>  <%= link_to @levels[:level2], office_networking_level_path(2)  %></td></tr>
+      <tr><td>3</td><td>  <%= link_to @levels[:level3], office_networking_level_path(3)  %></td></tr>
+      <tr><td>4</td><td>  <%= link_to @levels[:level4], office_networking_level_path(4)  %></td></tr>
+      <% if false %>
+        <tr><td>5</td><td>  <%= link_to @levels[:level5], office_networking_level_path(5)  %></td></tr>
+        <tr><td>6</td><td>  <%= link_to @levels[:level6], office_networking_level_path(6)  %></td></tr>
+        <tr><td>7</td><td>  <%= link_to @levels[:level7], office_networking_level_path(7)  %></td></tr>
+        <tr><td>8</td><td>  <%= link_to @levels[:level8], office_networking_level_path(8)  %></td></tr>
+      <% end %>
+      <tr><td>Todos</td><td><%=@levels.values.sum  %></td></tr>
+    </tbody>
+  </table>
+  <table class="office">
+    <caption>Patrocinadores</caption>
+    <tr><th style="width: 50%">Indicador</th><td><%= link_to current_user.sponsor.get_nick, office_networking_sponsor_path(1) %></td></tr>
+    <% if current_user.network_setup==true %>
+      <tr><th>Upline</th><td><%= link_to current_user.matrix.upline.user.get_nick , office_networking_sponsor_path(2) %></td></tr>
+    <% end %>
+  </table>

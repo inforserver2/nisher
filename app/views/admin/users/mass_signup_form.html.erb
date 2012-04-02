@@ -1,0 +1,72 @@
+<h1 class="title">Cadastros manuais</h1>
+<%= form_tag(mass_signup_post_admin_users_path) do |f| %>
+
+  <div class="field">
+    <%=label_tag "Apelido" %>
+    <%= text_field_tag :nickname %>
+  </div>
+
+  <div class="field">
+    <%=label_tag "Id indicador" %>
+    <%= text_field_tag :sponsor %>
+  </div>
+
+  <div class="field">
+    <%=label_tag "Tipo de cliente" %>
+    <%= select_tag :type_id, options_for_select([["consumo",1],["negócios",2]],2)  %>
+  </div>
+
+  <div class="field">
+    <%=label_tag "Produto" %>
+    <%= select_tag :product_id, options_for_select(Product.all.map {|p| [p.title, p.id]})  %>
+  </div>
+
+<div class="field">
+    <%= label_tag "Nível" %>
+    <%#= select_tag :level, options_for_select((0..8).to_a, 0) %>
+    <%= select_tag :level, options_for_select((0..4).to_a, 0) %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "Qtd" %>
+    <%= select_tag :qty, options_for_select((1..1000).to_a) %>
+  </div>
+
+
+  <div class="field">
+    <%= label_tag "Sorteado?" %>
+    <%= check_box_tag :sorting %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "Enviar emails?" %>
+    <%= check_box_tag :mailing %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "Quitar adesão?" %>
+    <%= check_box_tag :closing %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "Comissionar?" %>
+    <%= check_box_tag :make_comm, "yes", true %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Prosseguir" %>
+  </div>
+<% end %>
+
+<br/>
+<hr/>
+<br/>
+<% if @users.any? %>
+  <p>Usuários cadastrados (<%= @users.count %>)</p>
+  <span>id - login - id indicador</span><br/>
+  <% @users.each do |user| %>
+    <%= user.errors.full_messages.inspect if user.errors.full_messages.any? %>
+    <span><%= "#{user.id} - #{user.get_login} - #{user.sponsor_id}" %></span><br/>
+
+  <% end %>
+<% end %>

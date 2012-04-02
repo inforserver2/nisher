@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cpf ou Cnpj:</b>
+  <%= @multiuser.cpfcnpj %>
+</p>
+
+<%= link_to 'Editar', edit_multiuser_path(@multiuser) %> |
+<%= link_to 'Voltar', multiusers_path %>

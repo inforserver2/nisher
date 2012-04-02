@@ -1,0 +1,125 @@
+<h1 class="title">Meus dados</h1>
+
+<section id="office_user_data" class="office_show_data">
+  <article class="box">
+    <header class="title">
+      <h1>Dados pessoais</h1>
+      <%= link_to "Editar", office_dados_pessoais_path %>
+    </header>
+    <table class="office">
+      <tr><th>Tipo pessoa:</th><td><%= tipo_pessoa @user.person_type_id %></td></tr>
+      <% if @user.person_type_id==1 %>
+        <tr><th>Nome exibição:</th><td><%= @user.get_nick %></td></tr>
+        <tr><th>Nome completo:</th><td><%= @user.get_name %></td></tr>
+        <tr><th>Cpf:</th><td><%= @user.cpf %></td></tr>
+        <tr><th>Rg:</th><td><%= @user.rg %></td></tr>
+        <tr><th>Data nascimento:</th><td><%= @user.birth.to_s_br %> -
+          <%= "Sua idade é #{age=MyTools.age_in_completed_years(@user.birth,Time.now)} #{(pluralize(age,"ano","anos")).split.last}" if @user.birth? %>
+        </td></tr>
+        <tr><th>Sexo:</th><td><%= sexo_pessoa @user.gender_id %></td></tr>
+        <% else %>
+        <tr><th>Nome exibição:</th><td><%= @user.get_nick %></td></tr>
+        <tr><th>Razão social:</th><td><%= @user.get_name %></td></tr>
+        <tr><th>Cnpj:</th><td><%= @user.cnpj %></td></tr>
+        <tr><th>Nome do responsável:</th><td><%= @user.respons_name %></td></tr>
+        <tr><th>Cpf do responsável:</th><td><%= @user.respons_cpf %></td></tr>
+        <tr><th>Data nascimento:</th><td><%= @user.birth.to_s_br %> -
+          <%= "Sua idade é #{age=MyTools.age_in_completed_years(@user.birth,Time.now)} #{(pluralize(age,"ano","anos")).split.last}" if @user.birth? %>
+        </td></tr>
+        <tr><th>Sexo:</th><td><%= sexo_pessoa @user.gender_id %></td></tr>
+      <% end %>
+      <tr><th>Como conheceu a Nisher?</th><td><%= origem_pessoa @user.comes_from_id %></td></tr>
+    </table class="office">
+  </article>
+  <article class="box">
+    <header class="title">
+      <h1>Dados do cliente</h1>
+    </header>
+    <table class="office">
+        <tr><th>Cod. cliente:</th><td><%=@user.id  %></td></tr>
+        <tr><th>Tipo cliente:</th><td><%= tipo_cliente @user.account_type_id %></td></tr>
+        <tr><th>Usuário:</th><td><%= @user.get_login  %></td></tr>
+        <tr><th>Senha:</th><td>******* [<%= link_to "mudar", office_minha_senha_path %>]</td></tr>
+    </table class="office">
+
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Créditos</h1>
+    </header>
+    <table class="office">
+        <tr><th>Saldo disponível:</th><td>R$ <%=@user.my_pending_credit.real  %></td></tr>
+    </table class="office">
+
+  </article>
+
+
+  <% if @user.account_type_id==2 %>
+    <article class="box">
+      <header class="title">
+        <h1>Dados representação</h1>
+      </header>
+      <table class="office">
+        <tr><th>Site:</th><td><%=get_site @user  %></td></tr>
+      </table class="office">
+    </article>
+  <% end %>
+
+  <article class="box">
+      <header class="title">
+        <h1>Dados patrocinador direto</h1>
+      </header>
+      <table class="office">
+        <tr><th>Nome:</th><td><%= link_to current_user.sponsor.get_nick, office_networking_sponsor_path(1) %></td></tr>
+      </table>
+    </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados para contato</h1>
+      <%= link_to "Editar", office_dados_contato_path %>
+    </header>
+    <table class="office">
+      <tr><th>Email1:</th><td><%=@user.email1  %></td></tr>
+      <tr><th>Email2:</th><td><%=@user.email2  %></td></tr>
+      <tr><th>Telefone:</th><td><%=@user.phone  %></td></tr>
+      <tr><th>Celular:</th><td><%=@user.mobile  %></td></tr>
+    </table class="office">
+  </article>
+  <article class="box">
+    <header class="title">
+      <h1>Dados endereço</h1>
+      <%= link_to "Editar", office_dados_endereco_path %>
+    </header>
+    <table class="office">
+      <tr><th>Logradouro:</th><td><%= @user.address.try :street_name %></td></tr>
+      <tr><th>Número:</th><td><%= @user.address.try :number %></td></tr>
+      <tr><th>Bairro:</th><td><%= @user.address.try :neighborhood %></td></tr>
+      <tr><th>Complemento:</th><td><%= @user.address.try :complement %></td></tr>
+      <tr><th>Cidade:</th><td><%= @user.address.try :city_name %></td></tr>
+      <tr><th>Estado:</th><td><%= @user.address.try :state_name %></td></tr>
+      <tr><th>País:</th><td><%= @user.address.country.try :name %></td></tr>
+      <tr><th>Cep:</th><td><%= @user.address.try :zip %></td></tr>
+    </table class="office">
+  </article>
+
+  <% if @user.account_type_id==2 %>
+    <article class="box">
+      <header class="title">
+        <h1>Dados conta bancária</h1>
+      <%= link_to "Editar", office_dados_banco_path %>
+      </header>
+      <table class="office">
+        <tr><th>Banco:</th><td><%= @user.bank_account.try(:bank).try :name %></td></tr>
+        <tr><th>Agência:</th><td><%= @user.bank_account.try(:agency) %></td></tr>
+        <tr><th>Conta:</th><td><%= @user.bank_account.try(:account) %></td></tr>
+        <tr><th>Tipo de conta:</th><td><%= bank_account_type @user.bank_account.try(:bank_account_type_id) %></td></tr>
+        <tr><th>Titular da conta:</th><td><%= @user.bank_account.try(:fullname_owner) %></td></tr>
+        <tr><th>CPF/CNPJ do titular:</th><td><%= @user.bank_account.try(:cpf_owner) %></td></tr>
+        <tr><th>Mais informações:</th><td><%= simple_format @user.bank_account.try(:extra) %></td></tr>
+      </table class="office">
+    </article>
+  <% end %>
+
+</section>

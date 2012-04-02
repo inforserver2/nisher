@@ -1,0 +1,76 @@
+
+<iframe width="640" height="480" src="http://www.youtube.com/embed/rZxvW3S_-bs" frameborder="0" allowfullscreen></iframe>
+
+<% cache 'site_product_list' do %>
+          <div id="products">
+
+          	<div class="fillup showcase">
+           	  <h3>Fill-UP</h3>
+                  <img src="assets/fillup.jpg"/>
+                  <p>Faça redução de estômago sem cirurgia</p>
+                  <span class="price"><%= Product.find(1).price.real_contabil %></span>
+                  <div class="buy">
+                  <%= link_to "Comprar", Product.find(1) %>
+
+                  </div>
+                </div>
+
+
+          	<div class="meal showcase">
+           	  <h3>Nutra Meal</h3>
+              <img src="assets/nutrimeal.jpg"/>
+              <p>Emagreça
+                enquanto
+              dorme</p>
+                  <span class="price"><%= Product.find(2).price.real_contabil %></span>
+                        <div class="buy">
+                  <%= link_to "Comprar", Product.find(2) %>
+
+                        </div>
+          	</div>
+
+          	<div class="alef showcase">
+           	  <h3>Álef</h3>
+              <img src="assets/alef.jpg"/>
+              <p>Complexo
+                Omega 3<br />
+              /6/9</p>
+                  <span class="price"><%= Product.find(3).price.real_contabil %></span>
+<div class="buy">
+                  <%= link_to "Comprar", Product.find(3) %>
+
+</div>
+          	</div>
+
+          	<div class="stackdiurno showcase">
+           	  <h3>Mega Stack dia</h3>
+              <img src="assets/megastack_diurno.jpg"/>
+              <p>Auxílio
+                renovação
+              celular</p>
+                  <span class="price"><%= Product.find(4).price.real_contabil %></span>
+<div class="buy">
+                  <%= link_to "Comprar", Product.find(4) %>
+
+</div>
+          	</div>
+
+          	<div class="stacknoturno showcase">
+           	  <h3>Mega Stack noite</h3>
+              <img src="assets/megastack_noturno.jpg"/>
+              <p>Intensifica
+                renovação
+              celular</p>
+                  <span class="price"><%= Product.find(5).price.real_contabil %></span>
+<div class="buy">
+                  <%= link_to "Comprar", Product.find(5) %>
+
+</div>
+          	</div>
+
+
+
+
+
+              </div>
+            <% end -%>

@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>Email</title>
+    <style type="text/css">
+      body{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-color: #FEB745;
+        background-image: url("<%= image_path "bg.jpg" %>");
+        background-repeat: repeat-x;
+        font-size: 14px;
+        font-family: Tahoma;
+      }
+      img#logo{
+        margin: 5px;
+        width: 100px;
+      }
+      table#mail{
+        width: 640px;
+        margin: 10px;
+        border: 1px solid black;
+        text-align: left;
+        background-color: white;
+      }
+      table{
+        font-size: 14px;
+        font-family: Tahoma;
+      }
+      table.lista{
+        width: 100%;
+      }
+      table.lista td, table.lista th{
+        border-bottom: 1px dashed #cff;
+      }
+      table td, table th{
+        text-align: left;
+        vertical-align: top;
+      }
+      div#bottom {
+        padding: 10px;
+        text-align: center;
+      }
+      div#bottom p{
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <%= image_tag "logo.png", id:"logo" %>
+    <table id="mail">
+      <tr>
+        <td>
+          <%= yield %>
+        </td>
+      </tr>
+    </table>
+    <div id="bottom">
+    <p>Nisher Networks</p>
+    </div>
+  </body>
+</html>
+
+

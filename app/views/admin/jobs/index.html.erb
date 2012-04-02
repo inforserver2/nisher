@@ -1,0 +1,102 @@
+<h1 class="title">Tarefas administrativas</h1>
+<p>Clique abaixo na tarefa desejada para executar sua rotina</p>
+<p>Após clicar aguarde o processo que pode demorar alguns segundos...</p>
+
+<div id="admin_jobs_procs">
+  <ul>
+    <li>
+      <p>Remover carrinhos que não foram pedidos a mais de 48 horas atrás</p>
+      <%= link_to "executar", admin_jobs_run_path(1), method: :post %>
+     </li>
+    <li>
+      <p>Gerar envio de pagamentos para os usuários qualificados</p>
+      <%= link_to "executar", admin_jobs_run_path(2), method: :post %>
+
+    </li>
+    <li>
+      <p>Remover cache de imagens armazenados a mais de 24 horas atrás</p>
+      <%= link_to "executar", admin_jobs_run_path(3), method: :post %>
+
+    </li>
+    <li>
+      <p>Inativação de distribuidores que completam 30 dias sem fazer novos pedidos qualificados</p>
+      <%= link_to "executar", admin_jobs_run_path(4), method: :post %>
+
+     </li>
+    <li>
+      <p>Cancelamento de distribuidores inativos que completam 60 dias sem fazer novos pedidos qualificados</p>
+      <%= link_to "executar", admin_jobs_run_path(5), method: :post %>
+
+     </li>
+    <li>
+      <p>Enviar parabenização para os usuários que fazem aniversário na data de hoje</p>
+      <%= link_to "executar", admin_jobs_run_path(6), method: :post %>
+
+     </li>
+    <li>
+      <p>Enviar lembretes de pedidos pendentes à (3/10/15) dias </p>
+      <%= link_to "executar", admin_jobs_run_path(7), method: :post %>
+
+     </li>
+    <li>
+      <p>Enviar lembretes inativação para usuários com a data de expiração à (7/3) dias para vencer</p>
+      <%= link_to "executar", admin_jobs_run_path(8), method: :post %>
+
+     </li>
+    <li>
+      <p>Enviar lembretes cancelamento para usuários com a data de expiração em (15/20/25) dias após vencidos</p>
+      <%= link_to "executar", admin_jobs_run_path(9), method: :post %>
+
+     </li>
+    <li>
+      <p>Tentar cobrar um pedido de NutraMeal + Frete PAC na data de inativação de um usuário ainda antes da inativação</p>
+      <%= link_to "executar", admin_jobs_run_path(10), method: :post %>
+
+     </li>
+   </ul>
+</div>
+
+<div id="admin_user_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_jobs_path do |f| %>
+      <%= f.label "nome equivale a" %>
+      <%= f.text_field :name_cont %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= f.label "forma de execução equivale a" %>
+      <%= f.select :type_id_eq, [["automatico",0], ["manual",1]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_jobs_path %>
+    <% end %>
+  </div>
+</div>
+
+<div id="admin_job_index">
+   <table class="office">
+     <caption>Histórico geral</caption>
+     <thead>
+       <tr>
+         <th>Tarefa</th>
+         <th>Forma</th>
+         <th>Horário</th>
+         <th>Contêm log?</th>
+         <th>Ações</th>
+       </tr>
+     </thead>
+     <tbody>
+     <% @jobs.each do |job| %>
+       <tr>
+         <td><%= job.name %></td>
+         <td><%= job_type job.type_id %></td>
+         <td><%= job.created_at.to_s_br %></td>
+         <td><%= boo job.log? %></td>
+         <td><%= link_to "ver log", admin_job_path(job) %></td>
+       </tr>
+     <% end %>
+     </tbody>
+   </table>
+   <%= will_paginate @jobs %>
+</div>

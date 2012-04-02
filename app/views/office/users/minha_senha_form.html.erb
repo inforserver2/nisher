@@ -1,0 +1,28 @@
+
+<%= link_to "Voltar", office_meus_dados_path %>
+
+<h1 class="title">Meus dados - Minha senha</h1>
+
+<%= form_for(@user, url: office_minha_senha_path, :html=>{:class=>:form}) do |f| %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+      <div class="field">
+    <%= f.label :new_pwd %><br />
+    <%= f.password_field :new_pwd %>
+  </div>
+
+  <div class="field">
+    <%= f.label :new_pwd_confirmation %><br />
+    <%= f.password_field :new_pwd_confirmation %>
+  </div>
+    <div class="field">
+      <%= f.label :pwd %><br />
+      <%= f.password_field :pwd %>
+    </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

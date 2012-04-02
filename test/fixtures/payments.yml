@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 1.5
+  status: 1
+  blocked: false
+  obs: MyText
+  closed_at: 2012-02-09 16:20:26
+
+two:
+  value: 1.5
+  status: 1
+  blocked: false
+  obs: MyText
+  closed_at: 2012-02-09 16:20:26

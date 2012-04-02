@@ -1,0 +1,30 @@
+<%= render :partial => "layouts/parts/headers" %>
+<body>
+  <%= render :partial => "layouts/parts/fb_string" %>
+
+  <div class="container">
+
+    <%= render :partial => "layouts/parts/top" %>
+
+    <div class="wrap">
+      <%= render :partial => "layouts/parts/menu_top" %>
+
+      <div class="clear"></div>
+        <%= render :partial => "layouts/parts/site_sidebar" %>
+        <div id="content">
+          <%= render :partial => "layouts/parts/flashes" %>
+
+        <%= yield %>
+
+
+        <div class="clear"></div>
+
+        <%= render :partial => "layouts/parts/fb_buttons" %>
+      </div>
+      <div class="clear"></div>
+      <hr/>
+      <%= render :partial => "layouts/parts/bottom1" %>
+      <div class="clear"></div>
+
+    </div>
+<%= render :partial => "layouts/parts/bottom" %>

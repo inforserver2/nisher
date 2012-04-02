@@ -1,0 +1,52 @@
+<%= link_to 'Editar', edit_admin_boleto_path(@boleto) %> |
+<%= link_to 'Voltar pra lista', admin_boletos_path  %>
+
+<h1 class="title">Exibindo boleto <%= @boleto.id %></h1>
+
+<p>
+  <b>Nome:</b>
+  <%= @boleto.name %>
+</p>
+<p>
+  <b>Email:</b>
+  <%= @boleto.price %>
+</p>
+<p>
+  <b>Cpf/Cnpj:</b>
+  <%= @boleto.show_cpfcnpj %>
+</p>
+<p>
+  <b>Endereço Linha1:</b>
+  <%= @boleto.address1 %>
+</p>
+<p>
+  <b>Endereço Linha2:</b>
+  <%= @boleto.address2 %>
+</p>
+<p>
+  <b>Ordem de compra:</b>
+  <%= @boleto.order_id %>
+</p>
+<p>
+  <b>Valor:</b>
+  <%= @boleto.price.real_contabil %>
+</p>
+<p>
+  <b>Status:</b>
+  <%= boleto_status @boleto.status %>
+</p>
+<% if @boleto.status==1 %>
+  <p>
+    <b>Pago em:</b>
+    <%= @boleto.closed_at.to_s_br %>
+  </p>
+<% else %>
+  <p>
+    <b>Expira em:</b>
+    <%= @boleto.expire_date.to_s_br %>
+  </p>
+<% end %>
+
+
+
+

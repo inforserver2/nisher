@@ -1,0 +1,38 @@
+<h1 class="title">Produtos</h1>
+
+<%= button_to 'Adc novo produto', new_admin_product_path, :method=>:get %>
+<%= search_form_for @q, :url=>admin_products_path, :html=>{:class=>:form} do |f| %>
+  <fieldset>
+    <legend>Filtrar por</legend>
+    <%= f.label "Titulo contêm:" %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit "Filtrar" %>
+    <%= link_to "Mostrar todos", admin_products_path %>
+
+  </fieldset>
+
+<% end %>
+
+
+<div id="admin_products">
+  <% @admin_products.each do |product| %>
+    <%= div_for product do %>
+      <h2><%= product.title %></h1>      
+      <span><%= product.price.real_contabil %></span>
+      <%= link_to image_tag(product.image_url(:medium)), image_path(product.image_url(:show)), :class=>:fancy %>
+      <ul class="inline">
+        <li><%= link_to 'Mais Infor', [:admin,product] %></li>
+        <li><%= link_to 'Editar', edit_admin_product_path(product) %></li>
+        <li><%= link_to 'Deletar', [:admin, product], confirm: 'Têm certeza?', method: :delete %></li>
+      </ul>
+
+    <% end %>
+  <% end %>
+</div>
+<div class="clear"></div>
+
+<br />
+
+<div class="flickr_pagination">
+  <%= will_paginate @admin_products %>
+</div>

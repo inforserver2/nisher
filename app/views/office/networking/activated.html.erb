@@ -1,0 +1,15 @@
+<h1 class="title">Escolha o produto para adicionar ao carrinho:</h1>
+<ul id="office_products_select">
+  <% @products.each do |p| %>
+    <li>
+      <div class="net_products">
+        <%= link_to image_tag(p.image_url(:medium)), image_path(p.image_url(:show)), :class=>:fancy %>
+        <h1><%= p.title %></h1>
+        <p><%= p.description %></p>
+        <span class="price"><%= p.price.real_contabil %></span>
+        <%= link_to "mais detalhes", product_path(p.id) %>
+        <div class="clear"></div>
+      </div>
+    </li>
+  <% end %>
+</ul>

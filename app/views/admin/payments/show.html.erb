@@ -1,0 +1,79 @@
+<h1 class="title">Admin - Dados envio de pagamento</h1>
+
+<section id="admin_payment_show" class="office_show_data">
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados do registro</h1>
+      <%= link_to "editar", edit_admin_payment_path(@payment) %>
+    </header>
+    <table class="office">
+      <tr><th>id</th><td><%= @payment.id %></td></tr>
+      <tr><th>registrado em</th><td><%= @payment.created_at.to_s_br %></td></tr>
+      <tr><th>valor</th><td><%= @payment.value.real_contabil %></td></tr>
+      <tr><th>status</th><td><%= payment_status @payment.status %></td></tr>
+      <% if @payment.closed==true %>
+        <tr><th>quitado em</th><td><%= @payment.closed_at.to_s_br %></td></tr>
+      <% end %>
+      <tr><th>login do titular</th><td><%= link_to @payment.user.get_login, admin_user_path(@payment.user) %></td></tr>
+      <tr><th>bloqueado?</th><td><%= boo @payment.blocked? %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados da conta bancária vinculado especificamente para este depósito</h1>
+      <%= link_to "atualizar", update_p_bank_account_info_admin_payment_path(@payment), method: :put %>
+    </header>
+    <table class="office">
+        <tr><th>Banco:</th><td><%= @payment.p_bank_account.try(:bank).try :name %></td></tr>
+        <tr><th>Agência:</th><td><%= @payment.p_bank_account.try(:agency) %></td></tr>
+        <tr><th>Conta:</th><td><%= @payment.p_bank_account.try(:account) %></td></tr>
+        <tr><th>Tipo de conta:</th><td><%= bank_account_type @payment.p_bank_account.try(:bank_account_type_id) %></td></tr>
+        <tr><th>Titular da conta:</th><td><%= @payment.p_bank_account.try(:fullname_owner) %></td></tr>
+        <tr><th>CPF/CNPJ do titular:</th><td><%= @payment.p_bank_account.try(:cpf_owner) %></td></tr>
+        <tr><th>Mais informações:</th><td><%= simple_format @payment.p_bank_account.try(:extra) %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados da conta bancária do usuário</h1>
+    </header>
+    <table class="office">
+        <tr><th>Banco:</th><td><%= @payment.user.bank_account.try(:bank).try :name %></td></tr>
+        <tr><th>Agência:</th><td><%= @payment.user.bank_account.try(:agency) %></td></tr>
+        <tr><th>Conta:</th><td><%= @payment.user.bank_account.try(:account) %></td></tr>
+        <tr><th>Tipo de conta:</th><td><%= bank_account_type @payment.user.bank_account.try(:bank_account_type_id) %></td></tr>
+        <tr><th>Titular da conta:</th><td><%= @payment.user.bank_account.try(:fullname_owner) %></td></tr>
+        <tr><th>CPF/CNPJ do titular:</th><td><%= @payment.user.bank_account.try(:cpf_owner) %></td></tr>
+        <tr><th>Mais informações:</th><td><%= simple_format @payment.user.bank_account.try(:extra) %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Bônus vinculados a este envio de pagamentos</h1>
+    </header>
+    <table class="office">
+      <tr><th>id</th><th>valor</th><th>tipo</th><th>status</th><th>total</th></tr>
+      <% count=[] -%>
+      <% @payment.comms.each do |comm| %>
+        <% count << comm.value -%>
+        <tr><td><%= link_to comm.id, admin_comm_path(comm)  %></td><td><%= comm.value.real %></td><td><%= comm_type comm.type_id %></td><td><%= comm_status comm.status %></td><td><%= count.sum.real %></td></tr>
+      <% end %>
+      <% count=nil -%>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Observações</h1>
+      <%= link_to "editar", edit_admin_payment_path(@payment) %>
+    </header>
+    <table>
+      <tr><td><%= simple_format @payment.obs %></td></tr>
+    </table>
+  </article>
+
+</section>

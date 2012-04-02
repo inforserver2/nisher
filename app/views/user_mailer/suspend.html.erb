@@ -1,0 +1,10 @@
+<h2>Sua conta foi cancelada!</h2>
+<p>O cancelamento bloqueia sua conta no sistema.</p>
+<table class="lista">
+  <caption>Dados da conta</caption>
+  <tr><th>Apelido</th><td><%= @user.get_nick %></td></tr>
+  <tr><th>Seu login</th><td><%= @user.get_login %></td></tr>
+  <tr><th>Site de divulgação</th><td><%= get_site @user %></td></tr>
+</table>
+<p>Neste caso a Nisher se dá o direito de poder substituir a titularidade desta conta.</p>
+<p>Entre em contato imadiatamente antes que haja uma substituição de titularidade nesta conta.</p>

@@ -1,0 +1,56 @@
+<%= link_to "Voltar", office_meus_dados_path %>
+<h1 class="title">Meus dados - Dados endereco</h1>
+<%= form_for(@user, url: office_dados_endereco_path, :html=>{:class=>:form}) do |f| %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+
+  <%= f.fields_for :address do |b| %>
+
+    <div class="field">
+        <%= b.label :street_name %><br />
+        <%= b.text_field :street_name %>
+      </div>
+
+      <div class="field">
+        <%= b.label :number %><br />
+        <%= b.text_field :number %>
+      </div>
+
+      <div class="field">
+        <%= b.label :neighborhood %><br />
+        <%= b.text_field :neighborhood %>
+      </div>
+
+      <div class="field">
+        <%= b.label :complement %><br />
+        <%= b.text_field :complement %>
+      </div>
+
+      <div class="field">
+        <%= b.label :city_name %><br />
+        <%= b.text_field :city_name %>
+      </div>
+
+      <div class="field">
+        <%= b.label :state_name %><br />
+        <%= b.text_field :state_name %>
+      </div>
+
+      <div class="field">
+        <%= b.label :zip %><br />
+        <%= b.text_field :zip %>
+      </div>
+
+      <div class="field">
+        <%= b.label :country_id %><br />
+        <%= b.collection_select :country_id, Country.all, :id, :name %>
+      </div>
+
+    <% end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,205 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#duvidas{
+  dl{
+    padding: 10px;
+    dt{
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    dd{
+      padding: 10px;
+      padding-left: 20px;
+    }
+  }
+
+}
+#depoimentos, #nisher_tv{
+  text-align: center;
+  .tv{
+    padding: 10px;
+  }
+}
+
+#promocoes{
+  h2{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+  }
+  p{
+    font-weight: bold;
+  }
+  h3{
+    font-size: 25px;
+  }
+
+}
+
+#dicas{
+  .centralize{
+    text-align: center;
+  }
+}
+#banners{
+  embed{
+    display:block;
+    padding: 10px;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+
+
+  }
+  p{
+    font-weight: bold;
+  }
+  span{
+    border: 1px dotted #ccc;
+    padding: 5px;
+    background-color: #ccc;
+    display: block;
+  }
+}
+
+#downloads{
+  table{
+
+  th{
+    font-size: 20px;
+    line-heigth: 25px;
+    heigth: 25px;
+    padding-bottom: 20px;
+  }
+  tr{
+    &:hover{
+      background-color: blue;
+      color: white;
+    }
+    td{
+      border-bottom: 1px dashed #ccc;
+      padding: 10px;
+    }
+    td.right_col{
+      width: 200px;
+      text-align: center;
+    }
+
+  }
+  tr:first-child{
+    background-color: white;
+    &:hover{
+      background-color: white;
+      color: black;
+    }
+  }
+  }
+}
+.icons{
+  width: 400px !important;
+  text-align:center !important;
+  a{
+    display:inline !important;
+    img{
+      display:inline !important;
+    }
+    margin-right: 20px;
+  }
+}
+
+.central {
+        text-align: center;
+}
+table#renda{
+  form.email{
+    background-color: #ffffc0;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  p{
+    font-size: 16px;
+  }
+  table.ganhos{
+    td.line{
+      border-bottom: 1px solid black;
+    }
+  }
+  img.left{
+    float: left;
+    margin: 5px;
+  }
+
+  img.right{
+    float: right;
+    margin: 5px;
+  }
+
+}
+table#renda td{
+  padding: 4px;
+}
+table#renda h1{
+        font-size: 24px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+table#renda h2{
+        font-size: 18px;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+
+
+
+        div.prod_list{
+          width: 270px;
+          min-height: 530px;
+          margin: 5px;
+          background: url("/conv/linha.png");
+          padding: 5px;
+          float: left;
+        }
+        div.prod_list ul{
+          margin-left: 10px;
+          list-style: none;
+        }
+
+        div.prod_list span#prod_items{
+          padding-top: 20px;
+        }
+        div.prod_list span#prod_price{
+          font-size: 20px;
+          color:red;
+          font-weight: bold;
+          margin-left: 10px;
+        }
+        div.prod_list input{
+          right: 50px;
+        }
+        div.prod_list p{
+          height: 115px;
+        }
+        div.prod_list ul{
+          height: 100px;
+          margin-bottom: 20px;
+        }
+        div.prod_apoio {
+          width: 270px;
+          min-height: 250px;
+          margin: 5px;
+          background: url("/conv/linha.png");
+          padding: 5px;
+          float: left;
+        }
+        div.prod_empresa{
+          width: 100%;
+          text-align:center;
+          margin-top: 30px;
+        }

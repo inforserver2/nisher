@@ -1,0 +1,12 @@
+<h2>Cadastro concluído</h2>
+<p>Novo usuário cadastrado em seu site!</p>
+<table class="lista">
+  <tr><th>Apelido</th><td><%= @user.get_nick %></td></tr>
+  <tr><th>Seu login</th><td><%= @user.get_login %></td></tr>
+  <% if @user.account_type_id==2 %>
+    <tr><th>Site de divulgação</th><td><%= get_site @user %></td></tr>
+  <% end %>
+  <tr><th>Data do cadastro:</th><td><%= @user.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Acompanhe a lista através de sua central de negócios.</p>

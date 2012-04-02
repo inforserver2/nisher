@@ -1,0 +1,61 @@
+<div id="debug_frete">
+  <br/>
+  ------------------------ <br/>
+  PESO: 
+  <span id="total_weight">
+    <%= @cart.total_weight %>
+  </span>
+  <br/>
+  ALTURA:
+  <span id="total_height">
+    <%= @cart.total_height %>
+  </span>
+  <br/>
+  LARGURA:
+  <span id="total_width">
+    <%= @cart.total_width %>
+  </span>
+  <br/>
+  COMPRIMENTO:
+  <span id="total_length">
+    <%= @cart.total_length %>
+  </span>
+  <br/>
+  ALT+LARG+COMP:
+  <span id="total_size">
+    <%= @cart.total_size %>
+  </span>
+  <br/>
+  ------------------------ <br/>
+  PRODUTO DE MAIOR DIMENSAO:
+  <span id="product_name">
+    <%= @cart.the_greather_pack_product.try(:title) %>
+  </span>
+  <br/>
+
+  ------------------------ <br/>
+  LARGURA EM CALCULO:
+  <span id="final_width">
+    <%= @cart.final_width.ceil %>
+  </span>
+  <br/>
+  
+  COMPRIMENTO EM CALCULO:
+  <span id="final_length">
+    <%= @cart.final_length.ceil %>
+  </span>
+  <br/>
+  
+  ALTURA EM CALCULO:
+  <span id="final_height">
+    <%= @cart.final_height.ceil %>
+  </span>
+  <br/>
+
+  PESO EM CALCULO:
+  <span id="final_weight">
+    <%= @cart.total_weight %>
+  </span>
+  <br/>
+  ------------------------ <br/>
+</div>

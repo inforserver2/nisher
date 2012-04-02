@@ -1,0 +1,82 @@
+<h1 class="title">Administração de usuários</h1>
+
+<div id="admin_user_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_users_path do |f| %>
+      <%= f.label "id equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :name_cont %><br/>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :email1_or_email2_cont %><br/>
+      <%= f.label "id indicador equivale a" %>
+      <%= f.text_field :sponsor_id_eq %><br/>
+      <%= f.label "cpf ou cnpj contêm" %>
+      <%= f.text_field :cpf_or_cnpj_cont %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= label_tag "com o total de indicações qualificadas acima de" %>
+      <%= text_field_tag :total, params[:total] %> a partir de <%= text_field_tag :start_date, params[:start_date] %> até <%= text_field_tag :end_date,params[:end_date] %><br/>
+      <%= f.label "tipo de conta equivale a" %>
+      <%= f.select :account_type_id_eq, [["consumo",1], ["negócios",2]], include_blank:true %><br/>
+      <%= f.label "tipo de pessoa equivale a" %>
+      <%= f.select :person_type_id_eq, [["física",1], ["jurídica",2]], include_blank:true %><br/>
+      <%= f.label "genêro equivale a" %>
+      <%= f.select :gender_id_eq, [["masculino",1], ["feminino",2]], include_blank:true %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["pendente",0], ["ativo",1], ["inativo",2]], include_blank:true %><br/>
+      <%= f.label "bloqueado?" %>
+      <%= f.check_box :blocked_true %><br/>
+      <%= f.label "sorteado?" %>
+      <%= f.check_box :redir_from_present %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_users_path %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= form_tag emails_admin_users_path, target:"_blank"  do |f| %>
+    <%= hidden_field_tag :ids, @q.result.map(&:id)  %>
+    <%= submit_tag "lista emails", class:"email_list" %>
+  <% end %>
+</div>
+
+<div id="admin_user_list" class="office_list">
+  <table>
+    <caption>Lista de usuários (<%= @users.count %>)</caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>usuário</th>
+        <th>nome exibição</th>
+        <th>indicações</th>
+        <th>conta</th>
+        <th>pessoa</th>
+        <th>usuário indicador</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.get_login %></td>
+        <td><%= user.get_nick %></td>
+        <td><%= user.sponsored.size %></td>
+        <td><%= tipo_cliente user.account_type_id %></td>
+        <td><%= tipo_pessoa user.person_type_id %></td>
+        <td><%= user.sponsor.get_login %></td>
+        <td><%= link_to "mais", admin_user_path(user) %> |
+          <%= link_to "acesso", switch_path(user.id,user.token), :method=>:post %> |
+          <%= link_to "editar", edit_admin_user_path(user) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @users %>
+</div>
+

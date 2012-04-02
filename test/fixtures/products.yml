@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  image: MyString
+  price: 1.5
+  stock: 1
+  prod_valid: false
+  visible: false
+
+two:
+  title: MyString
+  description: MyText
+  image: MyString
+  price: 1.5
+  stock: 1
+  prod_valid: false
+  visible: false

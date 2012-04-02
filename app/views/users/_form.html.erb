@@ -1,0 +1,130 @@
+
+<%= form_for(@user, remote:true,:html=>{:class=>:form, id:"site_form_new_user"}) do |f| %>
+  <%= f.hidden_field :account_type_id %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+
+  <div class="field inline" >
+    <%= f.label :person_type_id %>
+    <%= f.radio_button :person_type_id, 1, class:"person_type_select" %> <span>Pessoa Física</span>
+    <%= f.radio_button :person_type_id, 2, class:"person_type_select" %> <span>Pessoa Jurídica</span>
+    <%= f.hidden_field :person_type_id %>
+  </div>
+
+  <div id="pessoa_fisica">
+    <div class="field">
+      <%= f.label :person_nick %><br />
+      <%= f.text_field :person_nick %>
+    </div>
+    <div class="field">
+      <%= f.label :person_name %><br />
+      <%= f.text_field :person_name %>
+    </div>
+    <div class="field">
+      <%= f.label :cpf %><br />
+      <%= f.text_field :cpf %>
+    </div>
+  </div>
+
+  <div id="pessoa_juridica">
+    <div class="field">
+      <%= f.label :company_nick %><br />
+      <%= f.text_field :company_nick %>
+    </div>
+    <div class="field">
+      <%= f.label :company_name %><br />
+      <%= f.text_field :company_name %>
+    </div>
+    <div class="field">
+      <%= f.label :cnpj %><br />
+      <%= f.text_field :cnpj %>
+    </div>
+  </div>
+
+  <div class="field" id="login_place">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+   <div id="check_for_user"></div>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :email1 %><br />
+    <%= f.text_field :email1 %>
+    <div id="check_for_email"></div>
+
+  </div>
+  <div class="field">
+    <%= f.label :email2 %><br />
+    <%= f.text_field :email2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile, alt: "mobile" %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone, alt: "phone" %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div id="bank_account_place">
+    <%= f.fields_for :bank_account do |b| %>
+      <div class=field>
+        <%= b.label :bank %><br/>
+        <%= b.collection_select(:bank_id, Bank.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :bank_account_type %><br/>
+        <%= b.collection_select(:bank_account_type_id, BankAccountType.all, :id, :name, :prompt=>true) %>
+      </div>
+
+      <div class=field>
+        <%= b.label :agency %><br/>
+        <%= b.text_field :agency %>
+      </div>
+
+      <div class=field>
+        <%= b.label :account %><br/>
+        <%= b.text_field :account %>
+      </div>
+
+      <div class=field>
+        <%= b.label :cpf_owner %><br/>
+        <%= b.text_field :cpf_owner %>
+      </div>
+
+      <div class=field>
+        <%= b.label :fullname_owner %><br/>
+        <%= b.text_field :fullname_owner %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comes_from_id, "Como conheceu a Nisher?" %><br />
+    <%= f.select :comes_from_id, User.comes_from_types.map{|x| [ x[:name], x[:id]]}, {include_blank:true} %>
+  </div>
+
+  <div class="field inline">
+    <%= f.label :confirm, "Li e concordo com os termos do contrato" %><br />
+    <%= f.check_box :confirm %>
+    <span>
+      <%= link_to "Ver contrato", site_contrato_path, target:"_blank" %>
+    </span>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Continuar com o cadastro"%>
+  </div>
+<% end %>

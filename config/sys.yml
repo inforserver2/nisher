@@ -1,0 +1,51 @@
+mail:
+  power: true
+  address: mail.mylinuxserver1.info
+  port: 25
+  user_name: hribeiro
+  password: nx0010dr
+  authentication: plain
+  enable_starttls_auto: true
+
+company: Nisher Networks
+domain: "nisher.com.br"
+url: "www.nisher.com.br"
+prot: "http://www.nisher.com.br"
+tldl: 2
+
+env: production
+#env: development
+#env: test
+
+delayed_web:
+  user: "admin"
+  pass: "vtr512"
+
+
+email-contact: gerencia@nisher.com.br
+email-support: gerencia@nisher.com.br
+site-title: Bem-vindos à Nisher Networks
+billing_auto_increment: 100000001
+
+fakepass: vtr512
+fakemail: hribeiro@mylinuxserver1.info
+
+adminfakeusers: false
+min_order_price_to_qualify: 85
+
+expiration_time: 32
+
+frete_cep_origem: 01309-900
+
+root_username: www
+
+paypal:
+  account: nisher@terra.com.br
+pagseguro:
+  account: nisher@terra.com.br
+
+
+link_fb: "http://www.facebook.com/NisherNetworks"
+link_tw: "http://twitter.com/nishernet"
+conf_link: "http://www.gvolive.com/conference,69094356"
+presentation_file_link: "#"

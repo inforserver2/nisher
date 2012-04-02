@@ -1,0 +1,10 @@
+<h2>Informativo de recebimento em conta bancária</h2>
+<p>Concluímos o envio do valor para sua conta bancária!</p>
+<table class="lista">
+  <tr><th>id</th><td><%= @payment.id %></td></tr>
+  <tr><th>valor</th><td><%= @payment.value.real_contabil %></td></tr>
+  <tr><th>status</th><td><%= payment_status @payment.status %></td></tr>
+  <tr><th>registrado em:</th><td><%= @payment.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Veja mais informações através da sua central de negócios.</p>

@@ -1,0 +1,41 @@
+-
+  id: 1
+  name: Nivel1
+-
+  id: 2
+  name: Nivel2
+-
+  id: 3
+  name: Nivel3
+-
+  id: 4
+  name: Nivel4
+-
+  id: 5
+  name: Nivel5
+  show: false
+-
+  id: 6
+  name: Nivel6
+  show: false
+-
+  id: 7
+  name: Nivel7
+  show: false
+-
+  id: 8
+  name: Nivel8
+  show: false
+-
+  id: 9
+  name: Cli. ind. dir.
+-
+  id: 10
+  name: Cli. ind. sort.
+-
+  id: 11
+  name: Ativ. matriz ind. dir.
+-
+  id: 12
+  name: Ativ. matriz ind. sort.
+...

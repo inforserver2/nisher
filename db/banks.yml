@@ -1,0 +1,33 @@
+-
+  id: 1
+  name: Banco do Brasil
+  code: 001
+-
+  id: 2
+  name: Banco Itau
+  code: 341
+-
+  id: 3
+  name: Nossa Caixa
+  code: 151
+-
+  id: 4
+  name: Caixa Economica Federal
+  code: 104
+-
+  id: 5
+  name: HSBC
+  code: 399
+-
+  id: 6
+  name: Banco Real
+  code: 356
+-
+  id: 7
+  name: Banco Bradesco
+  code: 237
+-
+  id: 8
+  name: Banco Santander
+  code: 033
+...  

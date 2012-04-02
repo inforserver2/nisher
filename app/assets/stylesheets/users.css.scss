@@ -1,0 +1,93 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div#cufon_question{
+  width: 95%;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #cff;
+  text-align: left;
+  cursor: pointer;
+
+  h1{
+    font-size: 21px;
+    color: blue;
+    margin: 5px;
+  }
+}
+div#question1{
+  width: 95%;
+  margin-bottom: 10px;
+  h1{
+    font-size: 21px;
+    color: blue;
+    margin: 5px;
+  }
+  padding: 5px;
+  padding-bottom: 20px;
+  background-color: #cff;
+  text-align: center;
+  ul{
+    list-style: none;
+    margin: 0 auto;
+    display: block;
+    width: 620px;
+    li{
+      div.new_user_option{
+        position: relative;
+        width: 280px;
+        min-height: 400px;
+        float: left;
+        margin: 10px;
+        padding: 5px;
+        background-color: white;
+        a{
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+        div{
+          text-align: left;
+          h2{
+            font-weight: bold;
+            font-size: 18px;
+            color: blue;
+            margin: 2px;
+          }
+          ul{
+            list-style: square;
+            padding-left: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+div#cufon_cart{
+  span#cufon_cart_details {
+    color: orange;
+    cursor: pointer;
+  }
+}
+span#cufon_cart_change_type {
+    color: orange;
+    cursor: pointer;
+  }
+ul#signup_options{
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  li{
+    margin-bottom: 20px;
+  }
+  h1{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  p{
+    font-style: italic;
+  }
+}

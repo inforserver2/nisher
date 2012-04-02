@@ -1,0 +1,10 @@
+<h1>Pedido atualizado</h1>
+<p>Recebemos o seu pagamento referênte à:</p>
+<table>
+  <tr><th>Pedido N</th><td><%= @order.id %></td></tr>
+  <tr><th>Valor pago</th><td><%= @order.price.real_contabil %></td></tr>
+  <tr><th>Pagamento concluído?</th><td><%= boo @order.closed %></td></tr>
+  <tr><th>Pagamento confirmado em:</th><td><%= @order.closed_at.to_s_br %></td></tr>
+</table>
+<p><%= link_to "Visualizar pedido", order_url(@order, subdomain: username_for_subdomain(@order.user), token:@order.token) %></p>
+<p>Seguindo o link acima você poderá ver mais detalhes assim como listar os itens e acessar as formas de pagamento.</p>

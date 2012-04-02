@@ -1,0 +1,17 @@
+.bundle
+db/*.sqlite3
+log/*.log
+log/*.pid
+tmp/
+.sass-cache/
+public/uploads/**/*
+.sw*
+.sv*
+.su*
+.*.sw*
+.*.sv*
+.*.su*
+.tmp_*
+db/sphinx/*
+WS_FTP.LOG
+Thumbs.db

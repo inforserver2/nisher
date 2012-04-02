@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email1: MyString
+  email2: MyString
+  password: MyString
+  admin: false
+  sponsor_id: 1
+  redir_from: MyString
+  token: MyString
+
+two:
+  name: MyString
+  email1: MyString
+  email2: MyString
+  password: MyString
+  admin: false
+  sponsor_id: 1
+  redir_from: MyString
+  token: MyString

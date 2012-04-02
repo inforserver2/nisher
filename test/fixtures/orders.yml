@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  price: 1.5
+  status: 1
+  user: 
+  cart: 
+
+two:
+  price: 1.5
+  status: 1
+  user: 
+  cart: 

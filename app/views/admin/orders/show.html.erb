@@ -1,0 +1,128 @@
+<h1 class="title">Admin - Dados do pedido</h1>
+<p>Abaixo segue o resumo de informações sobre este pedido.</p>
+
+<section id="office_order_data" class="office_show_data">
+  <article class="box">
+    <header class="title">
+      <h1>Dados pedido</h1>
+      <%= link_to "editar", edit_admin_order_path(@order) %>
+    </header>
+    <table>
+      <tr><th>id</th><td><%=@order.id  %></td></tr>
+      <tr><th>registrado em</th><td><%= @order.created_at.to_s_br %></td></tr>
+      <tr><th>descrição</th><td><%= @order.description %></td></tr>
+      <tr><th>total itens</th><td><%= @order.cart.total_items %></td></tr>
+      <tr><th>valor</th><td><%= @order.price.real_contabil %></td></tr>
+      <tr><th>status</th><td><%= order_status @order.status %></td></tr>
+      <% if @order.closed==true %>
+        <tr><th>pago em</th><td><%= @order.closed_at.to_s_br %></td></tr>
+      <% end %>
+      <tr><th>bloqueado?</th><td><%= boo @order.blocked %></td></tr>
+      <% if @order.blocked? %>
+        <tr><th>bloqueado em</th><td><%= @order.blocked_at.to_s_br %></td></tr>
+      <% end %>
+    </table>
+  </article>
+  <article class="box">
+    <header class="title">
+      <h1>Dados itens</h1>
+    </header>
+    <table>
+        <tr><th>qtd</th><th>produto</th><th>valor unitario</th><th>valor total</th></tr>
+      <% @order.cart.line_items.each do |item| %>
+        <tr class="items <%= cycle("odd", "even") %>">
+          <td><%= item.quantity %></td>
+          <td><%= item.product.title %> <%= " Sabor: #{item.product_taste.name}" if item.product_taste_id %></td>
+          <td><%= item.unit_price.real_contabil %></td>
+          <td><%= item.total_price.real_contabil %></td>
+        </tr>
+    <% end %>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados frete</h1>
+    <%= link_to "editar", edit_admin_frete_path(@order.cart.frete) %>
+    </header>
+    <table>
+      <tr><th>tipo</th><td><%= @order.cart.frete.try(:frete_type).try(:name) %></td></tr>
+      <% unless @order.cart.frete.frete_type_id==3 -%>
+      <tr><th>valor</th><td><%= @order.cart.frete.try(:price).try(:real_contabil) %></td></tr>
+      <% else -%>
+      <tr><th>valor</th><td>indefinido</td></tr>
+    <% end -%>
+    <tr><th>peso</th><td><%= @order.cart.frete.weight_total %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados endereço postagem</h1>
+      <%= link_to "editar", edit_admin_frete_path(@order.cart.frete) %>
+    </header>
+    <table>
+      <tr><th>destinatario</th><td><%=@order.cart.frete.to_name%></td></tr>
+      <tr><th>logradouro</th><td><%=@order.cart.frete.street_name%></td></tr>
+      <tr><th>número</th><td><%=@order.cart.frete.number%></td></tr>
+      <tr><th>bairro</th><td><%=@order.cart.frete.neighborhood%></td></tr>
+      <tr><th>complemento</th><td><%=@order.cart.frete.complement%></td></tr>
+      <tr><th>cidade</th><td><%=@order.cart.frete.city_name%></td></tr>
+      <tr><th>estado</th><td><%=@order.cart.frete.state_name%></td></tr>
+      <tr><th>país</th><td><%=@order.cart.frete.country.name%></td></tr>
+      <tr><th>cep</th><td><%=@order.cart.frete.zip_to%></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados titular</h1>
+    </header>
+    <table>
+      <tr><th>id</th><th><%= @order.user.id %></th></tr>
+      <tr><th>login</th><td><%= @order.user.get_login %></td></tr>
+      <tr><th>nome exibição</th><td><%= @order.user.get_nick %></td></tr>
+      <tr><th>telefone</th><td><%= @order.user.phone %></td></tr>
+      <tr><th>celular</th><td><%= @order.user.mobile %></td></tr>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Observações adicionais</h1>
+      <%= link_to "editar", edit_admin_order_path(@order) %>
+    </header>
+    <table>
+      <tr><td><%= simple_format @order.extra %></td></tr>
+    </table>
+  </article>
+
+
+    <article class="box">
+      <header class="title">
+        <h1>Comissões associadas</h1>
+        <%= link_to "alternar bloqueio de comissões", block_comms_admin_order_path(@order), method: :put %>
+      </header>
+      <table cellspacing="0">
+        <tr>
+          <th>comissão</th>
+          <th>valor</th>
+          <th>tipo</th>
+          <th>status</th>
+          <th>Bloqueado?</th>
+          <th>creditado</th>
+        </tr>
+        <% @order.comms.where(type_id:1).each do |comm| %>
+          <tr>
+            <td><%= comm.id %></td>
+            <td><%= comm.value.real_contabil %></td>
+            <td><%= comm.comm_type.name %></td>
+            <td><%= comm_status comm.status %></td>
+            <td><%= boo comm.blocked %></td>
+            <td><%= comm.user.get_login  %></td>
+          </tr>
+        <% end %>
+      </table>
+    </article>
+
+</section>

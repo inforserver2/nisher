@@ -1,0 +1,30 @@
+<h1 class="title">Admin - Edição bônus</h1>
+<%= form_for [:admin,@comm], html:{class:"form"} do |f| %>
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@comm}  %>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, [["disponível", 0], ["em envio",1], ["pago", 2], ["cancelado",3]]%>
+  </div>
+
+  <div class="field">
+    <%= f.label :blocked %><br />
+    <%= f.check_box :blocked %>
+  </div>
+
+  <div class="field">
+    <%= f.label :payment_id %><br />
+    <%= f.text_field :payment_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+

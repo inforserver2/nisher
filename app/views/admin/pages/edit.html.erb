@@ -1,0 +1,6 @@
+<h1 class="title">Editando pagina <%= @admin_page.id %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Exibir', [:admin, @admin_page] %> |
+<%= link_to 'Voltar', admin_pages_path %>

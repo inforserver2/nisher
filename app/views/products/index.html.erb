@@ -1,0 +1,38 @@
+<h1 class="title">Produtos</h1>
+
+<div id="site_products">
+  
+  <% @categories.each do |category| %>
+    <% if category.products.any? %>
+      <div class="category">
+        <h1><%= category.title %></h2>
+        <% category.products.each do |product| %>
+          <%= div_for product do  %>
+            <h2><%= product.title %></h2>
+            <%= link_to image_tag(product.image_url(:medium)), image_path(product.image_url(:show)), :class=>:fancy, :title=>product.title %>
+            <span class="price"><%= product.price.real_contabil %></span>
+            <span class="desc"><%= simple_format product.description %></span>
+            <% if product.product_tastes.any? %>
+              <div class="taste">
+                <h2>Sabores</h2>
+                <ul>
+                  <% product.product_tastes.order("id ASC").each do |taste| %>
+                    <li><%= taste.name %></li>
+                  <% end %>
+                </ul>
+              
+              </div>
+              
+            <% end %>
+            <%= button_to "Clique aqui", product, :method=>:get  %>
+          <% end %>
+        <% end %>
+      
+      </div>
+    <% end %>
+  <% end %>
+  
+</div>
+<div class="clear"></div>
+<br />
+

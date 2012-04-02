@@ -1,0 +1,8 @@
+<h1 class="title">Lista de e-mails</h1>
+<p>Copie e cole a lista abaixo em um documento txt</p>
+<p>Lembre-se que o sistema só listará emails não bloqueados</p>
+<hr/>
+<% @emails.each do |email| %>
+    <%= email %><br/>
+<% end %>
+

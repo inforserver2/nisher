@@ -1,0 +1,20 @@
+
+    <p id="copyrights">Todos os direitos reservados para <%= link_to "Nisher Networks", root_path %></p>
+    <div class="clear"></div>
+    
+  </div>
+
+<% if ApplicationController::ACTIVE_DEBUG %>
+  <br/><p>
+    <%= Rails.env %>
+  </p>
+  <br/><p>Params:</p>
+  <%= params.inspect %>
+  <br/><p>Sessions:</p>
+  <%= session.inspect %>
+  <br/><p>Flashes:</p>
+  <%= flash.inspect %>
+<% end %>
+
+</body>
+</html>

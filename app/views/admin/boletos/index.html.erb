@@ -1,0 +1,80 @@
+<h1 class="title">Boletos manuais</h1>
+<br/>
+<%= button_to 'Adc Novos', new_admin_boleto_path, :method=>:get %>
+<br/>
+<div id="admin_boletos_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_boletos_path do |f| %>
+      <%= f.label "id equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "nome contêm" %>
+      <%= f.text_field :name_cont %><br/>
+      <%= f.label "email contêm" %>
+      <%= f.text_field :email_cont %><br/>
+      <%= f.label "cpf ou cnpj contêm" %>
+      <%= f.text_field :cpfcnpj_cont %><br/>
+      <%= f.label "data de expiração partir da data" %>
+      <%= f.date_select :expire_date_gt, include_blank:true %><br/>
+      <%= f.label "data de expiração até a data" %>
+      <%= f.date_select :expire_date_lt, include_blank:true %><br/>
+      <%= f.label "ordem de compra contêm" %>
+      <%= f.text_field :order_id_cont %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["pendente",0], ["pago",1]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_boletos_path %>
+    <% end %>
+  </div>
+</div>
+
+<div id="office_boletos_stat">
+  <table class="office">
+    <caption>Estatística da busca</caption>
+    <thead>
+      <tr>
+        <th>pendente</th>
+        <th>pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @boletos.where(status:0).pluck(:price).sum.real  %></td>
+        <td><%= @boletos.where(status:1).pluck(:price).sum.real %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<table class="office">
+    <caption>Lista boletos <%= "(#{@boletos.count} - #{@boletos.sum(:price).real_contabil})" %></caption>
+  <tr>
+    <th>Cod</th>
+    <th>Valor</th>
+    <th>Status</th>
+    <th>Expira em</th>
+    <th>Titular</th>
+    <th colspan=4 >Funções</th>
+  </tr>
+
+<% @boletos.each do |boleto| %>
+  <tr>
+    <td><%= boleto.id %></td>
+    <td><%= boleto.price.real_contabil %></td>
+    <td><%= boleto_status boleto.status %></td>
+    <td><%= boleto.expire_date.to_s_br %></td>
+    <td><%= boleto.name.truncate 40 %></td>
+    <td><%= link_to_if boleto.status!=1, 'Boleto', boleto_manual_path(boleto.id, boleto.token), target:"_blank" %></td>
+    <td><%= link_to 'Dados', [:admin,boleto] %></td>
+    <td><%= link_to 'Editar', edit_admin_boleto_path(boleto) %></td>
+    <td><%= link_to 'Del', [:admin,boleto], confirm: 'Você tem certeza?', method: :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<%= will_paginate @boletos %>
+
+<br />
+

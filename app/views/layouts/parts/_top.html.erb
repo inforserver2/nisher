@@ -1,0 +1,72 @@
+<% unless @layout_type=="office" %>
+  <p id="sponsor"> <strong>Cliente indicador: </strong> <%= @sponsor.get_nick %><strong>&nbsp &nbsp <%= request.host %></strong></p>
+<% end %>
+
+<% if @layout_type=="office" %>
+    <div class="header">
+      <%= link_to image_tag("logo.png"), root_path %>
+      <div id="office">
+        <div class="pack">
+          <h3>Escritório Virtual</h3>
+          <div class="clear"></div>
+          <div class="informations">
+            <p><b>Apelido: </b><%= current_user.get_nick %></p>
+            <p><b>Tipo cliente: </b><%= tipo_cliente current_user.account_type_id %></p>
+            <% if current_user.account_type_id==2 %>
+              <p><b>Status: </b><%= user_status current_user.status %></p>
+              <p><b>Plano: </b><%= my_plan current_user.network_plan_id %></p>
+              <p><b>Ativo até: </b><%= expires_at current_user.expire_date %></p>
+            <% end %>
+          </div>
+            <div class="informations">
+          <% if current_user.account_type_id==2 %>
+              <p><b>Site: </b><%= get_site_show current_user %></p>
+              <p><b>Total visitas: </b><%= current_user.visit.count %></p>
+              <p><b>Total indicações: </b><%= current_user.sponsored_count %></p>
+          <% end %>
+            <p><b>Faturas pendentes: </b><%= current_user.orders.pending.count %></p>
+            <p><b>Saldo disponível: </b><%= current_user.my_pending_credit.real %></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+<% else %>
+    <div class="header">
+      <%= link_to image_tag("logo.png"), root_path %>
+      <h2>Produtos de Emagrecimento e Nutrição com Qualidade</h2>
+      <embed id="banner" src='/swf/banner.swf' pluginspage='http://www.macromedia.com' type='application/x-shockwave-flash' height=106 width=582 wmode="transparent"></embed>
+    </div>
+<% end %>
+
+    <div class="clear"></div>
+
+    <% unless @layout_type=="office" %>
+
+
+      <style>
+        div#newsletter{
+          background-color: #ff8400;
+          padding: 4px;
+          }
+      </style>
+
+    <div class="middleware">
+      <div id="newsletter">
+        <h2>Receba nossos informativos e concorra a produtos</h2>
+        <%= form_tag(news_index_path) do %>
+          <%= label_tag "Informe seu e-mail:" %>
+          <%= text_field_tag "new_email" %>
+          <%= submit_tag "Participar" %>
+        <% end %>
+      </div>
+      <div id="cart">
+        <p><%= link_to "Seu carrinho contêm #{pluralize(current_cart.total_items, "item")}", carrinho_path %></p>
+      </div>
+    </div>
+  <% end %>
+
+
+
+    <div class="clear"></div>

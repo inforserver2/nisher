@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 1.5
+  status: 1
+  type_id: 1
+  order: 
+  user: 
+  from_user: 1
+  to_user: 1
+  paid_order: 1
+  blocked: false
+
+two:
+  value: 1.5
+  status: 1
+  type_id: 1
+  order: 
+  user: 
+  from_user: 1
+  to_user: 1
+  paid_order: 1
+  blocked: false

@@ -1,0 +1,718 @@
+-
+  id: 1
+  name: Andorra
+-
+  id: 2
+  name: United Arab Emirates
+-
+  id: 3
+  name: Afghanistan
+-
+  id: 4
+  name: Antigua and Barbuda
+-
+  id: 5
+  name: Anguilla
+-
+  id: 6
+  name: Albania
+-
+  id: 7
+  name: Armenia
+-
+  id: 8
+  name: Netherlands Antilles
+-
+  id: 9
+  name: Angola
+-
+  id: 10
+  name: Antarctica
+-
+  id: 11
+  name: Argentina
+-
+  id: 12
+  name: American Samoa
+-
+  id: 13
+  name: Austria
+-
+  id: 14
+  name: Australia
+-
+  id: 15
+  name: Aruba
+-
+  id: 16
+  name: Azerbaijan
+-
+  id: 17
+  name: Bosnia and Herzegovina
+-
+  id: 18
+  name: Barbados
+-
+  id: 19
+  name: Bangladesh
+-
+  id: 20
+  name: Belgium
+-
+  id: 21
+  name: Burkina Faso
+-
+  id: 22
+  name: Bulgaria
+-
+  id: 23
+  name: Bahrain
+-
+  id: 24
+  name: Burundi
+-
+  id: 25
+  name: Benin
+-
+  id: 26
+  name: Bermuda
+-
+  id: 27
+  name: Brunei Darussalam
+-
+  id: 28
+  name: Bolivia
+-
+  id: 29
+  name: Brazil
+-
+  id: 30
+  name: Bahamas
+-
+  id: 31
+  name: Bhutan
+-
+  id: 32
+  name: Bouvet Island
+-
+  id: 33
+  name: Botswana
+-
+  id: 34
+  name: Belarus
+-
+  id: 35
+  name: Belize
+-
+  id: 36
+  name: Canada
+-
+  id: 37
+  name: Cocos (Keeling) Islands
+-
+  id: 38
+  name: Congo, the Democratic Republic of the
+-
+  id: 39
+  name: Central African Republic
+-
+  id: 40
+  name: Congo
+-
+  id: 41
+  name: Switzerland
+-
+  id: 42
+  name: Cote D'Ivoire
+-
+  id: 43
+  name: Cook Islands
+-
+  id: 44
+  name: Chile
+-
+  id: 45
+  name: Cameroon
+-
+  id: 46
+  name: China
+-
+  id: 47
+  name: Colombia
+-
+  id: 48
+  name: Costa Rica
+-
+  id: 49
+  name: Serbia and Montenegro
+-
+  id: 50
+  name: Cuba
+-
+  id: 51
+  name: Cape Verde
+-
+  id: 52
+  name: Christmas Island
+-
+  id: 53
+  name: Cyprus
+-
+  id: 54
+  name: Czech Republic
+-
+  id: 55
+  name: Germany
+-
+  id: 56
+  name: Djibouti
+-
+  id: 57
+  name: Denmark
+-
+  id: 58
+  name: Dominica
+-
+  id: 59
+  name: Dominican Republic
+-
+  id: 60
+  name: Algeria
+-
+  id: 61
+  name: Ecuador
+-
+  id: 62
+  name: Estonia
+-
+  id: 63
+  name: Egypt
+-
+  id: 64
+  name: Western Sahara
+-
+  id: 65
+  name: Eritrea
+-
+  id: 66
+  name: Spain
+-
+  id: 67
+  name: Ethiopia
+-
+  id: 68
+  name: Finland
+-
+  id: 69
+  name: Fiji
+-
+  id: 70
+  name: Falkland Islands (Malvinas)
+-
+  id: 71
+  name: Micronesia, Federated States of
+-
+  id: 72
+  name: Faroe Islands
+-
+  id: 73
+  name: France
+-
+  id: 74
+  name: Gabon
+-
+  id: 75
+  name: United Kingdom
+-
+  id: 76
+  name: Grenada
+-
+  id: 77
+  name: Georgia
+-
+  id: 78
+  name: French Guiana
+-
+  id: 79
+  name: Ghana
+-
+  id: 80
+  name: Gibraltar
+-
+  id: 81
+  name: Greenland
+-
+  id: 82
+  name: Gambia
+-
+  id: 83
+  name: Guinea
+-
+  id: 84
+  name: Guadeloupe
+-
+  id: 85
+  name: Equatorial Guinea
+-
+  id: 86
+  name: Greece
+-
+  id: 87
+  name: South Georgia and the South Sandwich Islands
+-
+  id: 88
+  name: Guatemala
+-
+  id: 89
+  name: Guam
+-
+  id: 90
+  name: Guinea-Bissau
+-
+  id: 91
+  name: Guyana
+-
+  id: 92
+  name: Hong Kong
+-
+  id: 93
+  name: Heard Island and Mcdonald Islands
+-
+  id: 94
+  name: Honduras
+-
+  id: 95
+  name: Croatia
+-
+  id: 96
+  name: Haiti
+-
+  id: 97
+  name: Hungary
+-
+  id: 98
+  name: Indonesia
+-
+  id: 99
+  name: Ireland
+-
+  id: 100
+  name: Israel
+-
+  id: 101
+  name: India
+-
+  id: 102
+  name: British Indian Ocean Territory
+-
+  id: 103
+  name: Iraq
+-
+  id: 104
+  name: Iran, Islamic Republic of
+-
+  id: 105
+  name: Iceland
+-
+  id: 106
+  name: Italy
+-
+  id: 107
+  name: Jamaica
+-
+  id: 108
+  name: Jordan
+-
+  id: 109
+  name: Japan
+-
+  id: 110
+  name: Kenya
+-
+  id: 111
+  name: Kyrgyzstan
+-
+  id: 112
+  name: Cambodia
+-
+  id: 113
+  name: Kiribati
+-
+  id: 114
+  name: Comoros
+-
+  id: 115
+  name: Saint Kitts and Nevis
+-
+  id: 116
+  name: Korea, Democratic People's Republic of
+-
+  id: 117
+  name: Korea, Republic of
+-
+  id: 118
+  name: Kuwait
+-
+  id: 119
+  name: Cayman Islands
+-
+  id: 120
+  name: Kazakhstan
+-
+  id: 121
+  name: Lao People's Democratic Republic
+-
+  id: 122
+  name: Lebanon
+-
+  id: 123
+  name: Saint Lucia
+-
+  id: 124
+  name: Liechtenstein
+-
+  id: 125
+  name: Sri Lanka
+-
+  id: 126
+  name: Liberia
+-
+  id: 127
+  name: Lesotho
+-
+  id: 128
+  name: Lithuania
+-
+  id: 129
+  name: Luxembourg
+-
+  id: 130
+  name: Latvia
+-
+  id: 131
+  name: Libyan Arab Jamahiriya
+-
+  id: 132
+  name: Morocco
+-
+  id: 133
+  name: Monaco
+-
+  id: 134
+  name: Moldova, Republic of
+-
+  id: 135
+  name: Madagascar
+-
+  id: 136
+  name: Marshall Islands
+-
+  id: 137
+  name: Macedonia, the Former Yugoslav Republic of
+-
+  id: 138
+  name: Mali
+-
+  id: 139
+  name: Myanmar
+-
+  id: 140
+  name: Mongolia
+-
+  id: 141
+  name: Macao
+-
+  id: 142
+  name: Northern Mariana Islands
+-
+  id: 143
+  name: Martinique
+-
+  id: 144
+  name: Mauritania
+-
+  id: 145
+  name: Montserrat
+-
+  id: 146
+  name: Malta
+-
+  id: 147
+  name: Mauritius
+-
+  id: 148
+  name: Maldives
+-
+  id: 149
+  name: Malawi
+-
+  id: 150
+  name: Mexico
+-
+  id: 151
+  name: Malaysia
+-
+  id: 152
+  name: Mozambique
+-
+  id: 153
+  name: Namibia
+-
+  id: 154
+  name: New Caledonia
+-
+  id: 155
+  name: Niger
+-
+  id: 156
+  name: Norfolk Island
+-
+  id: 157
+  name: Nigeria
+-
+  id: 158
+  name: Nicaragua
+-
+  id: 159
+  name: Netherlands
+-
+  id: 160
+  name: Norway
+-
+  id: 161
+  name: Nepal
+-
+  id: 162
+  name: Nauru
+-
+  id: 163
+  name: Niue
+-
+  id: 164
+  name: New Zealand
+-
+  id: 165
+  name: Oman
+-
+  id: 166
+  name: Panama
+-
+  id: 167
+  name: Peru
+-
+  id: 168
+  name: French Polynesia
+-
+  id: 169
+  name: Papua New Guinea
+-
+  id: 170
+  name: Philippines
+-
+  id: 171
+  name: Pakistan
+-
+  id: 172
+  name: Poland
+-
+  id: 173
+  name: Saint Pierre and Miquelon
+-
+  id: 174
+  name: Pitcairn
+-
+  id: 175
+  name: Puerto Rico
+-
+  id: 176
+  name: Palestinian Territory, Occupied
+-
+  id: 177
+  name: Portugal
+-
+  id: 178
+  name: Palau
+-
+  id: 179
+  name: Paraguay
+-
+  id: 180
+  name: Qatar
+-
+  id: 181
+  name: Reunion
+-
+  id: 182
+  name: Romania
+-
+  id: 183
+  name: Russian Federation
+-
+  id: 184
+  name: Rwanda
+-
+  id: 185
+  name: Saudi Arabia
+-
+  id: 186
+  name: Solomon Islands
+-
+  id: 187
+  name: Seychelles
+-
+  id: 188
+  name: Sudan
+-
+  id: 189
+  name: Sweden
+-
+  id: 190
+  name: Singapore
+-
+  id: 191
+  name: Saint Helena
+-
+  id: 192
+  name: Slovenia
+-
+  id: 193
+  name: Svalbard and Jan Mayen
+-
+  id: 194
+  name: Slovakia
+-
+  id: 195
+  name: Sierra Leone
+-
+  id: 196
+  name: San Marino
+-
+  id: 197
+  name: Senegal
+-
+  id: 198
+  name: Somalia
+-
+  id: 199
+  name: Suriname
+-
+  id: 200
+  name: Sao Tome and Principe
+-
+  id: 201
+  name: El Salvador
+-
+  id: 202
+  name: Syrian Arab Republic
+-
+  id: 203
+  name: Swaziland
+-
+  id: 204
+  name: Turks and Caicos Islands
+-
+  id: 205
+  name: Chad
+-
+  id: 206
+  name: French Southern Territories
+-
+  id: 207
+  name: Togo
+-
+  id: 208
+  name: Thailand
+-
+  id: 209
+  name: Tajikistan
+-
+  id: 210
+  name: Tokelau
+-
+  id: 211
+  name: Timor-Leste
+-
+  id: 212
+  name: Turkmenistan
+-
+  id: 213
+  name: Tunisia
+-
+  id: 214
+  name: Tonga
+-
+  id: 215
+  name: Turkey
+-
+  id: 216
+  name: Trinidad and Tobago
+-
+  id: 217
+  name: Tuvalu
+-
+  id: 218
+  name: Taiwan, Province of China
+-
+  id: 219
+  name: Tanzania, United Republic of
+-
+  id: 220
+  name: Ukraine
+-
+  id: 221
+  name: Uganda
+-
+  id: 222
+  name: United States Minor Outlying Islands
+-
+  id: 223
+  name: United States
+-
+  id: 224
+  name: Uruguay
+-
+  id: 225
+  name: Uzbekistan
+-
+  id: 226
+  name: Holy See (Vatican City State)
+-
+  id: 227
+  name: Saint Vincent and the Grenadines
+-
+  id: 228
+  name: Venezuela
+-
+  id: 229
+  name: Virgin Islands, British
+-
+  id: 230
+  name: Virgin Islands, U.s.
+-
+  id: 231
+  name: Viet Nam
+-
+  id: 232
+  name: Vanuatu
+-
+  id: 233
+  name: Wallis and Futuna
+-
+  id: 234
+  name: Samoa
+-
+  id: 235
+  name: Yemen
+-
+  id: 236
+  name: Mayotte
+-
+  id: 237
+  name: South Africa
+-
+  id: 238
+  name: Zambia
+-
+  id: 239
+  name: Zimbabwe
+...

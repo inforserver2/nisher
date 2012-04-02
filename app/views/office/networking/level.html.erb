@@ -1,0 +1,49 @@
+<h1 class="title"> Lista nível <%= params[:id] %> </h1>
+
+<div id="admin_matrices_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:office_networking_level_path(params[:id]) do |f| %>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :user_name_cont %><br/>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :user_email1_or_user_email2_cont %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :user_status_eq, [["ativo",1], ["inativo",2]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", office_networking_level_path(params[:id]) %>
+    <% end %>
+  </div>
+</div>
+
+<div id="office_matrices_list">
+  <table cellspacing="0" class="office">
+    <caption>Total <%= @matrices.count %></caption>
+    <thead>
+      <tr>
+        <th>matrix id</th>
+        <th>login</th>
+        <th>apelido</th>
+        <th>status</th>
+        <th>indicador</th>
+        <th>upline</th>
+        <th>+ info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @matrices.each do |matrix| %>
+        <tr>
+          <td><%= matrix.id %></td>
+          <td><%= matrix.user.get_login %></td>
+          <td><%= matrix.user.get_nick %></td>
+          <td><%= user_status matrix.user.status %></td>
+          <td><%= matrix.user.sponsor.get_login %></td>
+          <td><%= matrix.upline.user.get_login -%></td>
+          <td><%= link_to "mais", office_networking_matrix_path(matrix.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @matrices %>
+</div>
+

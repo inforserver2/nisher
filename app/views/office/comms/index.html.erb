@@ -1,0 +1,69 @@
+<h1 class="title">Meus bônus</h1>
+<p>Abaixo você tem uma listagem geral de bônus  associados à sua conta</p>
+
+<div id="office_comms_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:office_comms_path do |f| %>
+      <%= f.label "tipo equivale a" %>
+      <%= f.select :type_id_eq, [["bônus",1], ["transferência",2], ["credito", 3], ["compra", 4]], include_blank:true %><br/>
+      <%= f.label "classe equivale a" %>
+      <%= f.select :comm_type_id_eq, options_for_select(CommType.all.map{|t| [t.name,t.id] if t.show==true}.compact), include_blank:true %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["disponível",0], ["pago",1], ["cancelado",2]], include_blank:true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", office_comms_path %>
+    <% end %>
+  </div>
+</div>
+
+<div id="office_comms_stat">
+  <table class="office">
+    <caption>Saldo total</caption>
+    <thead>
+      <tr>
+        <th>disponivel</th>
+        <th>pago</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= current_user.my_pending_credit.real  %></td>
+        <td><%= current_user.my_paid_credit.real %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="office_comms_list">
+  <table cellspacing="0" class="office">
+    <caption>Lista bônus <%= "(#{@comms.count} - #{@comms.sum(:value).real_contabil})" %></caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>valor</th>
+        <th>status</th>
+        <th>tipo</th>
+        <th>classe</th>
+        <th>pedido</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @comms.each do |comm| %>
+      <tr>
+        <td><%= comm.id %></td>
+        <td><%= comm.value.real %></td>
+        <td><%= comm_status comm.status %></td>
+        <td><%= comm_type comm.type_id %></td>
+        <td><%= comm.comm_type.try(:name) %></td>
+        <td><%= comm.order_id %></td>
+        <td><%= link_to "ver", office_comm_path(comm) %></td>
+      </tr>
+
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @comms %>
+</div>
+

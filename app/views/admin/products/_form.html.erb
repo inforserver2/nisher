@@ -1,0 +1,78 @@
+<%= javascript_include_tag "#{CFG['prot']}/ckeditor/ckeditor.js"  %>
+<%= form_for([:admin,@admin_product], :html=>{:class=>:form}) do |f| %>
+
+  <%= render :partial => "shared/error", :locals=>{:obj=>@admin_product} %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, :id=>:textareaLimit %>
+    <p><span id="charsLeft">0</span> caracteres restantes.</p>
+  </div>
+  <div class="field">
+    <%= f.label :more %><br />
+    <%= f.text_area :more, :id=>:ckeditor %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prod_valid %><br />
+    <%= f.check_box :prod_valid %>
+  </div>
+  <div class="field">
+    <%= f.label :comm_porc %><br />
+    <%= f.text_field :comm_porc %>
+  </div>
+  <div class="field">
+    <%= f.label :buy %><br />
+    <%= f.check_box :buy %>
+  </div>
+  <div class="field">
+    <%= f.label :visible %><br />
+    <%= f.check_box :visible %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br />
+    <%= f.text_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :length %><br />
+    <%= f.text_field :length %>
+  </div>
+  <div class="field">
+    <%= f.label :products_categories %><br />
+    <%= f.collection_select :product_category_ids, ProductCategory.all, :id, :title, {},{:selected=>@admin_product.product_category_ids, :multiple=>true, :class=>:multiple} %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= image_tag(@admin_product.image_url(:medium)) if @admin_product.image? %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+  <% if @admin_product.image? %>
+    <div class="field">
+      <%= f.label :remove_image %><br/>
+      <%= f.check_box :remove_image %>
+    </div>
+
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= javascript_tag "load_ckeditor(); load_textarealimit();"  %>

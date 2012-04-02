@@ -1,0 +1,130 @@
+<h1 class="title">Admin - Dados de usuário</h1>
+<p>Abaixo segue o resumo de informações sobre <b><%= @user.get_nick %></b></p>
+
+<section id="office_user_data" class="office_show_data">
+  <article class="box">
+    <header class="title">
+      <h1>Dados pessoais</h1>
+    </header>
+    <table>
+      <tr><th>Tipo pessoa:</th><td><%= tipo_pessoa @user.person_type_id %></td></tr>
+      <% if @user.person_type_id==1 %>
+        <tr><th>Nome exibição:</th><td><%= @user.get_nick %></td></tr>
+        <tr><th>Nome completo:</th><td><%= @user.get_name %></td></tr>
+        <tr><th>Cpf:</th><td><%= @user.cpf %></td></tr>
+        <tr><th>Rg:</th><td><%= @user.rg %></td></tr>
+        <tr><th>Data nascimento:</th><td><%= @user.birth.to_s_br %> -
+          <%= "Sua idade é #{age=MyTools.age_in_completed_years(@user.birth,Time.now)} #{(pluralize(age,"ano","anos")).split.last}" if @user.birth? %>
+        </td></tr>
+        <tr><th>Sexo:</th><td><%= sexo_pessoa @user.gender_id %></td></tr>
+        <% else %>
+        <tr><th>Nome exibição:</th><td><%= @user.get_nick %></td></tr>
+        <tr><th>Razão social:</th><td><%= @user.get_name %></td></tr>
+        <tr><th>Cnpj:</th><td><%= @user.cnpj %></td></tr>
+        <tr><th>Nome do responsável:</th><td><%= @user.respons_name %></td></tr>
+        <tr><th>Cpf do responsável:</th><td><%= @user.respons_cpf %></td></tr>
+        <tr><th>Data nascimento:</th><td><%= @user.birth.to_s_br %> -
+          <%= "Sua idade é #{age=MyTools.age_in_completed_years(@user.birth,Time.now)} #{(pluralize(age,"ano","anos")).split.last}" if @user.birth? %>
+        </td></tr>
+        <tr><th>Sexo:</th><td><%= sexo_pessoa @user.gender_id %></td></tr>
+      <% end %>
+      <tr><th>Como conheceu a Nisher?</th><td><%= origem_pessoa @user.comes_from_id %></td></tr>
+    </table>
+  </article>
+  <article class="box">
+    <header class="title">
+      <h1>Dados do cliente</h1>
+    </header>
+    <table>
+      <tr><th>Registrado em:</th><td><%= @user.created_at.to_s_br %></td></tr>
+        <tr><th>Cod. cliente:</th><td><%=@user.id  %></td></tr>
+        <tr><th>Tipo cliente:</th><td><%= tipo_cliente @user.account_type_id %></td></tr>
+        <tr><th>Usuário:</th><td><%= @user.get_login  %></td></tr>
+        <tr><th>Senha:</th><td><%= @user.password %></td></tr>
+        <tr><th>Status</th><td><%= user_status @user.status %></td></tr>
+        <tr><th>Bloqueado?</th><td><%= boo @user.blocked %></td></tr>
+        <% if @user.blocked? %>
+          <tr><th>Bloqueado em:</th><td><%= @user.blocked_at.to_s_br %></td></tr>
+        <% end %>
+        <% if @user.redir_from.present? %>
+          <tr><th>Sorteado por acessar via</th><td><%= @user.redir_from %></td></tr>
+        <% end %>
+    </table>
+  </article>
+
+  <article class="box">
+    <header class="title">
+      <h1>Créditos</h1>
+    </header>
+    <table>
+        <tr><th>Saldo disponível:</th><td>R$ <%=@user.my_pending_credit.real  %></td></tr>
+    </table>
+
+  </article>
+
+
+  <% if @user.account_type_id==2 %>
+    <article class="box">
+      <header class="title">
+        <h1>Dados representação</h1>
+      </header>
+      <table>
+        <tr><th>Site:</th><td><%=get_site @user  %></td></tr>
+      </table>
+    </article>
+  <% end %>
+
+  <article class="box">
+    <header class="title">
+      <h1>Dados para contato</h1>
+    </header>
+    <table>
+      <tr><th>Email1:</th><td><%=@user.email1  %></td></tr>
+      <tr><th>Email2:</th><td><%=@user.email2  %></td></tr>
+      <tr><th>Telefone:</th><td><%=@user.phone  %></td></tr>
+      <tr><th>Celular:</th><td><%=@user.mobile  %></td></tr>
+    </table>
+  </article>
+  <article class="box">
+    <header class="title">
+      <h1>Dados endereço</h1>
+    </header>
+    <table>
+      <tr><th>Logradouro:</th><td><%= @user.address.try :street_name %></td></tr>
+      <tr><th>Número:</th><td><%= @user.address.try :number %></td></tr>
+      <tr><th>Bairro:</th><td><%= @user.address.try :neighborhood %></td></tr>
+      <tr><th>Complemento:</th><td><%= @user.address.try :complement %></td></tr>
+      <tr><th>Cidade:</th><td><%= @user.address.try :city_name %></td></tr>
+      <tr><th>Estado:</th><td><%= @user.address.try :state_name %></td></tr>
+      <tr><th>País:</th><td><%= @user.address.country.try :name %></td></tr>
+      <tr><th>Cep:</th><td><%= @user.address.try :zip %></td></tr>
+    </table>
+  </article>
+
+  <% if @user.account_type_id==2 %>
+    <article class="box">
+      <header class="title">
+        <h1>Dados conta bancária</h1>
+      </header>
+      <table>
+        <tr><th>Banco:</th><td><%= @user.bank_account.try(:bank).try :name %></td></tr>
+        <tr><th>Agência:</th><td><%= @user.bank_account.try(:agency) %></td></tr>
+        <tr><th>Conta:</th><td><%= @user.bank_account.try(:account) %></td></tr>
+        <tr><th>Tipo de conta:</th><td><%= @user.bank_account.try(:bank_account_type_id) %></td></tr>
+        <tr><th>Titular da conta:</th><td><%= @user.bank_account.try(:fullname_owner) %></td></tr>
+        <tr><th>CPF/CNPJ do titular:</th><td><%= @user.bank_account.try(:cpf_owner) %></td></tr>
+        <tr><th>Mais informações:</th><td><%= simple_format @user.bank_account.try(:extra) %></td></tr>
+      </table>
+    </article>
+  <% end %>
+
+  <article class="box">
+    <header class="title">
+      <h1>Observações adicionais</h1>
+    </header>
+    <table>
+      <tr><td><%= simple_format @user.extra %></td></tr>
+    </table>
+  </article>
+
+</section>

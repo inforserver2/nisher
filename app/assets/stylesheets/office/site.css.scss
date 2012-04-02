@@ -1,0 +1,15 @@
+// Place all the styles related to the office/site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div#office_nisher_messages{
+  ul{
+    list-style-type:lower-alpha;
+  }
+  li{
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color:"#cff";
+    color: black;
+  }
+
+}

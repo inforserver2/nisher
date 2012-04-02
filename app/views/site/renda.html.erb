@@ -1,0 +1,319 @@
+<h1 class="title">Bem vindos à Nisher Networks!</h1>
+<style type="text/css">
+
+</style>
+</head>
+
+<%= render :partial => 'shared/error', :locals=>{:obj=>@prospecto}  %>
+<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" id="renda">
+  <tr>
+    <td>
+      <%= image_tag "conv/apresentacao.jpg", class:"left" %>
+    <p>
+Você conhecerá agora a oportunidade que poderá mudar a sua vida para melhor!<br/><br/>
+A Nisher oferece ao mercado os melhores suplementos nutricionais desenvolvidos
+especificamente para melhorar sua qualidade de vida e auxiliar no emagrecimento.
+    </p>
+
+  </td>
+
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+      <h1>Produtos</h1>
+      <%= image_tag "products.png", class:"right" %>
+    <p>Programas nutricionais que fornecem a solução completa para: </p>
+    <p> - Redução de gordura<br />
+      - Fortalecimento de músculos e ossos<br />
+      - Renovação celular<br />
+      - Complementação de Omega 3/6/9<br />
+      e muito mais.</p>
+
+
+
+  </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+      <h1>A Oportunidade</h1>
+      <%= image_tag "conv/renda.jpg", class:"left" %>
+
+    <p>Todo cliente Nisher tem a oportunidade de construir uma renda extra progressiva  que pode transformar suas necessidades financeiras em liberdade financeira.</p>
+    <p>Por isso logo abaixo mostramos um resumo de como a Nisher pode te ajudar a fazer lucros acima de R$ 5.000,00 mensalmente.</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+      <h1>É de seu interesse receber nosso contato para apresentar melhor o plano?</h1>
+           <%= form_for @prospecto, url:{action: "prospecto"}, html: {class:"email"} do |f| %>
+              <p>Preencha o formulário abaixo:</p>
+             <table cellspacing="0">
+               <tr><th>Nome</th><td><%= f.text_field :name %></td></tr>
+               <tr><th>Email</th><td><%= f.text_field :email %></td></tr>
+               <tr><th>Telefone</th><td><%= f.text_field :phone, alt: "phone" %></td></tr>
+               <%= f.hidden_field :sponsor_id, value:@sponsor.id %>
+               <tr><td><%= f.submit "Enviar" %></td></tr>
+             </table>
+           <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+    <h1>Ganhos</h1>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="ganhos">
+      <tr>
+        <td class="line"><h2>1ª Forma de ganhos - Clientes</h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="central"><strong>VENDAS DIRETAS</strong></td>
+            </tr>
+            <tr>
+              <td class="central">10 a 25% de lucro <br />
+                sobre o valor total da compra de seus indicados clientes</td>
+            </tr>
+          </table>
+          <p>&nbsp;</p></td>
+        <td class="line">
+          <%= image_tag "conv/bonus1.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="line"><h2>2ª Forma de ganhos - Rede</h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="central"><strong>BÔNUS DE INÍCIO RÁPIDO</strong></td>
+            </tr>
+            <tr>
+              <td class="central">10 a 30% de lucro <br />
+                sobre o valor total
+da adesão de seu afiliado na rede</td>
+            </tr>
+          </table>
+          <p><br />
+          </p></td>
+        <td class="line">
+          <%= image_tag "conv/bonus2.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="line"><h2>3ª Forma de ganhos - Rede
+          </h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="4" class="central"><strong>BÔNUS MENSAL SOBRE CONSUMO</strong></td>
+            </tr>
+            <tr>
+              <td class="central">Nível 1</td>
+              <td class="central">Nível 2</td>
+              <td class="central">Nível 3</td>
+              <td class="central">Nível 4</td>
+            </tr>
+            <tr>
+              <td class="central">13 a 18%</td>
+              <td class="central">5 a 8%</td>
+              <td class="central">4 a 6%</td>
+              <td class="central">3 a 4%</td>
+            </tr>
+      </table>
+          <p>&nbsp;</p></td>
+        <td class="line">
+          <%= image_tag "conv/bonus3.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="line"><h2>4ª Forma de ganhos - Rede</h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="3" class="central"><strong>PRÊMIOS POR NÍVEIS CONCLUÍDOS</strong></td>
+            </tr>
+            <tr class="central">
+              <td>Nível 2</td>
+              <td>Nível 3 </td>
+              <td>Nível 4</td>
+            </tr>
+            <tr class="central">
+              <td> Smartphone Android 2.2</td>
+              <td> Viagem Europa</td>
+              <td> 1 Carro de Luxo:
+Honda/Corolla </td>
+            </tr>
+        </table>
+          <br /></td>
+        <td class="line">
+          <%= image_tag "conv/bonus4.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="line"><h2>5ª Forma de ganhos - Rede</h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="central"><strong>TOP INDICAÇÕES ATÉ 31/05/2012</strong></td>
+            </tr>
+            <tr>
+              <td class="central"> 1 Netbook Acer <br /></td>
+            </tr>
+          </table>
+          <p>&nbsp;</p></td>
+        <td class="line">
+          <%= image_tag "conv/bonus5.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="line"><h2>6ª Forma de ganhos - Rede</h2>
+          <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="central"><strong>BRINDES</strong></td>
+            </tr>
+            <tr>
+              <td class="central">*Quando na compra de 3 itens iguais você ganha mais 1 item do mesmo<br />
+*Quando na compra de 3 itens diferentes você ganha 1 MegaStack diurno ou noturno</td>
+            </tr>
+          </table>
+          <p>&nbsp;</p></td>
+        <td class="line">
+          <%= image_tag "conv/bonus6.jpg" %>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><h1>Cadastre-se agora mesmo, escolha um dos planos abaixo:</h1>
+
+      <style>
+      </style>
+
+      <div class="prod_list">
+        <h1>Kit Distribuidor 1</h1>
+        <%= image_tag "conv/bussines.png" %>
+        <p id="prod_desc">Este plano é o mais indicado para receber comissões em todos os níveis de ganhos disponíveis para os distribuidores rentabilizarem em parceria de negócios.</p>
+        <span id="prod_items">Itens:</span>
+        <ul>
+          <li>2 MegaStack</li>
+          <li>2 FillUp</li>
+          <li>2 NutraMeal</li>
+          <li>1 Apostila</li>
+          <li>1 DVD</li>
+          <li>Grátis: 1 MegaStack diurno e 1 noturno</li>
+        </ul>
+        <br/>
+        <span id="prod_price"> R$ 688,00 </span>
+        <%= button_to "ADQUIRIR", product_path(17), method: :get %>
+      </div>
+
+      <div class="prod_list">
+        <h1>Kit Distribuidor 2</h1>
+        <%= image_tag "conv/bussines.png" %>
+
+        <p id="prod_desc">Este é o nosso plano de negócios intermediário que ja te mantêm a um passo do plano mais indicado para receber comissões em todos os níveis.</p>
+        <span id="prod_items">Itens:</span>
+        <ul>
+          <li>1 MegaStack diurno</li>
+          <li>2 NutraMeal</li>
+          <li>1 Apostila</li>
+          <li>1 DVD</li>
+          <li>Grátis: 1 MegaStack noturno</li>
+        </ul>
+        <br/>
+        <span id="prod_price"> R$ 290,00 </span>
+        <%= button_to "ADQUIRIR", product_path(17), method: :get %>
+      </div>
+
+      <div class="prod_list">
+        <h1>Kit Distribuidor 3</h1>
+        <%= image_tag "conv/bussines.png" %>
+
+        <p id="prod_desc">Este é o nosso plano inicial indicado para quem quer iniciar um plano de carreira no sistema de negócios da Nisher que ainda te oferecerá todo o suporte para subir no plano de carreira.</p>
+        <span id="prod_items">Itens:</span>
+        <ul>
+          <li>1 NutraMeal</li>
+          <li>1 Apostila</li>
+          <li>1 DVD</li>
+        </ul>
+        <br/>
+        <span id="prod_price"> R$ 128,00 </span>
+        <%= button_to "ADQUIRIR", product_path(17), method: :get %>
+      </div>
+
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td><h1>Conheça mais sobre nossos produtos</h1>
+      <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr class="central">
+          <td>
+            <iframe width="200" height="165" src="http://www.youtube.com/embed/bBEddxYbGA8" frameborder="0" allowfullscreen></iframe>
+          </td>
+          <td>
+            <iframe width="200" height="165" src="http://www.youtube.com/embed/rZxvW3S_-bs" frameborder="0" allowfullscreen></iframe>
+          </td>
+          <td>
+            <iframe width="200" height="165" src=" http://www.youtube.com/embed/NwnVhg0m7UU" frameborder="0" allowfullscreen></iframe>
+          </td>
+          <td>
+            <iframe width="200" height="165" src=" http://www.youtube.com/embed/6BBekSLCpx0" frameborder="0" allowfullscreen></iframe>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4" class="central">
+            <p><%= link_to "Clique aqui para ver mais", site_tv_path %></p>
+          </td>
+        </tr>
+      </table>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td><h1>Dúvidas</h1>
+
+      <div class="prod_apoio">
+        <h1>Patrocinador</h1>
+        <p><%=raw [@sponsor.get_nick, @sponsor.email1, @sponsor.email2, @sponsor.phone, @sponsor.mobile, get_site_show(@sponsor)].compact.join("<br/>") %></p>
+      </div>
+
+      <div class="prod_apoio">
+        <h1>Reuniões Online</h1>
+        <p>Todas as quartas <br/>
+          das 21:00 às 22:00<br/>
+          <%= link_to "Clique aqui para acessar", CFG["conf_link"], target:"_blank" %>
+        </p>
+      </div>
+
+      <div class="prod_apoio">
+        <h1>Arquivo de Apresentação</h1>
+        <p>Formato: PowerPoint<br/>
+
+        <%= link_to "Em desenvolvimento", CFG["presentation_file_link"], target: "_blank" %>
+        </p>
+      </div>
+
+      <div class="clear"></div>
+      <div class="prod_empresa">
+          <h1>Nisher Networks</h1>
+          <p> Telefones: (19) 3291-3331/3324-7179/3291-3653<br />
+            CNPJ 10.300.058/0001-04<br />
+            Endereço: Rua Oliveira Cardoso, 41<br />
+            Bairro: Castelo<br />
+            Cidade: Campinas . SP<br />
+          CEP: 13070-148 </p>
+      </div>
+
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>

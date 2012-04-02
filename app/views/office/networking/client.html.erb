@@ -1,0 +1,18 @@
+<h1 class="title">Dados do cliente</h1>
+<div id="office_client_data">
+  <table cellspacing="0" class="office">
+    <tbody>
+    <tr><th style="width:150px">Data do cadastro</th><td><%= @client.created_at.to_s_br %></td></tr>
+    <tr><th>Tipo de conta</th><td><%= tipo_cliente @client.account_type_id %></td></tr>
+    <tr><th>Nome de exibição</th><td><%= @client.get_nick %></td></tr>
+    <tr><th>Email1</th><td><%= @client.email1 %></td></tr>
+    <tr><th>Email2</th><td><%= @client.email2 %></td></tr>
+    <tr><th>Telefone</th><td><%= @client.phone %></td></tr>
+    <tr><th>Celular</th><td><%= @client.mobile %></td></tr>
+    <tr><th>Cidade</th><td><%= @client.address.city_name %></td></tr>
+    <tr><th>Estado</th><td><%= @client.address.state_name %></td></tr>
+    <tr><th>País</th><td><%= @client.address.country.name %></td></tr>
+
+    </tbody>
+  </table>
+</div>

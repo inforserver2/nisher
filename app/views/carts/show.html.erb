@@ -1,0 +1,72 @@
+<h1 class='title'>Seu carrinho de compras</h1>
+<%= link_to("Limpar carrinho", limpar_carrinho_path, :method=>:put, :confirm=>"Você têm certeza?", remote:true, :id=>"link_esvaziar_carrinho") if @cart.line_items.any? %>
+
+<table cellspacing="0" id="cart_table">
+  <thead>
+    <tr>
+      <th>Qtd</th>
+      <th>Produto</th>
+      <th>Valor por unidade</th>
+      <th>Valor total</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% for item in @cart.line_items %>
+      <tr id="<%=dom_id(item)  %>" class="items <%= cycle("odd", "even") %>">
+        <td id="item_quantity"><%= item.quantity %></td>
+        <td><%= item.product.title %> <%= " Sabor: #{item.product_taste.name}" if item.product_taste_id %></td>
+        <td><%= item.unit_price.real_contabil %></td>
+        <td id="total_price"><%= item.total_price.real_contabil %></td>
+
+        <td><%= link_to "+", inc_line_item_path(item), method: :put, remote: true, id: "cart_inc_button", class:"cicle_button", title:"Incrementar quantidade" %></td>
+
+        <td id="dec_link"><%= link_to "-", dec_line_item_path(item), method: :put, remote: true, class:"cicle_button", title:"Decrementar quantidade" %></td>
+        <td><%= link_to "x", item, :method=>:delete, :confirm=>"Você tem certeza?", remote:true, class:"cicle_button", title:"Remover produto" %></td>
+
+      </tr>
+    <% end %>
+
+  </tbody>
+  <tfoot>
+    <tr id="foot">
+      <td colspan=3>Valor a pagar ( <span id="total_qty"><%= @cart.total_items %> </span> itens)</td>
+      <td id="to_pay" colspan=4><%= @cart.total_price.real_contabil %></td>
+    </tr>
+  </tfoot>
+  </table>
+
+  <%= link_to "Adicionar produtos", products_path, class:"cart_button" %>
+  <%= link_to("Calcular frete", "#", :id=>"link_calcular_frete", class:"cart_button") if @cart.line_items.any?  %>
+
+
+  <div id="calculo_frete" style="display:none">
+
+    <% if @cart.line_items.any? -%>
+
+      <%= render :partial => 'frete_info' if false %>
+
+      <div id="address_colect">
+        <%= render :partial => 'address_input' %>
+      </div>
+      <div id="address_completed" style="display:none"></div>
+
+
+      <% if @cart.frete.query.present? && false %>
+        FRETE CFG <%= debug @cart.frete.query.first  %>
+        <br/>
+        PAC <%= debug @cart.frete.query.last[:pac]  %>
+        <br/>
+        SEDEX <%= debug @cart.frete.query.last[:sedex]  %>
+      <% end %>
+
+    <% end %>
+
+  </div>
+
+  <div id="frete_info" style="display:none">
+  </div>
+  <div id="set_frete" style="display:none">
+  </div>
+

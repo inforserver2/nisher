@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email1:</b>
+  <%= @user.email1 %>
+</p>
+
+<p>
+  <b>Email2:</b>
+  <%= @user.email2 %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user.password %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @user.admin %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%= @user.sponsor_id %>
+</p>
+
+<p>
+  <b>Redir from:</b>
+  <%= @user.redir_from %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @user.token %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

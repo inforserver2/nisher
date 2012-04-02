@@ -1,0 +1,85 @@
+<%= link_to "Voltar", office_meus_dados_path %>
+<h1 class="title">Meus dados - Dados pessoais</h1>
+<%= form_for(@user, url: office_dados_pessoais_path, :html=>{:class=>:form, id:"site_form_new_user"}) do |f| %>
+  <%= f.hidden_field :account_type_id %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+
+  <div class="field inline">
+    <%= f.label :person_type_id %>
+    <%= f.radio_button :person_type_id, 1, class:"person_type_select" %> <span> Pessoa Física
+</span>    <%= f.radio_button :person_type_id, 2, class:"person_type_select" %> <span>Pessoa Jurídica
+</span>      <%= f.hidden_field :person_type_id %>
+  </div>
+
+  <div id="pessoa_fisica">
+
+    <div class="field">
+      <%= f.label :person_nick %><br />
+      <%= f.text_field :person_nick %>
+    </div>
+
+    <div class="field">
+      <%= f.label :person_name %><br />
+      <%= f.text_field :person_name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cpf %><br />
+      <%= f.text_field :cpf %>
+    </div>
+    <div class="field">
+      <%= f.label :rg %><br />
+      <%= f.text_field :rg %>
+    </div>
+
+
+
+  </div>
+
+  <div id="pessoa_juridica">
+    <div class="field">
+      <%= f.label :company_nick %><br />
+      <%= f.text_field :company_nick %>
+    </div>
+    <div class="field">
+      <%= f.label :company_name %><br />
+      <%= f.text_field :company_name %>
+    </div>
+    <div class="field">
+      <%= f.label :cnpj %><br />
+      <%= f.text_field :cnpj %>
+    </div>
+    <div class="field">
+      <%= f.label :respons_name %><br />
+      <%= f.text_field :respons_name %>
+    </div>
+    <div class="field">
+      <%= f.label :respons_cpf %><br />
+      <%= f.text_field :respons_cpf %>
+    </div>
+
+  </div>
+
+  <div class="field">
+      <%= f.label :gender_id %><br />
+      <%= f.select :gender_id, [["Masculino","1"],["Feminino","2"]], :include_blank=>true %>
+    </div>
+
+    <div class="field inline">
+      <%= f.label :birth %><br/>
+      <%= f.date_select :birth, {:start_year=>1900, :end_year=>Time.now.year, :include_blank=>true}, {class:"inline"} %>
+    </div>
+
+  <div class="field">
+    <%= f.label :comes_from_id, "Como conheceu a Nisher?" %><br />
+    <%= f.select :comes_from_id, User.comes_from_types.map{|x| [ x[:name], x[:id]]}, {include_blank:true} %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Atualizar"%>
+  </div>
+<% end %>

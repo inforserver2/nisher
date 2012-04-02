@@ -1,0 +1,45 @@
+@mixin round_this_border($px){
+  $radius: $px;
+
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  -border-radius: $radius;
+}
+
+@mixin bg_to_forms{
+
+  background-image: linear-gradient(bottom, rgb(224,224,224) 4%, rgb(242,242,242) 52%, rgb(255,255,255) 76%);
+  background-image: -o-linear-gradient(bottom, rgb(224,224,224) 4%, rgb(242,242,242) 52%, rgb(255,255,255) 76%);
+  background-image: -moz-linear-gradient(bottom, rgb(224,224,224) 4%, rgb(242,242,242) 52%, rgb(255,255,255) 76%);
+  background-image: -webkit-linear-gradient(bottom, rgb(224,224,224) 4%, rgb(242,242,242) 52%, rgb(255,255,255) 76%);
+  background-image: -ms-linear-gradient(bottom, rgb(224,224,224) 4%, rgb(242,242,242) 52%, rgb(255,255,255) 76%);
+  
+  background-image: -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(0.04, rgb(224,224,224)),
+          color-stop(0.52, rgb(242,242,242)),
+          color-stop(0.76, rgb(255,255,255))
+  );
+  
+
+}
+
+@mixin bg_to_category{
+  background-image: linear-gradient(bottom, rgb(237,228,235) 36%, rgb(255,255,255) 68%, rgb(255,255,255) 84%);
+  background-image: -o-linear-gradient(bottom, rgb(237,228,235) 36%, rgb(255,255,255) 68%, rgb(255,255,255) 84%);
+  background-image: -moz-linear-gradient(bottom, rgb(237,228,235) 36%, rgb(255,255,255) 68%, rgb(255,255,255) 84%);
+  background-image: -webkit-linear-gradient(bottom, rgb(237,228,235) 36%, rgb(255,255,255) 68%, rgb(255,255,255) 84%);
+  background-image: -ms-linear-gradient(bottom, rgb(237,228,235) 36%, rgb(255,255,255) 68%, rgb(255,255,255) 84%);
+  
+  background-image: -webkit-gradient(
+          linear,
+          left bottom,
+          left top,
+          color-stop(0.36, rgb(237,228,235)),
+          color-stop(0.68, rgb(255,255,255)),
+          color-stop(0.84, rgb(255,255,255))
+  );
+}

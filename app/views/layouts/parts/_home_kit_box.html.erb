@@ -1,0 +1,26 @@
+<div class="clear"></div>
+
+
+<%  cache 'site_kit1' do %>
+<div id="my_home_kits">
+        <br/>
+  <h1 class="my_home_kits">Kits distribuidor</h1>
+  <p class="my_home_kits">Saiba como subir de nível em seu estilo de vida melhorando sua saúde e construindo uma potencial fonte de renda extra em equipe.</p>
+  <ul id="office_products_select">
+  <% @products=Product.where(network_plan:true, visible:true).sort %>
+  <% @products.each do |p| %>
+    <li>
+      <div class="net_products">
+        <%= link_to image_tag(p.image_url(:medium)), image_path(p.image_url(:show)), :class=>:fancy %>
+        <h1><%= p.title %></h1>
+        <p><%= p.description %></p>
+        <span class="price"><%= p.price.real_contabil %></span>
+        <%= link_to "mais detalhes", product_path(p.id) %>
+        <div class="clear"></div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+</div>
+<% end %>
+

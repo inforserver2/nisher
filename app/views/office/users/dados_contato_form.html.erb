@@ -1,0 +1,32 @@
+<%= link_to "Voltar", office_meus_dados_path %>
+
+<h1 class="title">Meus dados - Dados contato</h1>
+
+<%= form_for(@user, url: office_dados_contato_path, :html=>{:class=>:form}) do |f| %>
+
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@user}  %>
+
+    <div class="field">
+      <%= f.label :email1 %><br />
+      <%= f.text_field :email1, disabled:true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email2 %><br />
+      <%= f.text_field :email2 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :phone %><br />
+      <%= f.text_field :phone, alt:"phone" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :mobile %><br />
+      <%= f.text_field :mobile, alt:"mobile" %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

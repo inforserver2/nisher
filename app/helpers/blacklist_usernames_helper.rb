@@ -1,0 +1,2 @@
+module BlacklistUsernamesHelper
+end

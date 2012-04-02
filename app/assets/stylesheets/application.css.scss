@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require reset
+ *= require superfish
+ *= require superfish-vertical
+ *= require_self
+ *= require_tree .
+ *= require pagination
+ *= require overlay-apple
+*/
+
+
+.container {
+  width: 1000px;
+  margin:{
+    left: auto;
+    right: auto;
+  }
+  #sidebar{
+    width: 200px;
+    float:left;
+  }
+  #content{
+    width: 780px;
+    padding: 10px;
+    float:left;
+    margin:{
+      left: auto;
+      right: auto;
+    }
+  }
+
+  #content-wide{
+    padding:10px;
+  }
+
+}
+
+
+.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+.error a, .alert a {color:#8a1f11;}
+.notice a {color:#514721;}
+.success a {color:#264409;}
+.info a {color:#205791;}

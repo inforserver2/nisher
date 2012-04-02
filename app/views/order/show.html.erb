@@ -1,0 +1,186 @@
+<% unless params[:new_user] or params[:new_order] %>
+  <%= link_to "Listar pedidos", office_orders_path %>
+<% end %>
+<% if params[:new_user]=="true" %>
+    <h1 class="title">Parabéns pelo seu cadastro!</h1>
+    <div id="dados_cadastro" class="box_cadastro">
+      <p>Cód. cliente</p>
+      <span><%= @order.user.id %></span>
+      <p>Tipo de cliente:</p>
+      <span><%= tipo_cliente @order.user.account_type_id %></span>
+      <p>Tipo de pessoa:</p>
+      <span><%= tipo_pessoa @order.user.person_type_id %></span>
+      <p>Login: </p>
+      <span><%= @order.user.get_login %></span>
+    </div>
+
+    <% if @order.user.account_type_id==2 %>
+      <div id="dados_site" class="box_cadastro">
+        <h1>SEU SITE DE NEGÓCIOS</h1>
+        <p class="site"><%= get_site_show(@order.user) %></p>
+        <p>Seu site de negócios já foi reservado e estará disponível para receber visitações tão logo que este pedido receber a confirmação de pagamento.</p>
+      </div>
+    <% end %>
+
+  <% end %>
+  <div class="clear"></div>
+
+<% if params[:new_order]=="true" %>
+  <h1 class="title">Pedido concluído, <%= link_to "exibir detalhes", "#", id:"botao_pedido_detalhes" %>:</h1>
+<% else %>
+  <h1 class="title">Pedido, <%= link_to "exibir detalhes", "#", id:"botao_pedido_detalhes" %>:</h1>
+<% end %>
+
+ <div id="pedido_colecao">
+     <div id="dados_pedido" class="box_pedido">
+      <h1>PEDIDO</h1>
+      <p>Nº</p>
+      <span><%= "#{@order.id}" %></span>
+      <p>Data de emissão:</p>
+      <span><%= @order.created_at.to_date.to_s_br %></span>
+      <p>Status pagamento:</p>
+      <span><%= order_status @order.status %></span>
+     </div>
+
+      <div id="dados_itens" class="box_pedido">
+        <h1>ITENS</h1>
+        <table>
+          <% for item in @order.cart.line_items %>
+            <tr id="<%=dom_id(item)  %>" class="items">
+              <td id="item_quantity"><%= item.quantity %></td>
+              <td><%= item.product.title %> <%= " Sabor: #{item.product_taste.name}" if item.product_taste_id %></td>
+              <td id="total_price"><%= item.total_price.real_contabil %></td>
+            </tr>
+          <% end %>
+        </table>
+          <div id="dados_frete">
+            <h1>FRETE</h1>
+            <p>Tipo: </p>
+            <span><%= @order.cart.frete.frete_type.try :name %></span>
+            <% if @order.cart.frete.frete_type_id==3 -%>
+              <p>Valor:</p>
+              <span>Indefinido</span>
+            <% else -%>
+              <p>Valor:</p>
+              <span><%= @order.cart.frete.price.try :real_contabil %></span>
+            <% end -%>
+          </div>
+      </div>
+
+      <div id="dados_address" class="box_pedido">
+        <h1>DESTINATARIO</h1>
+        <p>Destinatário:</p>
+        <span><%= @order.cart.frete.to_name %></span>
+        <br/>
+        <p>Logradouro:</p>
+        <span><%= @order.cart.frete.street_name %></span>
+        <br/>
+        <p>Número:</p>
+        <span><%= @order.cart.frete.number %></span>
+        <br/>
+        <p>Bairro:</p>
+        <span><%= @order.cart.frete.neighborhood %></span>
+        <br/>
+        <p>Complemento:</p>
+        <span><%= @order.cart.frete.complement %></span>
+        <br/>
+        <p>Cidade:</p>
+        <span><%= @order.cart.frete.city_name %></span>
+        <br/>
+        <p>Estado:</p>
+        <span><%= @order.cart.frete.state_name %></span>
+        <br/>
+        <p>País:</p>
+        <span><%= @order.cart.frete.country.name %></span>
+        <br/>
+        <p>Cep:</p>
+        <span><%= @order.cart.frete.zip_to %></span>
+      </div>
+      <div class="clear"></div>
+ </div>
+
+      <div id="pedido_total_a_pagar">
+        <h1>Valor total do pedido</h1>
+        <p><%= @order.cart.final_price.real_contabil %></p>
+      </div>
+  <% unless @order.status != 0 %>
+    <h1 class="title">Formas de pagamento</h1>
+    <div id="pedido_formas_pagamento">
+      <p>Clique sob a opção de sua preferência:</p>
+      <%= link_to(image_tag("bandeiras_pagamento/deposito.jpg"), "#", rel:"deposito") %>
+      <%= link_to(image_tag("bandeiras_pagamento/boleto.jpg"), "#", rel:"boleto") %>
+      <%= link_to(image_tag("bandeiras_pagamento/pagseguro.jpg"), "#", rel:"pagseguro") %>
+      <%= link_to(image_tag("bandeiras_pagamento/paypal.jpg"), "#", rel:"paypal") %>
+      <%= link_to(image_tag("bandeiras_pagamento/saldo_nisher.jpg"), "#", rel:"saldo") %>
+    </div>
+
+    <div id="pedido_deposito" class="box_tipo_pedido">
+      <h1>Depósito ou Transferência</h1>
+      <p>Copie os dados abaixo e após concluir o pagamento envie uma cópia do comprovante para gerencia@nisher.com.br</p>
+      <div id="dados_contas">
+        <h2>Contas:</h2>
+        <ul>
+          <li>
+            <div class="conta">
+              <%= image_tag "bandeiras_pagamento/band_itau.jpg" %>
+              <div>
+                <span>Banco: Itaú</span>
+                <span>Ag: 1620</span>
+                <span>Tipo de conta: Corrente</span>
+                <span>Conta: 26475-2 </span>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <li>
+            <div class="conta">
+              <%= image_tag "bandeiras_pagamento/band_bradesco.jpg" %>
+              <div>
+                <span>Banco: Bradesco</span>
+                <span>Ag: 2205-5</span>
+                <span>Tipo de conta: Corrente</span>
+                <span>Conta: 22242-9</span>
+
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="dados_empresa">
+        <h2>Dados do favorecido:</h2>
+        <div id="dados_favorecido">
+          <span>Razão Social: Nisher Networks</span>
+          <span>CNPJ: 10.300.058/0001-04</span>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div id="pedido_boleto" class="box_tipo_pedido">
+      <h1>Boleto bancário</h1>
+      <p>Após clicar no botão abaixo, você irá ser direcionado para uma nova página onde o boleto será exibido e você poderá imprimi-lo.</p>
+      <%= button_to "Gerar Boleto", boleto_path(@order.id, @order.token) %>
+    </div>
+
+    <div id="pedido_pagseguro" class="box_tipo_pedido">
+      <h1>PagSeguro</h1>
+      <p>Através do PagSeguro você pode pagar de diversas maneiras, pelo seu saldo no PagSeguro, via Cartões de Créditos, boletos e transferência bancária. Ao clicar no botão abaixo você será encaminhado para o site da PagSeguro, para você concluir seu pagamento.</p>
+      <%= button_to "Pagar via PagSeguro", pagseguro_path(@order.id, @order.token) %>
+    </div>
+
+    <div id="pedido_paypal" class="box_tipo_pedido">
+      <h1>PayPal</h1>
+      <p>Via PayPal você pode pagar através de seu saldo Paypal ou Cartões de Créditos. Ao clicar no botão abaixo você será encaminhado para o site da PayPal para você concluir seu pagamento.</p>
+      <%= button_to "Pagar via Paypal", paypal_path(@order.id, @order.token) %>
+    </div>
+
+    <div id="pedido_saldo" class="box_tipo_pedido">
+      <h1>Saldo de Créditos Nisher</h1>
+      <p>Via saldo de créditos Nisher você pode pagar com suas comissões recebidas</p>
+      <p>Seu saldo atual é: R$<%= @order.user.my_pending_credit.real %> </p>
+      <%= button_to "Pagar via Saldo Nisher", saldo_path(@order.id, @order.token) %>
+    </div>
+
+
+
+  <% end %>

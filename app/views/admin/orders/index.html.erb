@@ -1,0 +1,65 @@
+<h1 class="title">Administração de pedidos</h1>
+
+<div id="admin_order_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_orders_path do |f| %>
+      <%= f.label "id equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "id usuario equivale a" %>
+      <%= f.text_field :user_id_eq %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["pendente",0], ["ativo",1], ["cancelado",2]], include_blank:true %><br/>
+      <%= f.label "bloqueado?" %>
+      <%= f.check_box :blocked_true %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_orders_path %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= form_tag emails_admin_orders_path, target:"_blank"  do |f| %>
+    <%= hidden_field_tag :ids, @q.result.map(&:id)  %>
+    <%= submit_tag "lista emails", class:"email_list" %>
+  <% end %>
+</div>
+
+<div id="admin_order_list" class="office_list">
+  <table>
+    <caption>Lista de pedidos (<%= @orders.count %> - <%= @orders.sum(:price).real_contabil %>) </caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>registrado em</th>
+        <th>usuario</th>
+        <th>itens</th>
+        <th>valor</th>
+        <th>status</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.created_at.to_s_br %></td>
+        <td><%= order.user.try :get_login %></td>
+        <td><%= order.cart.try :total_items %></td>
+        <td><%= order.price.try :real_contabil %></td>
+        <td><%= order_status order.status %></td>
+        <td><%= link_to "mais", admin_order_path(order) %> |
+            <%= link_to_unless(order.closed?, "baixar", admin_close_order_path(id:order.id)) %> |
+            <%= link_to "editar", edit_admin_order_path(order) %> |
+            <%= link_to "remover", admin_order_path(order, page:params[:page]), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @orders %>
+</div>
+

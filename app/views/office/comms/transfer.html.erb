@@ -1,0 +1,21 @@
+<h1 class="title">Tranferir comissão</h1>
+<p>Seu saldo é R$ <%= current_user.my_pending_credit.real %></p>
+<p>Para iniciar a transferência entre com os dados abaixo:</p>
+<br/>
+<%= form_tag(transfer_proc_office_comms_path, {class:"form"}) do %>
+  <div class="field">
+    <%= label_tag "Para o login:" %>
+    <%= text_field_tag :to_username %>
+  </div>
+  <div class="field">
+    <%= label_tag "Valor:" %>
+    <%= text_field_tag :to_value %>
+  </div>
+  <div class="field">
+    <%= label_tag "Senha da conta:" %>
+    <%= password_field_tag :my_password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Transferir" %>
+  </div>
+<% end %>

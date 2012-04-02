@@ -1,0 +1,51 @@
+// Place all the styles related to the office/users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.office_show_data{
+  .box{
+    width: 600px;
+    margin: 10px;
+    padding: 10px;
+    header{
+      height: 40px;
+      padding: 2px;
+      background-color: blue;
+      color: #fff;
+      h1{
+        display:inline;
+      }
+      a{
+        float: right;
+        display: inline;
+        margin-right: 5px;
+        color: white;
+        text-decoration: none;
+        text-shadow: 0 -1px 1px black;
+        &:hover{
+          color: white;
+        }
+      }
+    }
+    table{
+      th{
+        padding: 2px;
+        width: 150px;
+      }
+    }
+  }
+}
+.office_close{
+    table{
+      caption{
+        text-align: center;
+        font-weight: bold;
+        font-style: italic;
+      }
+      th{
+        padding: 2px;
+        width: 150px;
+        font-weight: bold;
+      }
+    }
+}

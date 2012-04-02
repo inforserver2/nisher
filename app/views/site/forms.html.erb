@@ -1,0 +1,28 @@
+<%= form_tag("#", {:class=>"form"}) do %>
+
+  
+  <%= label_tag :ok %>
+  <%= text_field_tag :ok %>
+  <%= password_field_tag :vamos %>
+  <%= text_area_tag :box %>
+  <%= label_tag :ok %>
+  <div class="inline">
+    <%= radio_button_tag :gender, :male %>
+    <%= label_tag :ok %>
+    <%= radio_button_tag :gender, :female %>
+    <%= label_tag :ok %>
+  </div>
+  <%=select_tag "people", options_from_collection_for_select(User.all, "id", "name")  %>
+
+  <%= check_box_tag :course, :english %>
+    <%= label_tag :english %>
+  <%= check_box_tag :course, :french %>
+    <%= label_tag :french %>
+<%= field_set_tag 'Your details' do %>
+  <p><%= text_field_tag 'name' %></p>
+<% end %>
+<%= file_field_tag :attach %>
+<%= submit_tag :more %>
+<%= button_tag :ok %>
+  
+<% end %>

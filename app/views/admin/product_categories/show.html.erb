@@ -1,0 +1,19 @@
+<h1 class="title">Produto Categoria <%= @admin_product_category.id %></h1>
+<p>
+  <b>Título:</b>
+  <%= @admin_product_category.title %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%= simple_format @admin_product_category.description.try(:truncate, 350)  %>
+</p>
+
+<p>
+  <b>Imagem:</b>
+  <%= link_to image_tag(@admin_product_category.image_url(:thumb)), image_path(@admin_product_category.image_url(:show)), :class=>:fancy %>
+</p>
+
+
+<%= link_to 'Editar', edit_admin_product_category_path(@admin_product_category) %> |
+<%= link_to 'Voltar', admin_product_categories_path %>

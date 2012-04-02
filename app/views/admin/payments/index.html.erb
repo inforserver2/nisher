@@ -1,0 +1,67 @@
+<h1 class="title">Admin - Lista Envio de Pagamentos</h1>
+
+<div id="admin_payments_filter" class="filter">
+  <h2>Filtro</h2>
+  <div class="filter_content">
+    <%= search_form_for @q, url:admin_payments_path do |f| %>
+      <%= f.label "id equivale a" %>
+      <%= f.text_field :id_eq %><br/>
+      <%= f.label "login contêm" %>
+      <%= f.text_field :user_name_cont %><br/>
+      <%= f.label "email1 ou email2 contêm" %>
+      <%= f.text_field :user_email1_or_user_email2_cont %><br/>
+      <%= f.label "registrado a partir da data" %>
+      <%= f.date_select :created_at_gt, include_blank:true %><br/>
+      <%= f.label "registrado até a data" %>
+      <%= f.date_select :created_at_lt, include_blank:true %><br/>
+      <%= f.label "status equivale a" %>
+      <%= f.select :status_eq, [["a enviar",0], ["enviado",1], ["pendente",2], ["cancelado",2]], include_blank:true %><br/>
+      <%= f.label "bloqueado?" %>
+      <%= f.check_box :blocked_true %><br/>
+      <%= f.label "quitado?" %>
+      <%= f.check_box :closed_true %><br/>
+      <%= f.label "observação?" %>
+      <%= f.check_box :obs_present %><br/>
+      <%= f.submit "filtrar" %>
+      <%= link_to "remover filtro", admin_payments_path %>
+    <% end %>
+  </div>
+</div>
+
+
+<div id="admin_payments_list">
+  <table cellspacing="0" class="office">
+    <caption>Lista envio pagamentos <%= "(#{@payments.count} - #{@payments.sum(:value)})" %></caption>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>valor</th>
+        <th>status</th>
+        <th>login</th>
+        <th>quitado?</th>
+        <th>obs?</th>
+        <th>bloqueado?</th>
+        <th>mais</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.id %></td>
+        <td><%= payment.value.try :real_contabil %></td>
+        <td><%= payment_status payment.status %></td>
+        <td><%= payment.user.try :get_login %></td>
+        <td><%= boo payment.closed? %></td>
+        <td><%= boo payment.obs? %></td>
+        <td><%= boo payment.blocked? %></td>
+        <td>
+          <%= link_to "ver", admin_payment_path(payment) %> | <%= link_to_unless payment.closed?, "baixar", close_admin_payment_path(payment),method: :put %>  | <%= link_to "editar", edit_admin_payment_path(payment) %>
+        </td>
+      </tr>
+
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @payments %>
+</div>
+

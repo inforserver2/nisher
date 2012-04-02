@@ -1,0 +1,11 @@
+<h2>Informativo de recebimento em conta bancária</h2>
+<p>Um novo registro de recebimento em conta bancária foi associado a sua conta de usuário!</p>
+<p>Estaremos efetuando o depósito em até 5 dias úteis e o sistema enviará um email tão logo que for concluído o envio!</p>
+<table class="lista">
+  <tr><th>id</th><td><%= @payment.id %></td></tr>
+  <tr><th>valor</th><td><%= @payment.value.real_contabil %></td></tr>
+  <tr><th>status</th><td><%= payment_status @payment.status %></td></tr>
+  <tr><th>registrado em:</th><td><%= @payment.created_at.to_s_br %></td></tr>
+</table>
+
+<p>Veja mais informações através da sua central de negócios.</p>

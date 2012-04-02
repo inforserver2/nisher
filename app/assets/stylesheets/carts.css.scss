@@ -1,0 +1,155 @@
+// Place all the styles related to the carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "library/main";
+table#cart_table{
+  width: 100%;
+  thead{
+    height: 50px;
+    th{
+      font-weight: bold;
+    }
+  }
+  tbody{
+    tr.odd{
+      background-color: #ffc;
+      height: 20px;
+    }
+    a.cicle_button{
+      float: right;
+      padding-left: 2px;
+      padding-right: 2px;
+      color: white;
+      @include round_this_border(30px);
+      text-decoration: none;
+      background-color: black;
+      &:hover{
+        background-color:red;
+
+      }
+    }
+  }
+  tfoot{
+    tr#foot{
+    height: 40px;
+    }
+  }
+}
+
+.cart_button{
+  padding: 5px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #ccf;
+  color: black !important;
+  border: 1px solid black;
+  text-decoration: none;
+  &:hover{
+    color: white !important;
+  }
+
+}
+
+div#address_completed{
+  border: 1px dotted #ccf;
+  padding: 5px;
+  a{
+    float:right;
+  }
+  p{
+    font-weight: bold;
+    display: inline;
+  }
+  span{
+    font-color: gray;
+  }
+}
+
+div#frete_info{
+  margin-top: 10px;
+  border: 1px dotted #ccf;
+  padding: 5px;
+  p{
+    font-size: 21px;
+    font-weight: bold;
+  }
+  ul{
+    list-style: none;
+    li{
+      padding: 5px;
+      display: inline;
+      font-size: 16px; 
+      line-height: 30px;
+    }
+  }
+  span{
+    font-size: 18px;
+    color: red;
+    padding: 10px;
+  }
+}
+
+div#set_frete{
+
+  text-align: center; 
+
+  margin-top: 10px;
+  border: 1px dotted #ccc;
+  padding: 5px;
+  background-color: #F0F1F2;
+  h1{
+    font-size: 21px;
+  }
+  h2{
+    font-size: 18px;
+  }
+  p{
+    font-size: 16px;
+  }
+
+}
+
+div#cufon_cart{
+  width: 95%;
+  padding: 5px;
+  min-height: 50px;
+  background-color: #ccffff;
+  color: black;
+  line-height: 50px;
+  div{
+    margin: 5px;
+  }
+  h1{
+    color: blue;
+    font-size: 21px;
+  }
+  a{
+    float: right;
+  }
+  div#cufon_cart_data{
+    line-height:normal;
+    h1{
+      font-size: 18px;
+    }
+  }
+  div#address{
+    p{
+      font-weight: bold;
+      display: inline;
+    }
+  }
+  div#total{
+    height: 80px;
+    width: 200px;
+    border: 1px dotted white;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    p{
+      font-weight: bold;
+      font-size: 21px;
+      line-height: 120%;
+    }
+  }
+}

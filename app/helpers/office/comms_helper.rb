@@ -1,0 +1,2 @@
+module Office::CommsHelper
+end

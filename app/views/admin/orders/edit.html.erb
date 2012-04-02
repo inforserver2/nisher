@@ -1,0 +1,42 @@
+<h1 class="title">Edição dados pedido</h1>
+<%= form_for [:admin,@order], html:{class:"form"} do |f| %>
+  <%= render :partial => 'shared/error', :locals=>{:obj=>@order}  %>
+
+  <br/>
+  <%= link_to "editar frete", edit_admin_frete_path(@order.cart.frete) %>
+  <br/>
+
+
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, [["pendente", 0], ["ativo",1], ["cancelado", 2]]%>
+  </div>
+
+  <div class="field">
+    <%= f.label :blocked %><br />
+    <%= f.check_box :blocked %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid_with_money %><br />
+    <%= f.check_box :paid_with_money %>
+  </div>
+
+  <div class="field">
+    <%= f.label :closed %><br />
+    <%= f.check_box :closed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :extra %><br />
+    <%= f.text_area :extra %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+<% end %>
+

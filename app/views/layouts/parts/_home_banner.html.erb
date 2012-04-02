@@ -1,0 +1,14 @@
+
+<% cache 'site_home_banners' do %>
+
+        <div id="banner">
+          <div id="slider">
+            <%= link_to image_tag("b1.png"), Product.find(1) , :alt=>"b1" %>
+            <%= link_to image_tag("b2.png"), Product.find(8) , :alt=>"b2" %>
+            <%= link_to image_tag("b3.png"), Product.find(2) , :alt=>"b3" %>
+            <%= link_to image_tag("b4.png"), Product.find(3) , :alt=>"b4" %>
+          </div>
+
+        </div>
+
+      <% end -%>

@@ -1,0 +1,12 @@
+<h2>Sua conta foi inativada!</h2>
+<p>A inativação impossibilita a visitação ao seu site de divulgação, impede novos cadastros em sua rede e também impede o recebimento de novas comissões sob o consumo em sua rede de negócios.</p>
+<p>Para manter sua conta negócios ativa, você só precisa fazer um pedido de produto com valor igual ou superior à R$86,00 a cada 30 dias.</p>
+<table class="lista">
+  <caption>Dados da conta</caption>
+  <tr><th>Apelido</th><td><%= @user.get_nick %></td></tr>
+  <tr><th>Seu login</th><td><%= @user.get_login %></td></tr>
+  <tr><th>Site de divulgação</th><td><%= get_site @user %></td></tr>
+</table>
+<p>Entre em contato com a Nisher para reativação de sua conta.</p>
+<p>Caso sua conta continue inativa por mais 30 dias ela poderá ser cancelada.</p>
+<p>Aguardamos seu contato.</p>

@@ -1,0 +1,13 @@
+$("#calculo_frete").fadeOut();
+$("#link_calcular_frete").fadeOut();
+$("#link_esvaziar_carrinho").fadeOut();
+$('div#address_completed, div#frete_info , div#set_frete').empty().hide();
+
+$("div#cart p").html("<a href=\"<%= cart_path(@cart) %>\">Seu carrinho contêm <%= pluralize(@cart.total_items, "item") %></a>")
+$("tr.items").remove();
+$("div#debug_frete").hide();
+$("td#to_pay").html("<%= escape_javascript(@cart.total_price.real_contabil) %>")
+$("span#total_qty").html("<%= escape_javascript(@cart.total_items.to_s) %>")
+$("div.flash").hide();
+$("div.flash").html("Seu carrinho agora está vazio.");
+$("div.flash").fadeIn().delay(5000).fadeOut();

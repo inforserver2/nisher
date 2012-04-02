@@ -1,0 +1,45 @@
+<h1>Listing users</h1>
+<p>jsdhfljasd fasd faklsjd hflas jdfaskd fla sdlkfh als kdflkasd fl askdjfh lasd fl asd fl asldfalshd flas dflkahs lkdf haslkd fl askdljf halkshd flaksjhd fla sldkf alshd flaks </p>
+    
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email1</th>
+    <th>Email2</th>
+    <th>Password</th>
+    <th>Admin</th>
+    <th>Sponsor</th>
+    <th>Redir from</th>
+    <th>Token</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email1 %></td>
+    <td><%= user.email2 %></td>
+    <td><%= user.password %></td>
+    <td><%= user.admin %></td>
+    <td><%= user.sponsor_id %></td>
+    <td><%= user.redir_from %></td>
+    <td><%= user.token %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to "Switch", switch_path(user.id,user.token), :method=>:post %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>
+
+<div class="flickr_pagination">
+  <%= will_paginate @users %>
+</div>

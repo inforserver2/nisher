@@ -1,0 +1,5 @@
+<h1>Valor Total</h1>
+<p><%= @cart.final_price.real_contabil %></p>
+<h2>Tipo de frete</h2>
+<p><%= @cart.frete.frete_type.name %></p>
+<%= button_to "Prosseguir", sign_up_path, id:"submit_order",method: :get %>
